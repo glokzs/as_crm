@@ -7,5 +7,5 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
 
 
-         has_one :student
+         has_one :student, foreign_key: :email
 end
