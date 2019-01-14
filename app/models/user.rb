@@ -8,7 +8,7 @@ class User < ApplicationRecord
   
   def set_role
     user = User.last
-    user.role = 2 if Student.find_by(email: current_user.email)
+    user.role = 2 if Student.find_by(email: user.email)
     user.save
   end
 end
