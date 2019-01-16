@@ -6,13 +6,15 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-admin = User.create!(email: 'admin@admin',
+admin = User.new(email: 'admin@admin',
 					password: '123456',
 					role: 1)
+admin.skip_confirmation!
+admin.save
 
-student = User.create!(email: 'student@student',
-					   password: '987654',
-					   role: 2)
+# student = User.create!(email: 'student@student',
+# 					   password: '987654',
+# 					   role: 2)
 
 student_1 = Student.create!(first_name: 'Пушкин',
  last_name: 'Александр',
