@@ -1,0 +1,59 @@
+<%= form_with model: [:admin, @student], local: true do |f| %>
+<div class="field">
+	<%= f.label :last_name%>
+	<%= f.text_field :last_name%>
+</div>
+<div class="field">
+	<%= f.label :first_name%>
+	<%= f.text_field :first_name%>
+</div>
+<div class="field">
+	<%= f.label :middle_name%>
+	<%= f.text_field :middle_name%>
+</div>
+<div class="field">
+	<%= f.label :iin%>
+	<%= f.text_field :iin%>
+</div>
+<div class="field">
+	<%= f.label :email%>
+	<%= f.text_field :email%>
+</div>
+<div class="field">
+	<%= f.label :tel_1%>
+	<%= f.text_field :tel_1%>
+</div>
+<div class="field">
+	<%= f.label :tel_2%>
+	<%= f.text_field :tel_2%>
+</div>
+<div class="field">
+	<%= f.label :skype%>
+	<%= f.text_field :skype%>
+</div>
+<div class="field">
+	<%= f.label :gender%>
+	<%= f.text_field :gender%>
+</div>
+<div class="field">
+	<%= f.label :id_card%>
+	<%= f.text_field :id_card%>
+</div>
+<div class="field">
+	<%= f.label :date_of_issue%>
+	<%= f.date_field :date_of_issue%>
+</div>
+<div class="field">
+	<%= f.label :issued_by%>
+	<%= f.text_field :issued_by%>
+</div>
+<div class="field">
+	<%= f.label :group_id%>
+	<%= f.number_field :group_id%>
+</div>
+<div class="field">
+	<%= f.label :course_id%>
+	<%= f.number_field :course_id%>
+</div>
+<%= f. submit %>
+<% end %>
