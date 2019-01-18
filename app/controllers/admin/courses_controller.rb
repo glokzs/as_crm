@@ -1,4 +1,4 @@
-class Admin::CoursesController < ApplicationController
+class Admin::CoursesController < Admin::AdminController
   def index
     @courses = Course.all
   end
@@ -23,6 +23,11 @@ class Admin::CoursesController < ApplicationController
 
   def update
     @course = Course.find(params[:id])
+    if @course.update(course_params)
+  redirect_to admin_path
+else
+  render 'edit'
+end
   end
 
 
