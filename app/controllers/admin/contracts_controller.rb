@@ -17,8 +17,20 @@ class Admin::ContractsController < Admin::AdminController
     end
   end
 
+  def show
+    @contract = Contract.find(params[:id])
+    respond_to do |format|
+      format.html
+      format.pdf do
+        pdf = ContractPdf.new(@contract)
+        send_data pdf.render, filename: 'contract.pdf', type: 'application/pdf'
+      end
+    end
+  end
+
   private
   def contract_params
     params.permit(:student_id, :date, :number)
   end
 end
+

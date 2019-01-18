@@ -3,4 +3,5 @@ class Admin::UsersController < Admin::AdminController
 		@users = User.all
     @students = Student.all
 	end
+
 end

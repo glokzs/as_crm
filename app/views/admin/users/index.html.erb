@@ -18,7 +18,7 @@
 			<%= link_to 'Редактировать', edit_admin_student_path(student) %>
 			<%= link_to 'Удалить' %>
 			<% if student.contract.present? %>
-				<%= student.contract.number %>
+				<%= link_to student.contract.number, admin_contracts_path << "/#{student.contract.number}.pdf"  %>
 			<% else %>
 				<%= link_to 'Заключить договор', admin_contracts_path(student_id: student), method: :post%>
 			<% end %>
