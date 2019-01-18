@@ -22,7 +22,7 @@ class Admin::ContractsController < Admin::AdminController
     respond_to do |format|
       format.html
       format.pdf do
-        pdf = ContractPdf.new(@contract)
+        pdf = Admin::ContractPdf.new(@contract)
         send_data pdf.render, filename: 'contract.pdf', type: 'application/pdf'
       end
     end
