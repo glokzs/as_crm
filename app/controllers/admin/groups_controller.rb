@@ -1,4 +1,4 @@
-class Admin::GroupsController < ApplicationController
+class Admin::GroupsController < Admin::AdminController
   def index
     @groups = Group.all
   end
@@ -23,6 +23,11 @@ class Admin::GroupsController < ApplicationController
 
   def update
     @group = Group.find(params[:id])
+    if @group.update(group_params)
+  redirect_to admin_path
+else
+  render 'edit'
+end
   end
 
 
@@ -33,7 +38,7 @@ class Admin::GroupsController < ApplicationController
   end
 
   def group_params
-    params.require(:group).permit(:name, :course_id, :created_at, :updated_at)
+    params.require(:group).permit(:name)
   end
 
 end
