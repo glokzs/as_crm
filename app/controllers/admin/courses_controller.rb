@@ -24,10 +24,10 @@ class Admin::CoursesController < Admin::AdminController
   def update
     @course = Course.find(params[:id])
     if @course.update(course_params)
-  redirect_to admin_path
-else
-  render 'edit'
-end
+      redirect_to admin_path
+    else
+      render 'edit'
+    end
   end
 
 
