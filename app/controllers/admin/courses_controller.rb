@@ -21,6 +21,10 @@ class Admin::CoursesController < Admin::AdminController
     end
   end
 
+  def edit
+    @course = Course.find(params[:id])
+  end
+
   def update
     @course = Course.find(params[:id])
     if @course.update(course_params)
@@ -29,7 +33,6 @@ class Admin::CoursesController < Admin::AdminController
       render 'edit'
     end
   end
-
 
   def destroy
     Course.destroy(params[:id])

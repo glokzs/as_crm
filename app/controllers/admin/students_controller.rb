@@ -1,5 +1,9 @@
 class Admin::StudentsController < Admin::AdminController
 
+  def index
+    @students = Student.all
+  end
+
   def show
     @student = Student.find(params[:id])
   end
@@ -16,6 +20,25 @@ class Admin::StudentsController < Admin::AdminController
     else
       render 'new'
     end
+  end
+
+  def edit
+    @student = Student.find(params[:id])
+  end
+
+  def update
+    @student = Student.find(params[:id])
+    if @student.update(student_params)
+      redirect_to @student
+    else
+      render 'edit'
+    end
+  end
+
+  def destroy
+    Student.destroy(params[:id])
+
+    redirect_to admin_users_path
   end
 
   private

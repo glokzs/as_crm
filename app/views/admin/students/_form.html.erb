@@ -1,59 +1,85 @@
-<%= form_with model: [:admin, @student], local: true do |f| %>
-<div class="field">
-	<%= f.label :last_name%>
-	<%= f.text_field :last_name%>
+<%= form_with model: [:admin, @student], local: true do |f| %> 
+<div class="form-group row">
+	<%= f.label :last_name, 'Фамилия', class:"col-sm-2 col-form-label"%>
+	<div class="col-sm-10">
+		<%= f.text_field :last_name, class:"form-control"%>
+	</div>
 </div>
-<div class="field">
-	<%= f.label :first_name%>
-	<%= f.text_field :first_name%>
+<div class="form-group row">
+	<%= f.label :first_name, 'Имя', class:"col-sm-2 col-form-label"%>
+	<div class="col-sm-10">
+		<%= f.text_field :first_name, class:"form-control"%>
+	</div>
 </div>
-<div class="field">
-	<%= f.label :middle_name%>
-	<%= f.text_field :middle_name%>
+<div class="form-group row">
+	<%= f.label :middle_name, 'Отчество', class:"col-sm-2 col-form-label"%>
+	<div class="col-sm-10">
+		<%= f.text_field :middle_name, class:"form-control"%>
+	</div>
 </div>
-<div class="field">
-	<%= f.label :iin%>
-	<%= f.text_field :iin%>
+<div class="form-group row">
+	<%= f.label :iin, 'ИИН', class:"col-sm-2 col-form-label"%>
+	<div class="col-sm-10">
+		<%= f.text_field :iin, class:"form-control"%>
+	</div>
 </div>
-<div class="field">
-	<%= f.label :email%>
-	<%= f.text_field :email%>
+<div class="form-group row">
+	<%= f.label :email, class:"col-sm-2 col-form-label"%>
+	<div class="col-sm-10">
+		<%= f.text_field :email, class:"form-control"%>
+	</div>
 </div>
-<div class="field">
-	<%= f.label :tel_1%>
-	<%= f.text_field :tel_1%>
+<div class="form-group row">
+	<%= f.label :tel_1, 'Тел', class:"col-sm-2 col-form-label"%>
+	<div class="col-sm-10">
+		<%= f.text_field :tel_1, class:"form-control"%>
+	</div>
 </div>
-<div class="field">
-	<%= f.label :tel_2%>
-	<%= f.text_field :tel_2%>
+<div class="form-group row">
+	<%= f.label :tel_2, 'Доп тел', class:"col-sm-2 col-form-label"%>
+	<div class="col-sm-10">
+		<%= f.text_field :tel_2, class:"form-control"%>
+	</div>
 </div>
-<div class="field">
-	<%= f.label :skype%>
-	<%= f.text_field :skype%>
+<div class="form-group row">
+	<%= f.label :skype, class:"col-sm-2 col-form-label"%>
+	<div class="col-sm-10">
+		<%= f.text_field :skype, class:"form-control"%>
+	</div>
 </div>
 <div class="field">
 	<%= f.label :gender%>
 	<%= f.text_field :gender%>
 </div>
-<div class="field">
-	<%= f.label :id_card%>
-	<%= f.text_field :id_card%>
+<div class="form-group row">
+	<%= f.label :id_card, '№ удост личности', class:"col-sm-2 col-form-label"%>
+	<div class="col-sm-10">
+		<%= f.text_field :id_card, class:"form-control"%>
+	</div>
 </div>
-<div class="field">
-	<%= f.label :date_of_issue%>
-	<%= f.date_field :date_of_issue%>
+<div class="form-group row">
+	<%= f.label :date_of_issue, 'Дата выдачи', class:"col-sm-2 col-form-label"%>
+	<div class="col-sm-10">
+		<%= f.date_field :date_of_issue, class:"form-control"%>
+	</div>
 </div>
-<div class="field">
-	<%= f.label :issued_by%>
-	<%= f.text_field :issued_by%>
+<div class="form-group row">
+	<%= f.label :issued_by, 'Кем выдан', class:"col-sm-2 col-form-label"%>
+	<div class="col-sm-10">
+		<%= f.text_field :issued_by, class:"form-control"%>
+	</div>
 </div>
-<div class="field">
-	<%= f.label :group_id%>
-	<%= f.number_field :group_id%>
+<div class="form-group row">
+	<%= f.label :group_id, 'Группа', class:"col-sm-2 col-form-label" %>
+	<div class="col-sm-10">
+		<%= f.select(:group_id, Group.all.collect {|c| [c.name, c.id]}, { :prompt => 'Выбрать' }, { :class => 'form-control' }) %>
+	</div>
 </div>
-<div class="field">
-	<%= f.label :course_id%>
-	<%= f.number_field :course_id%>
+<div class="form-group row">
+	<%= f.label :course_id, 'Курс', class:"col-sm-2 col-form-label" %>
+	<div class="col-sm-10">
+		<%= f.select(:course_id, Course.all.collect {|c| [c.name, c.id]}, { :prompt => 'Выбрать' }, { :class => 'form-control' }) %>
+	</div>
 </div>
-<%= f. submit %>
+<%= f. submit @student.new_record? ? 'Создать' : 'Изменить', class:'btn btn-primary' %>
 <% end %>
