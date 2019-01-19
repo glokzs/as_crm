@@ -7,7 +7,9 @@ Rails.application.routes.draw do
 		resources :users
     resources :contracts
     resources :courses
+    resources :groups
 	end
 	resources :students,  only: :show
   resources :courses,  only: :show
+  resources :groups,  only: :show
 end
