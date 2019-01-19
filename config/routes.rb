@@ -6,6 +6,8 @@ Rails.application.routes.draw do
 		resources :students
 		resources :users
     resources :contracts
+    resources :courses
 	end
 	resources :students,  only: :show
+  resources :courses,  only: :show
 end

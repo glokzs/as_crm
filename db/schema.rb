@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_01_18_072103) do
+ActiveRecord::Schema.define(version: 2019_01_19_112253) do
 
   create_table "contracts", force: :cascade do |t|
     t.date "date", default: "2019-01-19"
@@ -19,6 +19,12 @@ ActiveRecord::Schema.define(version: 2019_01_18_072103) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["student_id"], name: "index_contracts_on_student_id"
+  end
+
+  create_table "courses", force: :cascade do |t|
+    t.string "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "students", force: :cascade do |t|
