@@ -6,7 +6,8 @@ Rails.application.routes.draw do
 	namespace :admin do
 		resources :students
 		resources :users
-    resources :courses
+    
+		resources :courses
 
 	end
 	resources :students,  only: :show 
