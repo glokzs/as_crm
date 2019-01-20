@@ -5,6 +5,8 @@ class Student < ApplicationRecord
 
   after_create :create_user
 
+  enum gender: {мужчина: 1, женщина: 2}
+
   private
   def create_user
     student = Student.last
