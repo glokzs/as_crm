@@ -42,7 +42,7 @@ ActiveRecord::Schema.define(version: 2019_01_21_134431) do
   end
 
   create_table "contracts", force: :cascade do |t|
-    t.date "date", default: "2019-01-21"
+    t.date "date", default: "2019-01-22"
     t.string "number"
     t.integer "student_id"
     t.datetime "created_at", null: false
@@ -81,13 +81,12 @@ ActiveRecord::Schema.define(version: 2019_01_21_134431) do
     t.string "tel_1"
     t.string "tel_2"
     t.string "email"
-    t.string "skype"
+    t.string "telegram"
     t.integer "gender"
     t.string "id_card"
     t.date "date_of_issue"
     t.string "issued_by"
     t.integer "group_id"
-    t.integer "course_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

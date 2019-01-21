@@ -8,13 +8,12 @@ class CreateStudents < ActiveRecord::Migration[5.2]
       t.string :tel_1
       t.string :tel_2
       t.string :email
-      t.string :skype
+      t.string :telegram
       t.integer :gender
       t.string :id_card
       t.date :date_of_issue
       t.string :issued_by
       t.integer :group_id
-      t.integer :course_id
 
       t.timestamps
     end

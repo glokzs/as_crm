@@ -25,13 +25,12 @@ student_1 = Student.create!(
   tel_1: '87775556666',
   tel_2: '87779996622',
   email: 'student@student',
-  skype: 'ivanov222',
+  telegram: 'ivanov222',
   gender: 0,
   id_card: '3698521478',
   date_of_issue: '12/01/2015',
   issued_by: 'МВД РК',
-  group_id: 1,
-  course_id: 1)
+  group_id: 1)
 
 student_2 = Student.create!(
   first_name: 'Лермонтов',
@@ -41,10 +40,9 @@ student_2 = Student.create!(
   tel_1: '87775556666',
   tel_2: '87779996622',
   email: 'lermontov@gmail',
-  skype: 'ivanov222',
+  telegram: 'ivanov222',
   gender: 0,
   id_card: '3698521478',
   date_of_issue: '12/01/2015',
   issued_by: 'МЮ РК',
-  group_id: 1,
-  course_id: 1)
+  group_id: 1)
