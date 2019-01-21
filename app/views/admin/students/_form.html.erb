@@ -32,8 +32,10 @@
 	<%= f.text_field :skype%>
 </div>
 <div class="field">
-	<%= f.label :gender%>
-    <%= f.select(:gender, [ 'мужчина', 'женщина' ], {}, { :class => 'select' }) %>
+	<%= f.label :gender%><br />
+    <%= f.radio_button :gender, 'муж' %> муж<br />
+    <%= f.radio_button :gender, 'жен' %> жен<br />
+
 </div>
 <div class="field">
 	<%= f.label :id_card%>

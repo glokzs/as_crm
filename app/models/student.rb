@@ -5,7 +5,7 @@ class Student < ApplicationRecord
 
   after_create :create_user
 
-  enum gender: {мужчина: 1, женщина: 2}
+  enum gender: {муж: 1, жен: 2}
 
   private
   def create_user
