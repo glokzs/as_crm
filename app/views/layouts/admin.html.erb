@@ -40,6 +40,9 @@
                 <%= link_to 'Студенты', admin_students_path, class:"dropdown-item" %>
               </div>
             </div>
+            <div class="nav-item">
+                <%= link_to 'Редактировать договор', admin_template_path(1), class:'nav-link' %>
+            </div>
           </div>
             <% if user_signed_in? %>
               <div class="nav-item">

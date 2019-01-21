@@ -6,7 +6,22 @@
 table.table-striped {
 	text-align: center;
 }
-th, td {
+table .table-striped th, td {
 	padding-top: 10px;
 	padding-bottom: 10px;
+}
+.template_title {
+	text-align: center;
+}
+.section_title {
+	justify-content: center;
+
+}
+.clause {
+	text-align: left;
+}
+table.contract td {
+	width: 70%;
+	border: 1px solid black;
+	text-align: center;
 }
