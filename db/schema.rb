@@ -10,10 +10,18 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_01_19_115340) do
+ActiveRecord::Schema.define(version: 2019_01_21_091450) do
+
+  create_table "clauses", force: :cascade do |t|
+    t.integer "section_id"
+    t.decimal "number"
+    t.text "body"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "contracts", force: :cascade do |t|
-    t.date "date", default: "2019-01-20"
+    t.date "date", default: "2019-01-21"
     t.string "number"
     t.integer "student_id"
     t.datetime "created_at", null: false
@@ -36,6 +44,14 @@ ActiveRecord::Schema.define(version: 2019_01_19_115340) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "sections", force: :cascade do |t|
+    t.integer "template_id"
+    t.integer "number"
+    t.string "title"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "students", force: :cascade do |t|
     t.string "first_name"
     t.string "last_name"
@@ -51,6 +67,12 @@ ActiveRecord::Schema.define(version: 2019_01_19_115340) do
     t.string "issued_by"
     t.integer "group_id"
     t.integer "course_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "templates", force: :cascade do |t|
+    t.string "title"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

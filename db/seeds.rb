@@ -15,6 +15,7 @@ admin.save
 
 Course.create!(name: 'Разработчик Ruby on Rails')
 Group.create(name: 'RoR-1', course_id: 1, start: '12/02/2018', end: '05/02/2019')
+Template.create!(title: 'об оказании услуг по обучению')
 
 student_1 = Student.create!(
   first_name: 'Пушкин',
