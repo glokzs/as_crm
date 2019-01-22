@@ -47,9 +47,12 @@
 		<%= f.text_field :skype, class:"form-control"%>
 	</div>
 </div>
-<div class="field">
-	<%= f.label :gender%>
-	<%= f.text_field :gender%>
+<div class="form-group row">
+	<%= f.label :gender, 'Пол', class:"col-sm-2 col-form-label" %>
+	<div class="col-sm-10">
+	    <%= f.radio_button :gender, :male %> муж
+	    <%= f.radio_button :gender, :female %> жен
+	</div>
 </div>
 <div class="form-group row">
 	<%= f.label :id_card, '№ удост личности', class:"col-sm-2 col-form-label"%>
