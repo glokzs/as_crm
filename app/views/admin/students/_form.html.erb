@@ -1,0 +1,83 @@
+<%= form_with model: [:admin, @student], local: true do |f| %> 
+<div class="form-group row">
+	<%= f.label :last_name, 'Фамилия', class:"col-sm-2 col-form-label"%>
+	<div class="col-sm-10">
+		<%= f.text_field :last_name, class:"form-control"%>
+	</div>
+</div>
+<div class="form-group row">
+	<%= f.label :first_name, 'Имя', class:"col-sm-2 col-form-label"%>
+	<div class="col-sm-10">
+		<%= f.text_field :first_name, class:"form-control"%>
+	</div>
+</div>
+<div class="form-group row">
+	<%= f.label :middle_name, 'Отчество', class:"col-sm-2 col-form-label"%>
+	<div class="col-sm-10">
+		<%= f.text_field :middle_name, class:"form-control"%>
+	</div>
+</div>
+<div class="form-group row">
+	<%= f.label :iin, 'ИИН', class:"col-sm-2 col-form-label"%>
+	<div class="col-sm-10">
+		<%= f.text_field :iin, class:"form-control"%>
+	</div>
+</div>
+<div class="form-group row">
+	<%= f.label :email, class:"col-sm-2 col-form-label"%>
+	<div class="col-sm-10">
+		<%= f.text_field :email, class:"form-control"%>
+	</div>
+</div>
+<div class="form-group row">
+	<%= f.label :tel_1, 'Тел', class:"col-sm-2 col-form-label"%>
+	<div class="col-sm-10">
+		<%= f.text_field :tel_1, class:"form-control"%>
+	</div>
+</div>
+<div class="form-group row">
+	<%= f.label :tel_2, 'Доп тел', class:"col-sm-2 col-form-label"%>
+	<div class="col-sm-10">
+		<%= f.text_field :tel_2, class:"form-control"%>
+	</div>
+</div>
+<div class="form-group row">
+	<%= f.label :telegram, class:"col-sm-2 col-form-label"%>
+	<div class="col-sm-10">
+		<%= f.text_field :telegram, class:"form-control"%>
+	</div>
+</div>
+<div class="form-group row">
+	<%= f.label :gender, 'Пол', class:"col-sm-2 col-form-label" %>
+	<div class="col-sm-10">
+	    <%= f.radio_button :gender, :male %> муж
+	    <%= f.radio_button :gender, :female %> жен
+	</div>
+</div>
+<div class="form-group row">
+	<%= f.label :id_card, '№ удост личности', class:"col-sm-2 col-form-label"%>
+	<div class="col-sm-10">
+		<%= f.text_field :id_card, class:"form-control"%>
+	</div>
+</div>
+<div class="form-group row">
+	<%= f.label :date_of_issue, 'Дата выдачи', class:"col-sm-2 col-form-label"%>
+	<div class="col-sm-10">
+		<%= f.date_field :date_of_issue, class:"form-control"%>
+	</div>
+</div>
+<div class="form-group row">
+	<%= f.label :issued_by, 'Кем выдан', class:"col-sm-2 col-form-label"%>
+	<div class="col-sm-10">
+		<%= f.text_field :issued_by, class:"form-control"%>
+	</div>
+</div>
+<div class="form-group row">
+	<%= f.label :group_id, 'Группа', class:"col-sm-2 col-form-label" %>
+	<div class="col-sm-10">
+		<%= f.select(:group_id, Group.all.collect {|c| [c.name, c.id]}, { :prompt => 'Выбрать' }, { :class => 'form-control' }) %>
+	</div>
+</div>
+ 
+<%= f. submit @student.new_record? ? 'Создать' : 'Изменить', class:'btn btn-primary' %>
+<% end %>

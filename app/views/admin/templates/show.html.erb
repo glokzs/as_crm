@@ -1,0 +1,23 @@
+<h2>Редактирование шаблона договора</h2>
+<br>
+<table class="contract">
+	<tr>
+		<td><h2><%= @template.title %></h2></td>
+		<td>
+			<%= link_to 'Добавить параграф', new_admin_section_path %>
+			<%= link_to 'Добавить пункт', new_admin_clause_path %>
+		</td>
+	</tr>
+	<% @template.sections.each do |s| %>
+	<tr>
+		<td><h4><%= s.number %>. <%= s.title %></h4></td>
+		<td><%= link_to 'Редактировать', edit_admin_section_path(s) %></td>
+	</tr>
+		<% s.clauses.each do |c| %>
+		<tr>
+			<td><%= c.number %>. <%= c.body %></td>
+			<td><%= link_to 'Редактировать', edit_admin_clause_path(c) %></td>
+		</tr>
+		<% end %>
+	<% end %>
+</table>

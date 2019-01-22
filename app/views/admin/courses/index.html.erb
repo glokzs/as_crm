@@ -1,0 +1,16 @@
+<h2>Список курсов</h2>
+<table class="table-striped w-100 mt-4">
+	<tr>
+		<th>Название курса</th>
+		<th colspan="3">Действия</th>
+	</tr>
+<% @courses.each do |course| %>
+	<tr>
+		<td><%= course.name %></td>
+		<td>
+			<%= link_to 'Редактировать', edit_admin_course_path(course) %>
+			<%= link_to 'Удалить' %>
+		</td>
+	</tr>
+<% end %>
+</table>

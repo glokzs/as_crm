@@ -1,0 +1,5 @@
+<h2>Список шаблонов</h2>
+<% @templates.each do |t| %>
+	<%= t.title %>
+	<%= link_to 'Show', admin_template_path(t) %>
+<% end %>

@@ -1,0 +1,21 @@
+<%= form_with model: [:admin, @clause], local: true do |f| %>
+<div class="form-group row">
+	<%= f.label :number, 'Номер пункта', class:"col-sm-2 col-form-label" %>
+	<div class="col-sm-10">
+		<%= f.text_field :number, class:"form-control"%>
+	</div>
+</div>
+<div class="form-group row">
+	<%= f.label :body, 'Содержание пункта', class:"col-sm-2 col-form-label" %>
+	<div class="col-sm-10">
+		<%= f.text_field :body, class:"form-control"%>
+	</div>
+</div>
+<div class="form-group row">
+	<%= f.label :section_id, 'Параграф', class:"col-sm-2 col-form-label" %>
+	<div class="col-sm-10">
+		<%= f.select(:section_id, @sections.collect {|t| [t.title, t.id]}, { :prompt => 'Выбрать' }, { :class => 'form-control' }) %>
+	</div>
+</div>
+<%= f.submit @clause.new_record? ? 'Создать' : 'Изменить', class:'btn btn-primary' %>
+<% end %>

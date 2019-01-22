@@ -1,10 +1,18 @@
 Rails.application.routes.draw do
 
-  devise_for :users
+  devise_for :users, controllers: { confirmations: "users/confirmations" }
 	root to: 'welcome#index'
 	namespace :admin do
 		resources :students
 		resources :users
+    resources :contracts
+    resources :courses
+    resources :groups
+    resources :templates
+    resources :sections
+    resources :clauses
 	end
-	resources :students,  only: :show 
+	resources :students,  only: :show
+  resources :courses,  only: :show
+  resources :groups,  only: :show
 end

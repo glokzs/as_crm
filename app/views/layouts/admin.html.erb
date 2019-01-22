@@ -11,35 +11,57 @@
 
   <body>
     <nav class="navbar fixed navbar-dark bg-dark navbar-expand-md">
-    <div class="container">
+      <div class="container">
+        <a class="navbar-brand" href="/admin/users">Attractor School</a>
         <button type="button" class="navbar-toggler collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
           <span class="sr-only">Toggle navigation</span>
           &#x2630;
         </button>
 
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-            <div class="navbar-nav ml-auto">
-              <div class="navbar-nav ml-auto">
-                  <% if user_signed_in? %>
-                    <div class="nav-item">
-                      <span class="navbar-text">
-                        <%= link_to 'Sign out', destroy_user_session_path, method: :delete, class: 'nav-link'%>
-                      <span>
-                    </div>
-                  <% else %>
-                      <div class="nav-item">
-                         <%= link_to 'Sign up', new_user_registration_path, class: 'nav-link' %>
-                      </div>
-                      <div class="nav-item">
-                         <%= link_to 'Log in', new_user_session_path, class: 'nav-link' %>
-                      </div>
-                  <% end %>
-                </div>
+          <div class="navbar-nav mr-auto">
+            <div class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Добавить
+              </a>
+              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <%= link_to 'курс', new_admin_course_path, class:"dropdown-item" %>
+                <%= link_to 'группу', new_admin_group_path, class:"dropdown-item" %>
+                <%= link_to 'студента', new_admin_student_path, class:"dropdown-item" %>
+              </div>
             </div>
+            <div class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Просмотр
+              </a>
+              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <%= link_to 'Курсы', admin_courses_path, class:"dropdown-item" %>
+                <%= link_to 'Группы', admin_groups_path, class:"dropdown-item" %>
+                <%= link_to 'Студенты', admin_students_path, class:"dropdown-item" %>
+              </div>
+            </div>
+            <div class="nav-item">
+                <%= link_to 'Редактировать договор', admin_template_path(1), class:'nav-link' %>
+            </div>
+          </div>
+            <% if user_signed_in? %>
+              <div class="nav-item">
+                <span class="navbar-text">
+                  <%= link_to 'Выйти', destroy_user_session_path, method: :delete, class: 'nav-link'%>
+                <span>
+              </div>
+            <% else %>
+                <div class="nav-item">
+                   <%= link_to 'Зарегистрироваться', new_user_registration_path, class: 'nav-link' %>
+                </div>
+                <div class="nav-item">
+                   <%= link_to 'Войти', new_user_session_path, class: 'nav-link' %>
+                </div>
+            <% end %>
         </div>
       </div>
     </nav>
-    <div class="container">
+    <div class="container mt-4">
       <%= yield %>
     </div>
   </body>
