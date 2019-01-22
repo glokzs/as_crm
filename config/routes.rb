@@ -8,6 +8,9 @@ Rails.application.routes.draw do
     resources :contracts
     resources :courses
     resources :groups
+    resources :templates
+    resources :sections
+    resources :clauses
 	end
 	resources :students,  only: :show
   resources :courses,  only: :show
