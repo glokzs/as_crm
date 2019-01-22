@@ -8,13 +8,13 @@ one:
   tel_1: MyString
   tel_2: MyString
   email: MyString
-  skype: MyString
+  telegram: MyString
   gender: 1
   id_card: MyString
   date_of_issue: 2019-01-12
   issued_by: MyString
   group_id: 1
-  course_id: 1
+
 
 two:
   first_name: MyString
@@ -24,10 +24,10 @@ two:
   tel_1: MyString
   tel_2: MyString
   email: MyString
-  skype: MyString
+  telegram: MyString
   gender: 1
   id_card: MyString
   date_of_issue: 2019-01-12
   issued_by: MyString
   group_id: 1
-  course_id: 1
+
