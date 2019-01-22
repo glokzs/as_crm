@@ -29,7 +29,7 @@ class Admin::StudentsController < Admin::AdminController
   def update
     @student = Student.find(params[:id])
     if @student.update(student_params)
-      redirect_to @student
+      redirect_to admin_users_path
     else
       render 'edit'
     end
