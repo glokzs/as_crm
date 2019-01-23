@@ -1,0 +1,15 @@
+  <% if @teacher.picture.attached? %>
+      <%= image_tag @teacher.picture, size: 100 %>
+  <% end %></br>
+  
+  <%= @teacher.first_name %>
+  <%= @teacher.last_name %>
+  <%= @teacher.middle_name %>
+
+  Еmail:       <p><%= @teacher.email %></p>
+  Телефон:     <p><%= @teacher.tel_1 %></p>
+  Доп телефон: <p><%= @teacher.tel_2 %></p>
+  Телеграмм:   <p><%= @teacher.telegram %></p>
+</tr>
+
+<%= link_to 'Back' %>

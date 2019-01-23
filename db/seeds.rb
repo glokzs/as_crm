@@ -46,3 +46,13 @@ student_2 = Student.create!(
   date_of_issue: '12/01/2015',
   issued_by: 'МЮ РК',
   group_id: 1)
+
+teacher_1 = Teacher.create!(
+  first_name: 'Уэлс',
+  last_name: 'Герберт',
+  middle_name: 'Андреевич',
+  tel_1: '87775878787',
+  tel_2: '87775454548',
+  email: 'gerberd@gmail',
+  telegram: 'gerberd1112232',
+  group_id: 1)
