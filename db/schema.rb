@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_01_23_200604) do
+ActiveRecord::Schema.define(version: 2019_01_23_222613) do
 
   create_table "active_storage_attachments", force: :cascade do |t|
     t.string "name", null: false
@@ -65,7 +65,7 @@ ActiveRecord::Schema.define(version: 2019_01_23_200604) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "groups_teachers", force: :cascade do |t|
+  create_table "groups_teachers", id: false, force: :cascade do |t|
     t.integer "group_id"
     t.integer "teacher_id"
     t.index ["group_id"], name: "index_groups_teachers_on_group_id"
@@ -106,16 +106,8 @@ ActiveRecord::Schema.define(version: 2019_01_23_200604) do
     t.string "tel_2"
     t.string "email"
     t.string "telegram"
-    t.integer "group_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-  end
-
-  create_table "teachers_groups", id: false, force: :cascade do |t|
-    t.integer "teacher_id"
-    t.integer "group_id"
-    t.index ["group_id"], name: "index_teachers_groups_on_group_id"
-    t.index ["teacher_id"], name: "index_teachers_groups_on_teacher_id"
   end
 
   create_table "templates", force: :cascade do |t|

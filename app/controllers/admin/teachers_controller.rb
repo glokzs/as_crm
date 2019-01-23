@@ -6,6 +6,7 @@ class Admin::TeachersController < Admin::AdminController
 
   def show
     @teacher = Teacher.find(params[:id])
+    @groups = @teacher.groups
   end
 
   def new
@@ -16,7 +17,7 @@ class Admin::TeachersController < Admin::AdminController
      @teacher = Teacher.new(teacher_params)
     if  @teacher.save
       flash[:notice] = 'Преподователь успешно добавлен'
-      redirect_to admin_users_path
+      redirect_to admin_teachers_path
     else
       render 'new'
     end
@@ -29,7 +30,7 @@ class Admin::TeachersController < Admin::AdminController
   def update
     @teacher = Teacher.find(params[:id])
     if @teacher.update(teacher_params)
-      redirect_to admin_users_path
+      redirect_to admin_teacher_path(@teacher)
     else
       render 'edit'
     end

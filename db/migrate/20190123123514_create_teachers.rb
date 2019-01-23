@@ -8,7 +8,6 @@ class CreateTeachers < ActiveRecord::Migration[5.2]
       t.string :tel_2
       t.string :email
       t.string :telegram
-      t.integer :group_id
 
       t.timestamps
     end
