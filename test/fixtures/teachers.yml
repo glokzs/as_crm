@@ -8,7 +8,7 @@ one:
   tel_2: MyString
   email: MyString
   telegram: MyString
-  group_id: 1
+
 
 two:
   first_name: MyString
@@ -18,4 +18,4 @@ two:
   tel_2: MyString
   email: MyString
   telegram: MyString
-  group_id: 1
+

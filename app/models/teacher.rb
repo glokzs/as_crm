@@ -1,6 +1,6 @@
 class Teacher < ApplicationRecord
   has_one :user, foreign_key: :email
-  belongs_to :group
+  has_and_belongs_to_many :groups
   has_one_attached :picture
   
   after_create :create_user
