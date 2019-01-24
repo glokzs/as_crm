@@ -5,11 +5,11 @@ class Admin::SectionsController < Admin::AdminController
 
   def new
     @section = Section.new
-    @templates = Template.all
   end
 
   def create
     @section = Section.new(section_params)
+    @section[:template_id] = 1
     if @section.save
       redirect_to admin_template_path(1)
     else

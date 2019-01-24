@@ -8,12 +8,12 @@
 			<%= link_to 'Добавить пункт', new_admin_clause_path %>
 		</td>
 	</tr>
-	<% @template.sections.each do |s| %>
+	<% @template.sections.order("number").each do |s| %>
 	<tr>
 		<td><h4><%= s.number %>. <%= s.title %></h4></td>
 		<td><%= link_to 'Редактировать', edit_admin_section_path(s) %></td>
 	</tr>
-		<% s.clauses.each do |c| %>
+		<% s.clauses.order("number").each do |c| %>
 		<tr>
 			<td><%= c.number %>. <%= c.body %></td>
 			<td><%= link_to 'Редактировать', edit_admin_clause_path(c) %></td>
