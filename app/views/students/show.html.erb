@@ -1,2 +1,37 @@
-<h1>Students#show</h1>
-<p>Find me in app/views/students/show.html.erb</p>
+<%= form_with model: [:admin, @student], local: true do |f| %> 
+<div class="container">
+  <div class="row">
+    <div class="col-md-6">
+     
+      <div class="card" style="width: 18rem; border-width: 0px">
+        <% if @student.avatar.attached? %>
+          <%= image_tag @student.avatar.variant(resize: '100x100'), class:"mt-5 pt-10 card-img-top rounded-circle" %>
+        <%else%>
+          <%= f.label :avatar, 'Фото'%>
+        <div class="col-sm-10">
+          <%= f.file_field :avatar%>
+        </div>
+
+           <%= f. submit 'Изменить Фото', class:'btn btn-primary mt-2' %>
+        <% end %>
+        <div class="card-body">
+          <ul class="list-group list-group-flush">
+            <li class="list-group-item" style="border-width: 0px"> ИМЯ ОТЧЕСТВО ФАМИЛИЯ<br/><%= @student.first_name %> <%= @student.middle_name %> <%= @student.last_name %> </li>
+            <li class="list-group-item" style="border-width: 0px">ИИН<br/><%= @student.iin %></li>
+            <li class="list-group-item" style="border-width: 0px">ТЕЛ_1<br/><%= @student.tel_1 %></li>
+            <li class="list-group-item" style="border-width: 0px">ТЕЛ_2<br/><%= @student.tel_2 %></li>
+            <li class="list-group-item" style="border-width: 0px">EMAIL<br/><%= @student.email %></li>
+            <li class="list-group-item" style="border-width: 0px">Telegram<br/><%= @student.telegram %></li>
+            <li class="list-group-item" style="border-width: 0px">ПОЛ<br/><%= @student.gender %></li>
+            <li class="list-group-item" style="border-width: 0px">номер удостоверния личности<br/><%= @student.id_card %></li>
+            <li class="list-group-item" style="border-width: 0px">дата выдачи<br/><%= @student.date_of_issue %></li>
+            <li class="list-group-item" style="border-width: 0px">кем выдано<br/><%= @student.issued_by %></li>
+            <li class="list-group-item" style="border-width: 0px">№ группы<br/><%= @student.group.name %></li>
+          </ul>
+        </div>
+      </div> 
+      
+  <% end %></br>
+
+  <%= link_to 'Back', admin_students_path, class:'btn btn-primary' %>
+</div>

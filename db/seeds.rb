@@ -127,7 +127,7 @@ student_2 = Student.create!(
   email: 'gerberd@gmail',
   telegram: 'gerberd1112232')
 
-  i.picture.attach(
+  i.avatar.attach(
     io:File.open("app/assets/images/#{i.id}.jpeg"),
     filename: "{i.id}.jpeg")
 end

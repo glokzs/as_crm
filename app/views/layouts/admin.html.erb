@@ -1,70 +1,71 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>CrmAS</title>
-    <%= csrf_meta_tags %>
-    <%= csp_meta_tag %>
+<head>
+  <title>CrmAS</title>
+  <%= csrf_meta_tags %>
+  <%= csp_meta_tag %>
 
-    <%= stylesheet_link_tag 'admin', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-  </head>
+  <%= stylesheet_link_tag 'admin', media: 'all', 'data-turbolinks-track': 'reload' %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  
+</head>
 
-  <body>
-    <nav class="navbar fixed navbar-dark bg-dark navbar-expand-md">
-      <div class="container">
-        <a class="navbar-brand" href="/admin/users">Attractor School</a>
-        <button type="button" class="navbar-toggler collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
-          <span class="sr-only">Toggle navigation</span>
-          &#x2630;
-        </button>
+<body>
+  <nav class="navbar fixed navbar-dark bg-dark navbar-expand-md">
+    <div class="container">
+      <a class="navbar-brand" href="/admin/users">Attractor School</a>
+      <button type="button" class="navbar-toggler collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        &#x2630;
+      </button>
 
-        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-          <div class="navbar-nav mr-auto">
-            <div class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                Добавить
-              </a>
-              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                <%= link_to 'курс', new_admin_course_path, class:"dropdown-item" %>
-                <%= link_to 'группу', new_admin_group_path, class:"dropdown-item" %>
-                <%= link_to 'студента', new_admin_student_path, class:"dropdown-item" %>
-                 <%= link_to 'преподователя', new_admin_teacher_path, class:"dropdown-item" %>
-              </div>
-            </div>
-            <div class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                Просмотр
-              </a>
-              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                <%= link_to 'Курсы', admin_courses_path, class:"dropdown-item" %>
-                <%= link_to 'Группы', admin_groups_path, class:"dropdown-item" %>
-                <%= link_to 'Студенты', admin_students_path, class:"dropdown-item" %>
-                <%= link_to 'Преподователи', admin_teachers_path, class:"dropdown-item" %>
-              </div>
-            </div>
-            <div class="nav-item">
-                <%= link_to 'Редактировать договор', admin_template_path(1), class:'nav-link' %>
+      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+        <div class="navbar-nav mr-auto">
+          <div class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              Добавить
+            </a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <%= link_to 'курс', new_admin_course_path, class:"dropdown-item" %>
+              <%= link_to 'группу', new_admin_group_path, class:"dropdown-item" %>
+              <%= link_to 'студента', new_admin_student_path, class:"dropdown-item" %>
+              <%= link_to 'преподователя', new_admin_teacher_path, class:"dropdown-item" %>
             </div>
           </div>
-            <% if user_signed_in? %>
-              <div class="nav-item">
-                <span class="navbar-text">
-                  <%= link_to 'Выйти', destroy_user_session_path, method: :delete, class: 'nav-link'%>
-                <span>
-              </div>
-            <% else %>
-                <div class="nav-item">
-                   <%= link_to 'Зарегистрироваться', new_user_registration_path, class: 'nav-link' %>
-                </div>
-                <div class="nav-item">
-                   <%= link_to 'Войти', new_user_session_path, class: 'nav-link' %>
-                </div>
-            <% end %>
+          <div class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              Просмотр
+            </a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <%= link_to 'Курсы', admin_courses_path, class:"dropdown-item" %>
+              <%= link_to 'Группы', admin_groups_path, class:"dropdown-item" %>
+              <%= link_to 'Студенты', admin_students_path, class:"dropdown-item" %>
+              <%= link_to 'Преподователи', admin_teachers_path, class:"dropdown-item" %>
+            </div>
+          </div>
+          <div class="nav-item">
+            <%= link_to 'Редактировать договор', admin_template_path(1), class:'nav-link' %>
+          </div>
         </div>
-      </div>
-    </nav>
-    <div class="container mt-4">
+        <% if user_signed_in? %>
+        <div class="nav-item">
+          <span class="navbar-text">
+            <%= link_to 'Выйти', destroy_user_session_path, method: :delete, class: 'nav-link'%>
+            <span>
+            </div>
+            <% else %>
+            <div class="nav-item">
+             <%= link_to 'Зарегистрироваться', new_user_registration_path, class: 'nav-link' %>
+           </div>
+           <div class="nav-item">
+             <%= link_to 'Войти', new_user_session_path, class: 'nav-link' %>
+           </div>
+           <% end %>
+         </div>
+       </div>
+     </nav>
+     <div class="container mt-4">
       <%= yield %>
     </div>
   </body>
-</html>
+  </html>
