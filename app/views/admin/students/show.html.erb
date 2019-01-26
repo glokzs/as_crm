@@ -6,7 +6,6 @@
       <div class="card " style="width: 18rem; border-width: 0px">
        
         <% if @student.avatar.attached? %>
-       
           <%= image_tag @student.avatar.variant(resize: '100x100'), class:"mt-5 pt-10 card-img-top rounded-circle" %>
         <%else%>
           <%= f.label :avatar, 'Фото'%>
@@ -34,9 +33,9 @@
     <div class="col-md-6">
           <% if @student.images.attached? %>
             <% @student.images.each do |image| %>
-           
-              <%= image_tag image.variant(resize: '100x200') %>
-           
+                <%= link_to (image.variant(resize: '500x1000')), data: {lightbox: "image"} do %> 
+                      <%= image_tag image.variant(resize: '100x200') %>
+                <%end%> 
             <%end%>
           <%else%>
            <div class="form-group row">
