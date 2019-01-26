@@ -13,6 +13,7 @@ Rails.application.routes.draw do
     resources :clauses
     resources :teachers
     resources :themes
+    resources :lessons
 	end
 	resources :students,  only: :show
   resources :courses,  only: :show
