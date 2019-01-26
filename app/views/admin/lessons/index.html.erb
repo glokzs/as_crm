@@ -8,11 +8,11 @@
 	</tr>
 <% @lessons.each do |lesson| %>
 	<tr>
-		<td><%= lesson.title %></td>
+		<td><%= lesson.theme.title %></td>
 		<td><%= lesson.date %></td>
-		<td><%= group.name %></td>
+		<td><%= lesson.group_id %></td>
 		<td>
-			<%= link_to 'Редактировать', edit_admin_group_path(group) %>
+			<%= link_to 'Редактировать', edit_admin_lesson_path(lesson) %>
 			<%= link_to 'Удалить' %>
 		</td>
 	</tr>
