@@ -6,7 +6,7 @@
 	</tr>
 <% @groups.each do |group| %>
 	<tr>
-		<td><%= group.name %></td>
+		<td><%= link_to group.name, admin_group_path(group) %></td>
 		<td>
 			<%= link_to (fa_icon "edit"), edit_admin_group_path(group), class:"font"%>
 			<%= link_to (fa_icon "trash"), admin_group_path(group), method: :destroy, class:"font" %>
