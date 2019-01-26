@@ -12,6 +12,7 @@ Rails.application.routes.draw do
     resources :sections
     resources :clauses
     resources :teachers
+    resources :lessons
 	end
 	resources :students,  only: :show
   resources :courses,  only: :show
