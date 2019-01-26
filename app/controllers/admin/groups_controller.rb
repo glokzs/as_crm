@@ -28,7 +28,7 @@ class Admin::GroupsController < Admin::AdminController
   def update
     @group = Group.find(params[:id])
     if @group.update(group_params)
-      redirect_to @group
+      redirect_to admin_groups_path
     else
       render 'edit'
     end

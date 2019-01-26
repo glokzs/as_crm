@@ -14,10 +14,10 @@
 		<td><%= student.email %></td>
 		<td><%= student.tel_1 %></td>
 		<td><%= student.tel_2 %></td>
-		<td><%= student.group_id %></td>
+		<td><%= link_to "#{student.group.name}", admin_group_path(@group) %></td>
 		<td>
-			<%= link_to 'Редактировать', edit_admin_student_path(student) %>
-			<%= link_to 'Удалить' %>
+			<%= link_to (fa_icon "edit"), edit_admin_student_path(student), class:"font" %>
+			<%= link_to (fa_icon "trash"), admin_student_path(student), class:"font" %>
 			<% if student.contract.present? %>
 				<%= link_to student.contract.number, admin_contracts_path << "/#{student.contract.number}.pdf"  %>
 			<% else %>
@@ -28,3 +28,4 @@
 
 <% end%>
 </table>
+
