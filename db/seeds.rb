@@ -131,3 +131,5 @@ student_2 = Student.create!(
     io:File.open("app/assets/images/#{i.id}.jpeg"),
     filename: "{i.id}.jpeg")
 end
+
+Theme.create!(number: 1, title: 'Знакомство с HTML', course_id: 1)
