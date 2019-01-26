@@ -8,8 +8,8 @@
 	<tr>
 		<td><%= group.name %></td>
 		<td>
-			<%= link_to 'Редактировать', edit_admin_group_path(group) %>
-			<%= link_to 'Удалить' %>
+			<%= link_to (fa_icon "edit"), edit_admin_group_path(group), class:"font"%>
+			<%= link_to (fa_icon "trash"), admin_group_path(group), method: :destroy, class:"font" %>
 		</td>
 	</tr>
 
