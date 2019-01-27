@@ -1,0 +1,37 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  owner: MyString
+  address: MyString
+  bin: 1
+  bank: MyString
+  iik: MyString
+  bik: MyString
+  email: MyString
+  web: MyString
+  tel_1: MyString
+  tel_2: MyString
+  tel_3: MyString
+  function: MyString
+  fio: MyString
+  based: MyString
+  function_2: MyString
+  fio_2: MyString
+
+two:
+  owner: MyString
+  address: MyString
+  bin: 1
+  bank: MyString
+  iik: MyString
+  bik: MyString
+  email: MyString
+  web: MyString
+  tel_1: MyString
+  tel_2: MyString
+  tel_3: MyString
+  function: MyString
+  fio: MyString
+  based: MyString
+  function_2: MyString
+  fio_2: MyString
