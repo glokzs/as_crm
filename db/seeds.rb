@@ -133,3 +133,21 @@ student_2 = Student.create!(
 end
 
 Theme.create!(number: 1, title: 'Знакомство с HTML', course_id: 1)
+Requisite.create!(
+  owner: "ТОО Образовательный центр \"Аттрактор скул Алматы\"",
+  address: "Казахстан, город Алматы, Алмалинский район, проспект Жибек Жолы, дом 135",
+  bin: 171240019162,
+  bank: "АО «Kaspi Bank»",
+  iik: "KZ88722S000001417077",
+  bik: "CASPKZKA",
+  email: "almaty@it-attractor.com",
+  web: "http://attractor-school.com/almaty",
+  tel_1: '+7 (707) 186 00 11',
+  tel_2: '+7 (707) 186 12 77',
+  tel_3: '+7 (707) 186 00 33',
+  function: 'Директор',
+  function_2: 'Директора',
+  fio: 'Гудов А.О.',
+  fio_2: 'Гудова Александра Олеговича',
+  based: 'Устава'
+  )
