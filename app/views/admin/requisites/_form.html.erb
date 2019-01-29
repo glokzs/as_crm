@@ -1,0 +1,99 @@
+<%= form_with model: [:admin, @requisite], local: true do |f| %> 
+<div class="form-group row">
+	<%= f.label :owner, 'Название компании', class:"col-sm-2 col-form-label"%>
+	<div class="col-sm-10">
+		<%= f.text_field :owner, class:"form-control"%>
+	</div>
+</div>
+<div class="form-group row">
+	<%= f.label :address, 'Адрес компании', class:"col-sm-2 col-form-label"%>
+	<div class="col-sm-10">
+		<%= f.text_field :address, class:"form-control"%>
+	</div>
+</div>
+<div class="form-group row">
+	<%= f.label :bin, 'БИН', class:"col-sm-2 col-form-label"%>
+	<div class="col-sm-10">
+		<%= f.text_field :bin, class:"form-control"%>
+	</div>
+</div>
+<div class="form-group row">
+	<%= f.label :bank, 'Банк', class:"col-sm-2 col-form-label"%>
+	<div class="col-sm-10">
+		<%= f.text_field :bank, class:"form-control"%>
+	</div>
+</div>
+<div class="form-group row">
+	<%= f.label :iik, 'ИИК', class:"col-sm-2 col-form-label"%>
+	<div class="col-sm-10">
+		<%= f.text_field :iik, class:"form-control"%>
+	</div>
+</div>
+<div class="form-group row">
+	<%= f.label :bik, 'БИК', class:"col-sm-2 col-form-label"%>
+	<div class="col-sm-10">
+		<%= f.text_field :bik, class:"form-control"%>
+	</div>
+</div>
+<div class="form-group row">
+	<%= f.label :email, class:"col-sm-2 col-form-label"%>
+	<div class="col-sm-10">
+		<%= f.text_field :email, class:"form-control"%>
+	</div>
+</div>
+<div class="form-group row">
+	<%= f.label :web, class:"col-sm-2 col-form-label"%>
+	<div class="col-sm-10">
+		<%= f.text_field :web, class:"form-control"%>
+	</div>
+</div>
+<div class="form-group row">
+	<%= f.label :tel_1, 'Тел', class:"col-sm-2 col-form-label"%>
+	<div class="col-sm-10">
+		<%= f.text_field :tel_1, class:"form-control"%>
+	</div>
+</div>
+<div class="form-group row">
+	<%= f.label :tel_2, 'Доп тел', class:"col-sm-2 col-form-label"%>
+	<div class="col-sm-10">
+		<%= f.text_field :tel_2, class:"form-control"%>
+	</div>
+</div>
+<div class="form-group row">
+	<%= f.label :tel_3, 'Доп тел', class:"col-sm-2 col-form-label"%>
+	<div class="col-sm-10">
+		<%= f.text_field :tel_3, class:"form-control"%>
+	</div>
+</div>
+<div class="form-group row">
+	<%= f.label :function, 'Должность руководителя', class:"col-sm-2 col-form-label"%>
+	<div class="col-sm-10">
+		<%= f.text_field :function, class:"form-control"%>
+	</div>
+</div>
+<div class="form-group row">
+	<%= f.label :function_2, 'Должность в род. падеже', class:"col-sm-2 col-form-label"%>
+	<div class="col-sm-10">
+		<%= f.text_field :function_2, class:"form-control"%>
+	</div>
+</div>
+<div class="form-group row">
+	<%= f.label :fio, 'Фамилия и инициалы руководителя', class:"col-sm-2 col-form-label"%>
+	<div class="col-sm-10">
+		<%= f.text_field :fio, class:"form-control"%>
+	</div>
+</div>
+<div class="form-group row">
+	<%= f.label :fio_2, 'Фамилия и инициалы руководителя в род. падеже', class:"col-sm-2 col-form-label"%>
+	<div class="col-sm-10">
+		<%= f.text_field :fio_2, class:"form-control"%>
+	</div>
+</div>
+<div class="form-group row">
+	<%= f.label :based, 'Основания', class:"col-sm-2 col-form-label"%>
+	<div class="col-sm-10">
+		<%= f.text_field :based, class:"form-control"%>
+	</div>
+</div>
+<%= f. submit @requisite.new_record? ? 'Создать' : 'Изменить', class:'btn btn-primary' %>
+<% end %>

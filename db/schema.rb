@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_01_21_134431) do
+ActiveRecord::Schema.define(version: 2019_01_26_190907) do
 
   create_table "active_storage_attachments", force: :cascade do |t|
     t.string "name", null: false
@@ -35,14 +35,14 @@ ActiveRecord::Schema.define(version: 2019_01_21_134431) do
 
   create_table "clauses", force: :cascade do |t|
     t.integer "section_id"
-    t.decimal "number"
+    t.string "number"
     t.text "body"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
   create_table "contracts", force: :cascade do |t|
-    t.date "date", default: "2019-01-22"
+    t.date "date", default: "2019-01-27"
     t.string "number"
     t.integer "student_id"
     t.datetime "created_at", null: false
@@ -61,6 +61,42 @@ ActiveRecord::Schema.define(version: 2019_01_21_134431) do
     t.string "name"
     t.date "start"
     t.date "end"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "groups_teachers", id: false, force: :cascade do |t|
+    t.integer "group_id"
+    t.integer "teacher_id"
+    t.index ["group_id"], name: "index_groups_teachers_on_group_id"
+    t.index ["teacher_id"], name: "index_groups_teachers_on_teacher_id"
+  end
+
+  create_table "lessons", force: :cascade do |t|
+    t.integer "theme_id"
+    t.date "date"
+    t.integer "group_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "requisites", force: :cascade do |t|
+    t.string "owner"
+    t.string "address"
+    t.integer "bin"
+    t.string "bank"
+    t.string "iik"
+    t.string "bik"
+    t.string "email"
+    t.string "web"
+    t.string "tel_1"
+    t.string "tel_2"
+    t.string "tel_3"
+    t.string "function"
+    t.string "fio"
+    t.string "based"
+    t.string "function_2"
+    t.string "fio_2"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -91,8 +127,29 @@ ActiveRecord::Schema.define(version: 2019_01_21_134431) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "teachers", force: :cascade do |t|
+    t.string "first_name"
+    t.string "last_name"
+    t.string "middle_name"
+    t.string "tel_1"
+    t.string "tel_2"
+    t.string "email"
+    t.string "telegram"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "templates", force: :cascade do |t|
     t.string "title"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "themes", force: :cascade do |t|
+    t.integer "number"
+    t.string "title"
+    t.string "addition"
+    t.integer "course_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

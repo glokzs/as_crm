@@ -11,8 +11,13 @@ Rails.application.routes.draw do
     resources :templates
     resources :sections
     resources :clauses
+    resources :teachers
+    resources :themes
+    resources :lessons
+    resources :requisites
 	end
 	resources :students,  only: :show
   resources :courses,  only: :show
   resources :groups,  only: :show
+  resources :teachers, only: :show
 end
