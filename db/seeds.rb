@@ -151,3 +151,6 @@ Requisite.create!(
   fio_2: 'Гудова Александра Олеговича',
   based: 'Устава'
   )
+
+Lesson.create!(theme_id: 1, date: '12/02/2019', group_id: 1)
+Homework.create!(date: '17/02/2019', student_id: 2, lesson_id: 1)
