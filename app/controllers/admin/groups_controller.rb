@@ -8,6 +8,7 @@ class Admin::GroupsController < Admin::AdminController
     @students = @group.students
     @themes = @group.course.themes
     @lessons = @group.lessons
+    @homeworks = Homework.all
   end
 
   def new
