@@ -3,6 +3,8 @@ class User < ApplicationRecord
   :recoverable, :rememberable, :validatable, :confirmable
 
   has_one :student, foreign_key: :email
+  has_one :teacher, foreign_key: :email
+
 
   protected
 
