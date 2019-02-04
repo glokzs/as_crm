@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_01_26_190907) do
+ActiveRecord::Schema.define(version: 2019_01_30_184456) do
 
   create_table "active_storage_attachments", force: :cascade do |t|
     t.string "name", null: false
@@ -42,7 +42,7 @@ ActiveRecord::Schema.define(version: 2019_01_26_190907) do
   end
 
   create_table "contracts", force: :cascade do |t|
-    t.date "date", default: "2019-01-27"
+    t.date "date", default: "2019-01-31"
     t.string "number"
     t.integer "student_id"
     t.datetime "created_at", null: false
@@ -72,12 +72,27 @@ ActiveRecord::Schema.define(version: 2019_01_26_190907) do
     t.index ["teacher_id"], name: "index_groups_teachers_on_teacher_id"
   end
 
+  create_table "homeworks", force: :cascade do |t|
+    t.integer "lesson_id"
+    t.date "date"
+    t.integer "student_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "lessons", force: :cascade do |t|
     t.integer "theme_id"
     t.date "date"
     t.integer "group_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "lessons_students", id: false, force: :cascade do |t|
+    t.integer "lesson_id"
+    t.integer "student_id"
+    t.index ["lesson_id"], name: "index_lessons_students_on_lesson_id"
+    t.index ["student_id"], name: "index_lessons_students_on_student_id"
   end
 
   create_table "requisites", force: :cascade do |t|
