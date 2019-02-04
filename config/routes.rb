@@ -21,4 +21,6 @@ Rails.application.routes.draw do
   resources :courses,  only: :show
   resources :groups,  only: :show
   resources :teachers, only: :show
+  
+  
 end
