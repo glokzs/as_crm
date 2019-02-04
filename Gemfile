@@ -65,6 +65,7 @@ group :development, :test do
   gem 'factory_bot_rails'
   gem 'selenium-webdriver'
   gem 'geckodriver-helper'
+  gem 'factory_bot_rails'
   gem 'cucumber-rails', require: false
   gem 'database_cleaner'
   gem 'coveralls', require: false

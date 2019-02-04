@@ -4,9 +4,9 @@
    fill_in('Email', with: email)
    fill_in('Password', with: password)
    sleep(2)
+ end
    click_button('Войти')
    sleep(5)
- end
 end
 
 То("он может создать студента с данными:") do |table|
@@ -14,8 +14,8 @@ end
      within('#new_student') do
      fill_in('Фамилия', with: table.hashes[0][:Фамилия])
      fill_in('Имя', with: table.hashes[0][:Имя])
-     click_button('Создать')
    end
+     click_button('Создать')
   end
 end
 
