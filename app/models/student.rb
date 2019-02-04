@@ -2,6 +2,8 @@ class Student < ApplicationRecord
 	has_one :user, foreign_key: :email
   has_one :contract
   belongs_to :group
+  has_one_attached :avatar
+  has_many_attached :images
 
   after_create :create_user
 
