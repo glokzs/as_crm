@@ -1,12 +1,9 @@
 class Admin::StudentsController < Admin::AdminController
 
-  def index
-    @students = Student.all
-  end
+  
 
   def show
     @student = Student.find(params[:id])
- 
   end
 
   def new
@@ -21,7 +18,7 @@ class Admin::StudentsController < Admin::AdminController
 
       redirect_to admin_students_path
 
-      redirect_to admin_students_path 
+
 
     else
       render 'new'
@@ -50,7 +47,7 @@ class Admin::StudentsController < Admin::AdminController
  
   private
   def student_params
-    params.require(:student).permit(:last_name, :first_name, :middle_name, :iin, :email, :tel_1, :tel_2, :telegram, :gender, :id_card, :date_of_issue, :issued_by, :group_id, :avatar, images: [])
+    params.require(:student).permit(:last_name, :first_name, :middle_name, :iin, :email, :tel_1, :tel_2, :telegram, :gender, :id_card, :date_of_issue, :issued_by, :group_id, :avatar:homework_file, images: [])
   end
   
 end

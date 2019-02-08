@@ -1,1 +1,33 @@
-<h2>Страница просмотра Групп</h2>
+ <%= form_with model: @group, local: true do |f| %>
+ <h1><%= @group.name %></h1>
+  Курс: <h3><%= @group.course.name %></h3>
+  Дата начало курса: <p><%= @group.start %></p>
+  Дата окончания курса: <p><%= @group.end %></p>
+
+ <table border="1" width="100%" cellpadding="5">
+  <tr>
+    <th>№ занятия</th>
+    <th>Тема занятия и раздаточный материал занятия</th>
+    <th>Домашняя работа и раздаточный материал </th>
+    <th>Файл домашней работы студента </th>
+    <th>Отправленое домашнее задание </th>
+  </tr>
+  <tr> 
+     <% @group.lessons.each do |lesson|%>
+        <th>#<%= lesson.theme.number %></th>
+        <th><%= link_to lesson.theme.title, admin_theme_path(lesson.theme_id) %></th>
+     <% end %>
+
+
+        <th>homework.name</th>
+
+        <th><% f.label :homework_file%>
+          <%= f.file_field :homework_file%>
+        </th>
+         <%= f. submit 'Загрузить', class:'btn btn-primary mt-2' %>
+         <
+ 
+  </tr>
+
+</table>
+ <% end %>

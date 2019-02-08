@@ -119,15 +119,15 @@ student_2 = Student.create!(
 
 1.times do |i|
   i = Teacher.create!(
-  first_name: 'Уэлс',
-  last_name: 'Герберт',
+  first_name: 'Герберт',
+  last_name: 'Уэлс',
   middle_name: 'Андреевич',
   tel_1: '87775878787',
   tel_2: '87775454548',
   email: 'gerberd@gmail',
   telegram: 'gerberd1112232')
 
-  i.picture.attach(
+  i.avatar.attach(
     io:File.open("app/assets/images/#{i.id}.jpeg"),
     filename: "{i.id}.jpeg")
 end

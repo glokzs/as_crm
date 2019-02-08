@@ -3,7 +3,7 @@ class ApplicationController < ActionController::Base
 		if current_user.role == 1
 			return admin_users_url
 		elsif current_user.role == 2 && Student.find_by(email: current_user.email)
-			return student_url(current_user)
+			return student_path(current_user)
 		else
 			return root_url
 		end

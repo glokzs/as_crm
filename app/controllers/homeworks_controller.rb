@@ -1,4 +1,4 @@
-class Admin::HomeworksController < Admin::AdminController
+class HomeworksController < ApplicationController
 	def index
     @homeworks = Homework.all
   end
@@ -13,7 +13,7 @@ class Admin::HomeworksController < Admin::AdminController
 
   def create
     @homework = Homework.new(homework_params)
-    
+
     if @homework.save
       redirect_to admin_homeworks_path
     else

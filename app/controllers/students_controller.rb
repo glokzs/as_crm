@@ -1,10 +1,27 @@
 class StudentsController < ApplicationController
   before_action :authenticate_user!, :is_student?
 
+  layout 'application'
+
   def show
     @student = Student.find(params[:id])
-    redirect_to admin_users_path
   end
+
+
+  def edit
+    @student = Student.find(params[:id])
+    
+  end
+
+  def update
+    @student = Student.find(params[:id])
+    if @student.update(student_params)
+      redirect_to student_path
+    else
+      render 'edit'
+    end
+  end
+ 
 
   private
   def is_student?
