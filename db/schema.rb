@@ -42,7 +42,7 @@ ActiveRecord::Schema.define(version: 2019_01_30_184456) do
   end
 
   create_table "contracts", force: :cascade do |t|
-    t.date "date", default: "2019-01-31"
+    t.date "date", default: "2019-02-09"
     t.string "number"
     t.integer "student_id"
     t.datetime "created_at", null: false
@@ -84,6 +84,8 @@ ActiveRecord::Schema.define(version: 2019_01_30_184456) do
     t.integer "theme_id"
     t.date "date"
     t.integer "group_id"
+    t.text "homework_task"
+    t.date "deadline"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -165,6 +167,7 @@ ActiveRecord::Schema.define(version: 2019_01_30_184456) do
     t.string "title"
     t.string "addition"
     t.integer "course_id"
+    t.text "content"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
