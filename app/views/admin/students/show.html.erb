@@ -1,1 +1,86 @@
- <%= @student.first_name %>
+<%= form_with model: [:admin, @student], local: true do |f| %> 
+<div class="container">
+  <div class="row">
+    <div class="col-md-6">
+      <div class="card - border" style="width: 18rem; border-width: 0px">
+        <% if @student.avatar.attached? %>
+        <%= image_tag @student.avatar.variant(resize: '100x100'), class:"mt-5 pt-10 card-img-top rounded-circle round_border " %>
+
+         <% else %>
+          <%= image_tag "default.jpg", resize: "100x100", class:"mt-5 pt-10 card-img-top rounded-circle round_border"%>
+        <% end %>
+        <div class="card-body">
+          <ul class="list-group list-group-flush">
+            <li class="list-group-item name_student"><br/><%= @student.first_name %> <%= @student.middle_name %> <%= @student.last_name %> </li>
+          </ul>
+        </div>
+      </div>
+    </br>
+    <% if @student.images.attached?%>
+    <%= image_tag @student.images.first.variant(resize: '100x200'), data: {toggle:"modal", target:"#exampleModal1"}%>
+    <%=image_tag @student.images.last.variant(resize: '100x200'), data: {toggle:"modal", target:"#exampleModal2"}%>
+
+    <div class="modal fade" id="exampleModal1" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+           <%= image_tag @student.images.first.variant(resize: '400x600')%>
+          </div>
+          <div class="modal-footer">
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="modal fade" id="exampleModal2" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+             <%=image_tag @student.images.last.variant(resize: '400x600')%>
+          </div>
+          <div class="modal-footer">
+          </div>
+        </div>
+      </div>
+    </div>
+    <% end %>
+  </br>
+</div>
+<div class="col-md-6">
+  <div class="card - border" style="width: 20rem; border-width: 0px">
+    <ul class="list-group list-group-flush">
+      <li class="list-group-item" >ИИН <%= @student.iin %>
+      </li>
+      <li class="list-group-item" >
+        <i class="fa fa-phone" aria-hidden="true"></i> <%= @student.tel_1 %>
+      </li>
+      <li class="list-group-item" ><i class="fa fa-phone" aria-hidden="true"></i> <%= @student.tel_2 %></li>
+      <li class="list-group-item" ><i class="fa fa-envelope" aria-hidden="true"></i> <%= @student.email %></li>
+      <li class="list-group-item"><i class="fa fa-telegram" aria-hidden="true"></i> <%= @student.telegram %></li>
+      <li class="list-group-item" ><i class="fa fa-venus-mars" aria-hidden="true"></i> <%= @student.gender %></li>
+      <li class="list-group-item" >Удостов.№  <%= @student.id_card %></li>
+      <li class="list-group-item" >Дата выдачи  <%= @student.date_of_issue %></li>
+      <li class="list-group-item" >Кем выдан  <%= @student.issued_by %></li>
+      <li class="list-group-item" ><i class="fa fa-bookmark" aria-hidden="true"></i> <%= @student.group.name %></li>
+    </ul>
+  </div>
+</div> 
+</div>
+<% end %>
+</div>
+</div>
+
+</br>
+
+
+
