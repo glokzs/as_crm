@@ -4,9 +4,8 @@ class CreateThemes < ActiveRecord::Migration[5.2]
       t.integer :number
       t.string :title
       t.string :addition
-      t.integer :course_id
+      t.integer :group_id
       t.text :content
-
       t.timestamps
     end
   end
