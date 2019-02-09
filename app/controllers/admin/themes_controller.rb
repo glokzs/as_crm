@@ -5,6 +5,7 @@ class Admin::ThemesController < Admin::AdminController
 
   def show
     @theme = Theme.find(params[:id])
+    @lesson = Lesson.find(params[:id])
   end
 
   def new

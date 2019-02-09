@@ -1,1 +1,20 @@
-<h2><%= @theme.title %></h2>
+<nav>
+  <div class="nav nav-tabs" id="nav-tab" role="tablist">
+    <a class="nav-item nav-link active" id="nav-home-tab" data-toggle="tab" href="#nav-task" role="tab" aria-controls="nav-home" aria-selected="true">Раздаточный материал урока</a>
+    <a class="nav-item nav-link" id="nav-profile-tab" data-toggle="tab" href="#nav-homework-task" role="tab" aria-controls="nav-profile" aria-selected="false">Раздаточный материал домашки</a>
+  </div>
+</nav>
+<div class="tab-content" id="nav-tabContent">
+  <div class="tab-pane fade show active" id="nav-task" role="tabpanel" aria-labelledby="nav-home-tab">
+  <h1><%= @theme.title %></h1>
+  <%= link_to 'Редактировать', edit_admin_theme_path(@lesson)%>
+  <%= @theme.content %>
+  	
+ </div>
+
+ <div class="tab-pane fade" id="nav-homework-task" role="tabpanel" aria-labelledby="nav-contact-tab">
+ 	<h2><%= @lesson.theme.title %></h2>
+ 	<%= link_to 'Редактировать', edit_admin_lesson_path(@lesson)%>
+ 	<%= @lesson.homework_task %>
+ </div>
+</div>

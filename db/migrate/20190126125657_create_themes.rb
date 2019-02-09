@@ -6,6 +6,10 @@ class CreateThemes < ActiveRecord::Migration[5.2]
       t.string :addition
       t.integer :group_id
 
+      t.text :content
+
+
+
       t.timestamps
     end
   end
