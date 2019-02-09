@@ -1,4 +1,3 @@
- <%= form_with model: @group, local: true do |f| %>
  <h1><%= @group.name %></h1>
   Курс: <h3><%= @group.course.name %></h3>
   Дата начало курса: <p><%= @group.start %></p>
@@ -10,24 +9,25 @@
     <th>Тема занятия и раздаточный материал занятия</th>
     <th>Домашняя работа и раздаточный материал </th>
     <th>Файл домашней работы студента </th>
-    <th>Отправленое домашнее задание </th>
   </tr>
   <tr> 
      <% @group.lessons.each do |lesson|%>
-        <th>#<%= lesson.theme.number %></th>
-        <th><%= link_to lesson.theme.title, admin_theme_path(lesson.theme_id) %></th>
-     <% end %>
-
-
-        <th>homework.name</th>
-
-        <th><% f.label :homework_file%>
-          <%= f.file_field :homework_file%>
-        </th>
-         <%= f. submit 'Загрузить', class:'btn btn-primary mt-2' %>
-         <
- 
+        <td>#<%= lesson.theme.number %></td>
+        <td><%= link_to lesson.theme.title, theme_path(lesson.theme_id) %></td>
+        <td>homework.name</td>
+        <td>
+          <%= form_with model: @homeworks, url: homeworks_path, local: true do |f| %>
+            <%= f.file_field :homework_file%>
+            <% f.label :homework_file%>
+            <%= f.hidden_field :student_id, value: @student.id %>
+            <%= f.hidden_field :lesson_id, value: lesson.id %>
+            <%= f.hidden_field :date, value: 01-01-2019 %>
+            <br>
+           <%= f.submit 'Загрузить' %>
+         <% end %>
+        </td>
   </tr>
-
+<% end %>
 </table>
- <% end %>
+
+ 

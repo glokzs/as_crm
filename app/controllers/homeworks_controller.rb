@@ -15,7 +15,7 @@ class HomeworksController < ApplicationController
     @homework = Homework.new(homework_params)
 
     if @homework.save
-      redirect_to admin_homeworks_path
+      redirect_back fallback_location: root_path
     else
       render 'new'
     end
@@ -25,23 +25,15 @@ class HomeworksController < ApplicationController
     @homework = Homework.find(params[:id])
   end
 
-  def update
-    @homework = Homework.find(params[:id])
-    if @homework.update(homework_params)
-      redirect_to admin_homeworks_path
-    else
-      render 'edit'
-    end
-  end
 
   def destroy
     Homework.destroy(params[:id])
 
-    redirect_to admin_homeworks_path
+    redirect_to homeworks_path
   end
 
   def homework_params
-    params.require(:homework).permit(:lesson_id, :date, :student_id)
+    params.require(:homework).permit(:lesson_id, :date, :homework_file, :student_id)
   end
 
 end

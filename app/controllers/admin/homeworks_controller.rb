@@ -13,7 +13,7 @@ class Admin::HomeworksController < Admin::AdminController
 
   def create
     @homework = Homework.new(homework_params)
-    
+
     if @homework.save
       redirect_to admin_homeworks_path
     else
@@ -41,7 +41,7 @@ class Admin::HomeworksController < Admin::AdminController
   end
 
   def homework_params
-    params.require(:homework).permit(:lesson_id, :date, :student_id)
+    params.require(:homework).permit(:lesson_id, :date, :homework_file, :student_id)
   end
 
 end
