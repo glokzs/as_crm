@@ -14,9 +14,14 @@
      <% @group.lessons.each do |lesson|%>
         <td>#<%=lesson.theme.number %></td>
         <td><%=link_to "#{lesson.theme.title}",controller: 'themes', action:"show", id: lesson.theme.id %></td>
-        <td><%=link_to '#{lesson.theme.title.}' , controller:'lessons', action: "show", id: lesson.homework_task.id %></td>
-        <td>
-          <%= form_with model: @homeworks, url: homeworks_path, local: true do |f| %>
+        <td><% if lesson.homework_task.nil?%>
+         <%= 'Домашки нет' %>
+         <%else%>
+         <%=link_to "#{lesson.theme.title}" , controller:'lessons', action: "show", id: lesson.homework_task.id %>
+         <%end%>
+        </td>
+
+   <%= form_with model: @homeworks, url: homeworks_path, local: true do |f| %>
             <%= f.file_field :homework_file%>
             <% f.label :homework_file%>
             <%= f.hidden_field :student_id, value: @student.id %>
