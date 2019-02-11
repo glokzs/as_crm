@@ -98,7 +98,7 @@
 			<td>#<%= lesson.theme.number %></td>
 			<td><%= lesson.theme.title %></td>
 			<td>
-				<%= @homeworks.count %>/<%= @students.count %>				
+				<%= lesson.homeworks.size %>/<%= @group.students.size %>				
 			</td>
 		</tr>
 			<%end%>
