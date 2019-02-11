@@ -18,10 +18,24 @@
 	</div>
 </div>
 <div class="form-group row">
+
 	<%= f.label :group_id, 'Курс', class:"col-sm-2 col-form-label" %>
 	<div class="col-sm-10">
 		<%= f.select(:group_id, Group.all.collect {|g| [g.name, g.id]}, { :prompt => 'Выбрать' }, { :class => 'form-control' }) %>
+
+	<%= f.label :group_id, 'Группа', class:"col-sm-2 col-form-label" %>
+	<div class="col-sm-10">
+		<%= f.select(:group_id, Group.all.collect {|c| [c.name, c.id]}, { :prompt => 'Выбрать' }, { :class => 'form-control' }) %>
+
 	</div>
+</div>
+
+<div class="form-group row">
+	<%= f.label :content, 'Раздаточный материал урока', class:"col-sm-2 col-form-label" %>
+	<div class="col-sm-10">
+		<%= f.text_area :content, class:"tinymce" %>
+	</div>
+	<%= tinymce %>
 </div>
 <div>
 	<%= f.submit @theme.new_record? ? 'Создать' : 'Изменить', class:'btn btn-primary' %>
