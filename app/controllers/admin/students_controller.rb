@@ -1,6 +1,8 @@
 class Admin::StudentsController < Admin::AdminController
 
-  
+  def index
+    @students = Student.all
+  end
 
   def show
     @student = Student.find(params[:id])

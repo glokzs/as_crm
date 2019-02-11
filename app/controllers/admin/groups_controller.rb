@@ -6,7 +6,7 @@ class Admin::GroupsController < Admin::AdminController
   def show
     @group = Group.find(params[:id])
     @students = @group.students
-    @themes = @group.course.themes
+    @themes = @group.themes
     @lessons = @group.lessons
     @homeworks = Homework.all
   end

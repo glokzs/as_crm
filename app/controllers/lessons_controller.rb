@@ -5,6 +5,7 @@ class LessonsController < ApplicationController
 
   def show
     @lesson = Lesson.find(params[:id])
+    @lesson_homework = lesson.homework_task
   end
 
   def new

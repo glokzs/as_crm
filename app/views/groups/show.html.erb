@@ -12,9 +12,9 @@
   </tr>
   <tr> 
      <% @group.lessons.each do |lesson|%>
-        <td>#<%= lesson.theme.number %></td>
-        <td><%= link_to lesson.theme.title, theme_path(lesson.theme_id) %></td>
-        <td>homework.name</td>
+        <td>#<%=lesson.theme.number %></td>
+        <td><%=link_to "#{lesson.theme.title}",controller: 'themes', action:"show", id: lesson.theme.id %></td>
+        <td><%=link_to '#{lesson.theme.title.}' , controller:'lessons', action: "show", id: lesson.homework_task.id %></td>
         <td>
           <%= form_with model: @homeworks, url: homeworks_path, local: true do |f| %>
             <%= f.file_field :homework_file%>
