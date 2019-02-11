@@ -87,20 +87,21 @@
   <div class="tab-pane fade" id="nav-homeworks" role="tabpanel" aria-labelledby="nav-contact-tab">
   	<table class="table-striped w-100 mt-4">
   		<tr>
-  			<th>Студент</th>
-  			<th>Урок</th>
-  			<th>Дата</th>
-  			<th colspan="3">Статус</th>
-  		</tr>
-  		<% @homeworks.each do |homework|%>
+			<th>Номер домашки</th>
+			<th>Название домашки</th>
+			<th>Сдали/Студенты</th>
+			<th>Пров./Не пров.</th>
+			<th>Новые/Все</th>
+		</tr>
   		<tr>
-  			<td><%= homework.student.first_name%> <%=  homework.student.last_name %></td>
-  			<td><%= homework.lesson.theme.title %></td>
-  			<td><%= homework.date%></td>
-  			<td><%= @homeworks.count%>/<%= @students.count%>
-  			</td>
-  		</tr>
-  		<% end%>
+  		<% @lessons.each do |lesson|%>
+			<td>#<%= lesson.theme.number %></td>
+			<td><%= lesson.theme.title %></td>
+			<td>
+				<%= lesson.homeworks.size %>/<%= @group.students.size %>				
+			</td>
+		</tr>
+			<%end%>
   	</table>
   </div>
 </div>

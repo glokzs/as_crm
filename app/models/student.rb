@@ -12,6 +12,7 @@ class Student < ApplicationRecord
 
   enum gender: {male: 1, female: 2}
   has_many_attached :images
+  has_many :homeworks
   private
   def create_user
     student = Student.last
