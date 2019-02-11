@@ -94,14 +94,14 @@
 			<th>Новые/Все</th>
 		</tr>
   		<tr>
-  		<% @themes.each do |theme|%>
-			<td>#<%= theme.number %></td>
-			<td><%= theme.title %></td>
+  		<% @lessons.each do |lesson|%>
+			<td>#<%= lesson.theme.number %></td>
+			<td><%= lesson.theme.title %></td>
 			<td>
 				<%= @homeworks.count %>/<%= @students.count %>				
 			</td>
-			<%end%>
 		</tr>
+			<%end%>
   	</table>
   </div>
 </div>
