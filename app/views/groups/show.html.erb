@@ -20,16 +20,16 @@
          <%=link_to "#{lesson.theme.title}" , controller:'lessons', action: "show", id: lesson.homework_task.id %>
          <%end%>
         </td>
-
-   <%= form_with model: @homeworks, url: homeworks_path, local: true do |f| %>
-            <%= f.file_field :homework_file%>
-            <% f.label :homework_file%>
-            <%= f.hidden_field :student_id, value: @student.id %>
-            <%= f.hidden_field :lesson_id, value: lesson.id %>
-            <%= f.hidden_field :date, value: 01-01-2019 %>
-            <br>
-           <%= f.submit 'Загрузить' %>
-         <% end %>
+       <td>
+        <%= form_with model: @homeworks, url: homeworks_path, local: true do |f| %>
+                 <%= f.file_field :homework_file%>
+                 <% f.label :homework_file%>
+                 <%= f.hidden_field :student_id, value: @student.id %>
+                 <%= f.hidden_field :lesson_id, value: lesson.id %>
+                 <%= f.hidden_field :date, value: 01-01-2019 %>
+                 <br>
+                <%= f.submit 'Загрузить' %>
+              <% end %>
         </td>
   </tr>
 <% end %>
