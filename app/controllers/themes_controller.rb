@@ -6,7 +6,7 @@ class ThemesController < ApplicationController
 
   def show
     @theme = Theme.find(params[:id])
-  
+    @theme.html_safe?  
   end
 
   def new
@@ -39,6 +39,6 @@ class ThemesController < ApplicationController
 
   private
   def theme_params
-    params.require(:theme).permit(:number, :title, :addition, :course_id)
+    params.require(:theme).permit(:number, :title, :addition, :course_id, :content)
   end
 end

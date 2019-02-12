@@ -39,7 +39,7 @@ class Admin::ThemesController < Admin::AdminController
   private
   def theme_params
 
-    params.require(:theme).permit(:number, :title, :addition, :group_id)
+    params.require(:theme).permit(:number, :title, :addition, :group_id, :content)
 
 
   end
