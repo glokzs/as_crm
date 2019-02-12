@@ -6,7 +6,6 @@ class Admin::StudentsController < Admin::AdminController
 
   def show
     @student = Student.find(params[:id])
- 
   end
 
   def new
@@ -21,7 +20,7 @@ class Admin::StudentsController < Admin::AdminController
 
       redirect_to admin_students_path
 
-      redirect_to admin_students_path 
+
 
     else
       render 'new'

@@ -1,1 +1,38 @@
-<h2>Страница просмотра Групп</h2>
+ <h1><%= @group.name %></h1>
+  Курс: <h3><%= @group.course.name %></h3>
+  Дата начало курса: <p><%= @group.start %></p>
+  Дата окончания курса: <p><%= @group.end %></p>
+
+ <table border="1" width="100%" cellpadding="5">
+  <tr>
+    <th>№ занятия</th>
+    <th>Тема занятия и раздаточный материал занятия</th>
+    <th>Домашняя работа и раздаточный материал </th>
+    <th>Файл домашней работы студента </th>
+  </tr>
+  <tr> 
+     <% @group.lessons.each do |lesson|%>
+        <td>#<%=lesson.theme.number %></td>
+        <td><%=link_to "#{lesson.theme.title}",controller: 'themes', action:"show", id: lesson.theme.id %></td>
+        <td><% if lesson.homework_task.nil?%>
+         <%= 'Домашки нет' %>
+         <%else%>
+         <%=link_to "#{lesson.theme.title}" , controller:'lessons', action: "show", id: lesson.homework_task.id %>
+         <%end%>
+        </td>
+       <td>
+        <%= form_with model: @homeworks, url: homeworks_path, local: true do |f| %>
+                 <%= f.file_field :homework_file%>
+                 <% f.label :homework_file%>
+                 <%= f.hidden_field :student_id, value: @student.id %>
+                 <%= f.hidden_field :lesson_id, value: lesson.id %>
+                 <%= f.hidden_field :date, value: 01-01-2019 %>
+                 <br>
+                <%= f.submit 'Загрузить' %>
+              <% end %>
+        </td>
+  </tr>
+<% end %>
+</table>
+
+ 
