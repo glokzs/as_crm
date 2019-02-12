@@ -11,14 +11,11 @@
     <th>Файл домашней работы студента </th>
   </tr>
   <tr> 
-     <% @group.lessons.each do |lesson|%>
+     <% @lessons.each do |lesson|%>
         <td>#<%=lesson.theme.number %></td>
-        <td><%=link_to "#{lesson.theme.title}",controller: 'themes', action:"show", id: lesson.theme.id %></td>
-        <td><% if lesson.homework_task.nil?%>
-         <%= 'Домашки нет' %>
-         <%else%>
-         <%=link_to "#{lesson.theme.title}" , controller:'lessons', action: "show", id: lesson.homework_task.id %>
-         <%end%>
+        <td><%=link_to "#{lesson.theme.title}",theme_path(lesson.theme.id)%></td>
+        <td>
+         <%=link_to "#{lesson.theme.title}", lesson_path(lesson.id)%>
         </td>
        <td>
         <%= form_with model: @homeworks, url: homeworks_path, local: true do |f| %>

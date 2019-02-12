@@ -5,7 +5,7 @@ class LessonsController < ApplicationController
 
   def show
     @lesson = Lesson.find(params[:id])
-    @lesson_homework = lesson.homework_task
+    @lesson.html_safe?
   end
 
   def new
@@ -42,6 +42,6 @@ class LessonsController < ApplicationController
   end
 
   def lesson_params
-    params.require(:lesson).permit(:theme_id, :date, :group_id)
+    params.require(:lesson).permit(:theme_id, :date, :group_id, :homework_task)
   end
 end
