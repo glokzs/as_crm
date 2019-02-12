@@ -1,11 +1,12 @@
-class Admin::ThemesController < Admin::AdminController
+class ThemesController < ApplicationController
+  
   def index
     @themes = Theme.all
   end
 
   def show
     @theme = Theme.find(params[:id])
-    @lesson = Lesson.find(params[:id])
+    @theme.html_safe?  
   end
 
   def new
@@ -38,9 +39,6 @@ class Admin::ThemesController < Admin::AdminController
 
   private
   def theme_params
-
-    params.require(:theme).permit(:number, :title, :addition, :group_id, :content)
-
-
+    params.require(:theme).permit(:number, :title, :addition, :course_id, :content)
   end
 end

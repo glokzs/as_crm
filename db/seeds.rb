@@ -127,12 +127,12 @@ student_2 = Student.create!(
   email: 'gerberd@gmail',
   telegram: 'gerberd1112232')
 
-  i.picture.attach(
+  i.avatar.attach(
     io:File.open("app/assets/images/#{i.id}.jpeg"),
     filename: "{i.id}.jpeg")
 end
 
-Theme.create!(number: 1, title: 'Знакомство с HTML', course_id: 1)
+Theme.create!(number: 1, title: 'Знакомство с HTML', group_id: 1)
 Requisite.create!(
   owner: "ТОО Образовательный центр \"Аттрактор скул Алматы\"",
   address: "Казахстан, город Алматы, Алмалинский район, проспект Жибек Жолы, дом 135",

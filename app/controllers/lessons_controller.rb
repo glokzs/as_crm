@@ -1,10 +1,11 @@
-class Admin::LessonsController < Admin::AdminController
+class LessonsController < ApplicationController
   def index
     @lessons = Lesson.all
   end
 
   def show
     @lesson = Lesson.find(params[:id])
+    @lesson.html_safe?
   end
 
   def new
@@ -41,6 +42,6 @@ class Admin::LessonsController < Admin::AdminController
   end
 
   def lesson_params
-    params.require(:lesson).permit(:theme_id, :date, :group_id, :homework_task, :deadline)
+    params.require(:lesson).permit(:theme_id, :date, :group_id, :homework_task)
   end
 end
