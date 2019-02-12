@@ -1,7 +1,7 @@
 class StudentsController < ApplicationController
   before_action :authenticate_user!, :is_student?
 
-  layout 'application'
+ 
 
   def show
     @student = Student.find(params[:id])
