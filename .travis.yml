@@ -1,1 +1,10 @@
 language: ruby
+env:
+  - CI=true
+matrix:
+  include:
+    - rvm: 2.4.4
+      gemfile: Gemfile.lock
+      script:
+        - bundle info rubocop
+        - bundle exec rubocop

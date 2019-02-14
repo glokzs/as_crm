@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class Admin::TemplatesController < Admin::AdminController
   def index
     @templates = Template.all
@@ -34,6 +36,7 @@ class Admin::TemplatesController < Admin::AdminController
   end
 
   private
+
   def template_params
     params.require(:template).permit(:title)
   end

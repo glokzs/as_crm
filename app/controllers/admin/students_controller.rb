@@ -1,5 +1,6 @@
-class Admin::StudentsController < Admin::AdminController
+# frozen_string_literal: true
 
+class Admin::StudentsController < Admin::AdminController
   def index
     @students = Student.all
   end
@@ -12,15 +13,12 @@ class Admin::StudentsController < Admin::AdminController
     @student = Student.new
   end
 
-  
   def create
     @student = Student.new(student_params)
     if @student.save
       flash[:notice] = 'Студент успешно добавлен'
 
       redirect_to admin_students_path
-
-
 
     else
       render 'new'
@@ -29,7 +27,6 @@ class Admin::StudentsController < Admin::AdminController
 
   def edit
     @student = Student.find(params[:id])
-    
   end
 
   def update
@@ -46,10 +43,9 @@ class Admin::StudentsController < Admin::AdminController
     redirect_to admin_users_path
   end
 
- 
   private
+
   def student_params
     params.require(:student).permit(:last_name, :first_name, :middle_name, :iin, :email, :tel_1, :tel_2, :telegram, :gender, :id_card, :date_of_issue, :issued_by, :group_id, :avatar, images: [])
   end
-  
 end
