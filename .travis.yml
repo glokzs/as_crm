@@ -3,8 +3,7 @@ env:
   - CI=true
 matrix:
   include:
-    - rvm: 2.4.4
-      gemfile: Gemfile.lock
+    - rvm: 2.5.0
       script:
         - bundle info rubocop
         - bundle exec rubocop
