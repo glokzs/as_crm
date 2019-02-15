@@ -1,0 +1,64 @@
+
+Lint/ParenthesesAsGroupedExpression:
+  Exclude:
+    - 'app/controllers/admin/contract_pdf.rb'
+
+
+Lint/ShadowedArgument:
+  Exclude:
+    - 'db/seeds.rb'
+
+
+Lint/UselessAssignment:
+  Exclude:
+    - 'app/models/student.rb'
+    - 'app/models/teacher.rb'
+    - 'db/seeds.rb'
+
+
+Metrics/AbcSize:
+  Max: 136
+
+
+Metrics/BlockLength:
+  Max: 166
+
+
+Metrics/MethodLength:
+  Max: 76
+
+
+Naming/PredicateName:
+  Exclude:
+    - 'spec/**/*'
+    - 'app/controllers/admin/admin_controller.rb'
+    - 'app/controllers/students_controller.rb'
+    - 'app/controllers/teachers_controller.rb'
+
+
+Naming/VariableNumber:
+  Exclude:
+    - 'db/seeds.rb'
+
+
+Style/ClassAndModuleChildren:
+  Enabled: false
+
+
+Style/Documentation:
+  Enabled: false
+
+
+Style/IdenticalConditionalBranches:
+  Exclude:
+    - 'app/controllers/admin/contracts_controller.rb'
+
+
+Style/MixinUsage:
+  Exclude:
+    - 'bin/setup'
+    - 'bin/update'
+
+
+Metrics/LineLength:
+  Max: 789

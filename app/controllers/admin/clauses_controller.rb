@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class Admin::ClausesController < Admin::AdminController
   def index
     @clauses = Clause.all
@@ -36,6 +38,7 @@ class Admin::ClausesController < Admin::AdminController
   end
 
   private
+
   def clause_params
     params.require(:clause).permit(:number, :body, :section_id)
   end

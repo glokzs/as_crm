@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 # This file should contain all the record creation needed to seed the database with its default values.
 # The data can then be loaded with the rails db:seed command (or created alongside the database with db:setup).
 #
@@ -7,9 +9,10 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 admin = User.new(
-          email: 'admin@admin',
-					password: '123456',
-					role: 1)
+  email: 'admin@admin',
+  password: '123456',
+  role: 1
+)
 admin.skip_confirmation!
 admin.save
 
@@ -17,20 +20,20 @@ Course.create!(name: 'Разработчик Ruby on Rails')
 Group.create(name: 'RoR-1', course_id: 1, start: '12/02/2018', end: '05/02/2019')
 Template.create!(title: 'на оказание услуг по обучению')
 sections = [
-[1, 'Предмет договора'],
-[2, 'Права и обязанности Сторон'],
-[3, 'Стоимость обучения и порядок оплаты'],
-[4, 'Ответственность сторон'],
-[5, 'Заключительные положения'],
-[6, 'Подписи и реквизиты сторон']
+  [1, 'Предмет договора'],
+  [2, 'Права и обязанности Сторон'],
+  [3, 'Стоимость обучения и порядок оплаты'],
+  [4, 'Ответственность сторон'],
+  [5, 'Заключительные положения'],
+  [6, 'Подписи и реквизиты сторон']
 ]
 
-sections.each_with_index do |section, index|
+sections.each_with_index do |section, _index|
   index = Section.create!(
     number: section[0],
     title: section[1],
     template_id: 1
-    )
+  )
 end
 
 clauses = [
@@ -75,22 +78,22 @@ clauses = [
   ['5.3.1', 'невыполнения  Студентом обязательств по оплате оказанных ему Услуг;', 5],
   ['5.3.2', 'посещения занятий в состоянии алкогольного или иного опьянения;', 5],
   ['5.3.3', 'отказа Студента от подписания соответствующего Дополнительного соглашения к Договору, определяющего стоимость обучения;', 5],
-  ['5.3.4', 'в иных случаях, предусмотренных действующим законодательством РК.', 5],
+  ['5.3.4', 'в иных случаях, предусмотренных действующим законодательством РК.', 5]
 ]
 
-clauses.each_with_index do |clause, index|
+clauses.each_with_index do |clause, _index|
   index = Clause.create!(
     number: clause[0],
     body: clause[1],
     section_id: clause[2]
-    )
+  )
 end
 
 student_1 = Student.create!(
   first_name: 'Александр',
   last_name: 'Пушкин',
   middle_name: 'Сергеевич',
-  iin: 123654789632,
+  iin: 123_654_789_632,
   tel_1: '87775556666',
   tel_2: '87779996622',
   email: 'student@student',
@@ -99,13 +102,14 @@ student_1 = Student.create!(
   id_card: '3698521478',
   date_of_issue: '12/01/2015',
   issued_by: 'МВД РК',
-  group_id: 1)
+  group_id: 1
+)
 
 student_2 = Student.create!(
   first_name: 'Михаил',
   last_name: 'Лермонтов',
   middle_name: 'Юрьевич',
-  iin: 123654789632,
+  iin: 123_654_789_632,
   tel_1: '87775556666',
   tel_2: '87779996622',
   email: 'lermontov@gmail',
@@ -114,34 +118,36 @@ student_2 = Student.create!(
   id_card: '3698521478',
   date_of_issue: '12/01/2015',
   issued_by: 'МЮ РК',
-  group_id: 1)
-
+  group_id: 1
+)
 
 1.times do |i|
   i = Teacher.create!(
-  first_name: 'Уэлс',
-  last_name: 'Герберт',
-  middle_name: 'Андреевич',
-  tel_1: '87775878787',
-  tel_2: '87775454548',
-  email: 'gerberd@gmail',
-  telegram: 'gerberd1112232')
+    first_name: 'Уэлс',
+    last_name: 'Герберт',
+    middle_name: 'Андреевич',
+    tel_1: '87775878787',
+    tel_2: '87775454548',
+    email: 'gerberd@gmail',
+    telegram: 'gerberd1112232'
+  )
 
   i.avatar.attach(
-    io:File.open("app/assets/images/#{i.id}.jpeg"),
-    filename: "{i.id}.jpeg")
+    io: File.open("app/assets/images/#{i.id}.jpeg"),
+    filename: '{i.id}.jpeg'
+  )
 end
 
 Theme.create!(number: 1, title: 'Знакомство с HTML', group_id: 1)
 Requisite.create!(
-  owner: "ТОО Образовательный центр \"Аттрактор скул Алматы\"",
-  address: "Казахстан, город Алматы, Алмалинский район, проспект Жибек Жолы, дом 135",
-  bin: 171240019162,
-  bank: "АО «Kaspi Bank»",
-  iik: "KZ88722S000001417077",
-  bik: "CASPKZKA",
-  email: "almaty@it-attractor.com",
-  web: "http://attractor-school.com/almaty",
+  owner: 'ТОО Образовательный центр "Аттрактор скул Алматы"',
+  address: 'Казахстан, город Алматы, Алмалинский район, проспект Жибек Жолы, дом 135',
+  bin: 171_240_019_162,
+  bank: 'АО «Kaspi Bank»',
+  iik: 'KZ88722S000001417077',
+  bik: 'CASPKZKA',
+  email: 'almaty@it-attractor.com',
+  web: 'http://attractor-school.com/almaty',
   tel_1: '+7 (707) 186 00 11',
   tel_2: '+7 (707) 186 12 77',
   tel_3: '+7 (707) 186 00 33',
@@ -150,7 +156,7 @@ Requisite.create!(
   fio: 'Гудов А.О.',
   fio_2: 'Гудова Александра Олеговича',
   based: 'Устава'
-  )
+)
 
 Lesson.create!(theme_id: 1, date: '12/02/2019', group_id: 1)
 Homework.create!(date: '17/02/2019', student_id: 2, lesson_id: 1)

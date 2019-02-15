@@ -1,5 +1,7 @@
+# frozen_string_literal: true
+
 class HomeworksController < ApplicationController
-	def index
+  def index
     @homeworks = Homework.all
   end
 
@@ -25,7 +27,6 @@ class HomeworksController < ApplicationController
     @homework = Homework.find(params[:id])
   end
 
-
   def destroy
     Homework.destroy(params[:id])
 
@@ -35,5 +36,4 @@ class HomeworksController < ApplicationController
   def homework_params
     params.require(:homework).permit(:lesson_id, :date, :homework_file, :student_id)
   end
-
 end

@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class CreateThemes < ActiveRecord::Migration[5.2]
   def change
     create_table :themes do |t|
@@ -7,8 +9,6 @@ class CreateThemes < ActiveRecord::Migration[5.2]
       t.integer :group_id
 
       t.text :content
-
-
 
       t.timestamps
     end

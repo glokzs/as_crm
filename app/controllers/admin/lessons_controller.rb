@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class Admin::LessonsController < Admin::AdminController
   def index
     @lessons = Lesson.all
