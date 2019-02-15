@@ -15,9 +15,9 @@
 		<td><%= lesson.group.name %></td>
 		<td><%= lesson.homework_task %></td>
 		<td><% if lesson.deadline.nil? %>
-				<%=lesson.date + 3.days %>
+				<%=(lesson.date + 3.days).strftime("%Y-%m-%d в 19:30") %>
 				<%else%>
-				<%= lesson.deadline%>
+				<%= lesson.deadline.strftime("%Y-%m-%d в 19:30")%>
 				<%end%>
 		</td>
 		<td>
