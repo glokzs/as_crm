@@ -3,20 +3,26 @@
  within('#new_user') do
    fill_in('Email', with: email)
    fill_in('Password', with: password)
-   sleep(2)
- end
+   sleep(3)
    click_button('Войти')
-   sleep(5)
+   sleep(1)
+ end
+ expect(page).to have_xpath("//h2")
 end
 
 То("он может создать студента с данными:") do |table|
    visit('/admin/students/new') do
-     within('#new_student') do
-     fill_in('Фамилия', with: table.hashes[0][:Фамилия])
-     fill_in('Имя', with: table.hashes[0][:Имя])
+    find('#new_student')
+     within(:xpath, "//*[@id='new_student']") do
+     fill_in('Фамилия', with: hash[:Фамилия])
+     fill_in('Имя', with: hash[:Имя])
+     fill_in('Email', with: hash[:Email])
+     select(hash[:Группа], from: 'Группа')
    end
      click_button('Создать')
   end
+ expect(page).to have_content('Голубь Одинокий')
+
 end
 
 
