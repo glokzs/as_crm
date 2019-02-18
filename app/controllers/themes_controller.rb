@@ -1,12 +1,13 @@
+# frozen_string_literal: true
+
 class ThemesController < ApplicationController
-  
   def index
     @themes = Theme.all
   end
 
   def show
     @theme = Theme.find(params[:id])
-    @theme.html_safe?  
+    @theme.html_safe?
   end
 
   def new
@@ -38,6 +39,7 @@ class ThemesController < ApplicationController
   end
 
   private
+
   def theme_params
     params.require(:theme).permit(:number, :title, :addition, :course_id, :content)
   end

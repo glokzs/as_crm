@@ -1,5 +1,7 @@
+# frozen_string_literal: true
+
 class Admin::HomeworksController < Admin::AdminController
-	def index
+  def index
     @homeworks = Homework.all
   end
 
@@ -43,5 +45,4 @@ class Admin::HomeworksController < Admin::AdminController
   def homework_params
     params.require(:homework).permit(:lesson_id, :date, :homework_file, :student_id)
   end
-
 end

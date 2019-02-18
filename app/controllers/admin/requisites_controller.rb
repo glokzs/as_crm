@@ -1,7 +1,7 @@
-class Admin::RequisitesController < Admin::AdminController
+# frozen_string_literal: true
 
-  def index
-  end
+class Admin::RequisitesController < Admin::AdminController
+  def index; end
 
   def new
     @requisite = Requisite.new
@@ -30,6 +30,7 @@ class Admin::RequisitesController < Admin::AdminController
   end
 
   private
+
   def requisite_params
     params.require(:requisite).permit(:owner, :address, :bin, :bank, :iik, :bik, :email, :web, :tel_1, :tel_2, :tel_3, :function, :fio, :based, :function_2, :fio_2)
   end

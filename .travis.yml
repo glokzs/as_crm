@@ -1,1 +1,9 @@
 language: ruby
+env:
+  - CI=true
+matrix:
+  include:
+    - rvm: 2.5.1
+      script:
+        - bundle info rubocop
+        - bundle exec rubocop

@@ -1,10 +1,11 @@
-Rails.application.routes.draw do
+# frozen_string_literal: true
 
-  devise_for :users, controllers: { confirmations: "users/confirmations" }
-	root to: 'welcome#index'
-	namespace :admin do
-		resources :students
-		resources :users
+Rails.application.routes.draw do
+  devise_for :users, controllers: { confirmations: 'users/confirmations' }
+  root to: 'welcome#index'
+  namespace :admin do
+    resources :students
+    resources :users
     resources :contracts
     resources :courses
     resources :groups
@@ -16,12 +17,12 @@ Rails.application.routes.draw do
     resources :lessons
     resources :requisites
     resources :homeworks
-	end
-	
+  end
+
   resources :courses, only: :show
   resources :groups, only: :show
   resources :teachers, only: :show
-  resources :students, only: [:show, :edit, :update]
+  resources :students, only: %i[show edit update]
   resources :homeworks
   resources :lessons
   resources :themes
