@@ -1,0 +1,35 @@
+<%= form_with model: [:admin, @review], local: true do |f| %>
+<div class="form-group row">
+	<%= f.label :title, 'Тема рецензии', class:"col-sm-2 col-form-label" %>
+	<div class="col-sm-10">
+		<%= f.text_field :date, class:"form-input" %>
+	</div>
+</div>
+<div class="form-group row">
+	<%= f.label :content, 'Содержание рецензии', class:"col-sm-2 col-form-label" %>
+	<div class="col-sm-10">
+		<%= f.text_area :content, class:"form-input" %>
+	</div>
+</div>
+<div class="form-group row">
+	<%= f.label :homework_id, 'Домашка к рецензии', class:"col-sm-2 col-form-label" %>
+	<div class="col-sm-10">
+		<%= f.select(:homework_id, Lesson.all.collect {|l| [l.theme.title, l.id]}, { :prompt => 'Выбрать' }, { :class => 'form-control' }) %>
+	</div>
+</div>
+<div class="form-group row">
+	<%= f.label :group_id, 'Дата рецензии', class:"col-sm-2 col-form-label" %>
+	<div class="col-sm-10">
+		<%= f.date_field :date, class:"form-input" %>
+	</div>
+</div>
+<div class="form-group row">
+	<%= f.label :rate, 'Оценка за домашку', class:"col-sm-2 col-form-label" %>
+	<div class="col-sm-10">
+		<%= f.number_field :rate, class:"form-input" %>
+	</div>
+</div>
+<div>
+	<%= f.submit @review.new_record? ? 'Создать' : 'Изменить', class:'btn btn-primary' %>
+</div>
+<% end %>

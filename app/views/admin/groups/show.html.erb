@@ -97,7 +97,7 @@
   		<tr>
   		<% @lessons.each do |lesson|%>
 			<td>#<%= lesson.theme.number %></td>
-			<td><%= lesson.theme.title %></td>
+			<td><%= link_to lesson.theme.title, admin_lesson_homeworks_path(lesson) %></td>
 			<td>
 				<%= lesson.homeworks.size %>/<%= @group.students.size %>				
 			</td>

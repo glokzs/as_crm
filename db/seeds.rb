@@ -120,6 +120,21 @@ student_2 = Student.create!(
   issued_by: 'МЮ РК',
   group_id: 1
 )
+student_3 = Student.create!(
+  first_name: 'Евгений',
+  last_name: 'Петросян',
+  middle_name: 'Вахтангович',
+  iin: 123_654_789_632,
+  tel_1: '87775556666',
+  tel_2: '87779996622',
+  email: '565656@gmail',
+  telegram: 'ivanov222',
+  gender: 1,
+  id_card: '3698521478',
+  date_of_issue: '12/01/2015',
+  issued_by: 'МЮ РК',
+  group_id: 1
+)
 
 1.times do |i|
   i = Teacher.create!(
@@ -161,6 +176,9 @@ Requisite.create!(
 Lesson.create!(theme_id: 1, date: '12/02/2019', group_id: 1)
 Homework.create!(date: '17/02/2019', student_id: 2, lesson_id: 1)
 Homework.create!(date: '18/02/2019', student_id: 1, lesson_id: 1)
+Homework.create!(date: '19/02/2019', student_id: 3, lesson_id: 1)
+
 Review.create!(title: 'Рецензия к домашке 1', content: 'Домашка решена на 5 баллов!', homework_id: 1, date: '19/02/2019', rate: 8.6)
 Review.create!(title: 'Рецензия к домашке 1', content: 'Домашка решена на отлично!', homework_id: 2, date: '19/02/2019', rate: 10)
+
 

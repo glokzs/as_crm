@@ -4,9 +4,9 @@ class Admin::ReviewsController < Admin::AdminController
   end
 
   def show
-    @lesson = Lesson.find(params[:id])
-    @homeworks = @lesson.homeworks
+    @homework = Homework.find(params[:id])
     @reviews = Review.all
+    @review = @reviews.where(homework_id: @homework.id)
   end
 
   def new
@@ -30,7 +30,7 @@ class Admin::ReviewsController < Admin::AdminController
   def update
     @review = Review.find(params[:id])
     if @review.update(review_params)
-      redirect_to admin_reviews_path
+      redirect_to admin_review_path(@review)
     else
       render 'edit'
     end
@@ -42,7 +42,7 @@ class Admin::ReviewsController < Admin::AdminController
     redirect_to admin_reviews_path
   end
 
-  def homework_params
+  def review_params
     params.require(:review).permit(:title, :date, :homework_id, :content, :rate)
   end
 end
