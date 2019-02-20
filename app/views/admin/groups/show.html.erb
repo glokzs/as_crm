@@ -115,7 +115,7 @@
   		<tr>
   		<% @lessons.each do |lesson|%>
 			<td>#<%= lesson.theme.number %></td>
-			<td><%= link_to lesson.theme.title, admin_reviews_path  %></td>
+			<td><%= link_to lesson.theme.title, admin_lesson_homeworks_path(lesson)  %></td>
 			<td>
 								
 			</td>

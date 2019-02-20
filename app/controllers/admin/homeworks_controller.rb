@@ -3,6 +3,7 @@
 class Admin::HomeworksController < Admin::AdminController
   def index
     @homeworks = Homework.all
+    @lessons = Lesson.all
   end
 
   def show

@@ -1,12 +1,12 @@
 class Admin::ReviewsController < Admin::AdminController
   def index
     @reviews = Review.all
-    @students = Student.all
-    @review = Review.find(params[:id])
   end
 
   def show
-    @review = Review.find(params[:id])
+    @lesson = Lesson.find(params[:id])
+    @homeworks = @lesson.homeworks
+    @reviews = Review.all
   end
 
   def new

@@ -4,5 +4,5 @@ class Homework < ApplicationRecord
   belongs_to :lesson
   belongs_to :student
   has_one_attached :homework_file
-  has_one :rewiew
+  has_one :review
 end

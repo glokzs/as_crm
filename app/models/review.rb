@@ -1,3 +1,3 @@
 class Review < ApplicationRecord
-	has_one :homework
+	belongs_to :homework
 end
