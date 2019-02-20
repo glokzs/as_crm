@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class Admin::ReviewsController < Admin::AdminController
   def index
     @reviews = Review.all

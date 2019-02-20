@@ -180,5 +180,3 @@ Homework.create!(date: '19/02/2019', student_id: 3, lesson_id: 1)
 
 Review.create!(title: 'Рецензия к домашке 1', content: 'Домашка решена на 5 баллов!', homework_id: 1, date: '19/02/2019', rate: 8.6)
 Review.create!(title: 'Рецензия к домашке 1', content: 'Домашка решена на отлично!', homework_id: 2, date: '19/02/2019', rate: 10)
-
-
