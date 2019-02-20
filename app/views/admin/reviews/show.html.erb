@@ -1,4 +1,4 @@
 <% @reviews.each do |review| %>
-	<%= review.homework.student.first_name%><br>
+	<%= "#{review.homework.student.first_name} #{review.homework.student.last_name}"%><br>
 	<%= review.content%>
 	<%end%>
