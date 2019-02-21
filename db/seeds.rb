@@ -154,6 +154,8 @@ student_3 = Student.create!(
 end
 
 Theme.create!(number: 1, title: 'Знакомство с HTML', group_id: 1)
+Theme.create!(number: 2, title: 'Знакомство с CSS', group_id: 1)
+
 Requisite.create!(
   owner: 'ТОО Образовательный центр "Аттрактор скул Алматы"',
   address: 'Казахстан, город Алматы, Алмалинский район, проспект Жибек Жолы, дом 135',
@@ -174,9 +176,13 @@ Requisite.create!(
 )
 
 Lesson.create!(theme_id: 1, date: '12/02/2019', group_id: 1)
+Lesson.create!(theme_id: 2, date: '15/02/2019', group_id: 1)
+
 Homework.create!(date: '17/02/2019', student_id: 2, lesson_id: 1)
 Homework.create!(date: '18/02/2019', student_id: 1, lesson_id: 1)
 Homework.create!(date: '19/02/2019', student_id: 3, lesson_id: 1)
+Homework.create!(date: '19/02/2019', student_id: 3, lesson_id: 2)
+
 
 Review.create!(title: 'Рецензия к домашке 1', content: 'Домашка решена на 5 баллов!', homework_id: 1, date: '19/02/2019', rate: 8.6)
 Review.create!(title: 'Рецензия к домашке 1', content: 'Домашка решена на отлично!', homework_id: 2, date: '19/02/2019', rate: 10)
