@@ -17,7 +17,7 @@ class Admin::ReviewsController < Admin::AdminController
 
   def new
     @review = Review.new
-     @homework = Homework.find(id: params[:homework_id])
+     # @homework = Homework.find(id: params[:homework_id])
   end
 
   def create
