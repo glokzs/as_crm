@@ -12,17 +12,17 @@ class Admin::ReviewsController < Admin::AdminController
     @lesson = Lesson.find(params[:lesson_id])
     @homework = Homework.find(params[:id])
     @review = Review.find(params[:id])
-    
   end
 
   def new
     @review = Review.new
-     # @homework = Homework.find(id: params[:homework_id])
+    @lesson = Lesson.find(params[:lesson_id])
+    # @homework = Homework.find(params[:id])
   end
 
   def create
-     @homework = Homework.find(id: params[:homework_id])
     @review = Review.new
+    @homework = Homework.find(params[:id])
     if @review.save
       redirect_to admin_lesson_review_path(@review)
     else
@@ -52,7 +52,7 @@ class Admin::ReviewsController < Admin::AdminController
 
   def set_homework
     @homework = Homework.find(params[:id])
-  end  
+  end
 
   def review_params
     params.require(:review).permit(:title, :date, :homework_id, :content, :rate)

@@ -18,7 +18,7 @@ Rails.application.routes.draw do
       resources :homeworks do
       end
       resources :reviews
-      end
+    end
     resources :requisites
   end
 
