@@ -10,6 +10,8 @@ class Admin::GroupsController < Admin::AdminController
     @students = @group.students
     @themes = @group.themes
     @lessons = @group.lessons
+    @lesson = Lesson.find(params[:id])
+    @homework = Homework.find(params[:id])
   end
 
   def new

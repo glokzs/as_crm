@@ -15,10 +15,11 @@ Rails.application.routes.draw do
     resources :teachers
     resources :themes
     resources :lessons do
-      resources :homeworks
+      resources :homeworks do
+        resources :reviews
+      end
     end
     resources :requisites
-    resources :reviews
   end
 
   resources :courses, only: :show
