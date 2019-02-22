@@ -1,25 +1,7 @@
-<table class="table-striped w-100 mt-4">
-	<tr>
-		<th>ФИО</th>
-		<th>Оценка за домашку</th>
-		<th>Рецензия к домашке</th>
-	</tr>
+<h3>Полученные домашки на тему <%= "#{@lesson.theme.title}"%></h3>
+<br>
+<% @lesson.homeworks.each do |homework| %>
+<%= "#{homework.student.first_name} #{homework.student.last_name}"%><br>
+<%end%>
 
-	<tr>
-		<% @homeworks.each do |homework|%>
-		<td><%= "#{homework.student.first_name} #{homework.student.last_name}"%>
-		</td>
-		<td><% if !homework.review.nil?%>
-			<%= homework.review.rate%>
-			<%end%>
-		</td>
-		<td>
-		<% if homework.review.nil? %>
-		<%= link_to "Создать рецензию", new_admin_review_path%>
-		<%else%>
-		<%= link_to "Редактировать рецензию", edit_admin_review_path(homework.student)%>
-		<%end%>
-		</td>
-	</tr>
-		<%end%>
-</table>
+		
