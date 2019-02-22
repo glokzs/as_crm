@@ -1,4 +1,4 @@
-<% @review.each do |review| %>
-<%= review. content %>
-<%end%>
+<h5><%="#{@review.homework.student.first_name} #{@review.homework.student.last_name}" %></h5><br>
+<%= @review.content.html_safe%>
+Оценка: <%= @review.rate%>
 

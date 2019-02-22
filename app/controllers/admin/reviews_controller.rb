@@ -4,38 +4,27 @@ class Admin::ReviewsController < Admin::AdminController
   # before_action :set_homework
 
   def index
-    # @reviews = Review.all
     @lesson = Lesson.find(params[:lesson_id])
-    # @homework = Homework.find(params[:homework_id])
-    @review = @lesson.reviews.where(lesson_id: @lesson.id)
-    # @review = Review.find(params[:review_id])
+    @reviews = @lesson.reviews.where(lesson_id: @lesson.id)
   end
 
   def show
-    # @reviews = Review.all
+    @lesson = Lesson.find(params[:lesson_id])
     @homework = Homework.find(params[:id])
-    @review = @reviews.where(homework_id: @homework.id)
+    @review = Review.find(params[:id])
     
   end
 
   def new
-    # @homework = Homework.find(params[:homework_id])
     @review = Review.new
-    # @review = @homework.review.build(review_params)
-    # @lesson = Lesson.find(params[:lesson_id])
-      # @homework = Homework.find(params[:id])
      @homework = Homework.find(id: params[:homework_id])
   end
 
   def create
-    # @homework = Homework.find(params[:id])
      @homework = Homework.find(id: params[:homework_id])
-    # @homework = Homework.find(params[:homework_id])
-
-    # @review = @homework.review.create(review_params)
     @review = Review.new
     if @review.save
-      redirect_to admin_review_path(@review)
+      redirect_to admin_lesson_review_path(@review)
     else
       render 'new'
     end
@@ -49,7 +38,7 @@ class Admin::ReviewsController < Admin::AdminController
   def update
     @review = Review.find(params[:id])
     if @review.update(review_params)
-      redirect_to admin_review_path(@review)
+      redirect_to admin_lesson_review_path(@review)
     else
       render 'edit'
     end
