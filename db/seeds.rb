@@ -180,9 +180,9 @@ Lesson.create!(theme_id: 2, date: '15/02/2019', group_id: 1)
 
 Homework.create!(date: '17/02/2019', student_id: 2, lesson_id: 1)
 Homework.create!(date: '18/02/2019', student_id: 1, lesson_id: 1)
-Homework.create!(date: '19/02/2019', student_id: 3, lesson_id: 1)
-Homework.create!(date: '19/02/2019', student_id: 3, lesson_id: 2)
+# Homework.create!(date: '19/02/2019', student_id: 3, lesson_id: 1)
+# Homework.create!(date: '19/02/2019', student_id: 3, lesson_id: 2)
 
 
-Review.create!(title: 'Рецензия к домашке 1', content: 'Домашка решена на 5 баллов!', homework_id: 1, date: '19/02/2019', rate: 8.6)
-Review.create!(title: 'Рецензия к домашке 1', content: 'Домашка решена на отлично!', homework_id: 2, date: '19/02/2019', rate: 10)
+Review.create!(title: 'Рецензия к домашке 1', content: 'Домашка решена на 5 баллов!', homework_id: 1, date: '19/02/2019', lesson_id: 1, rate: 8.6)
+Review.create!(title: 'Рецензия к домашке 1', content: 'Домашка решена на отлично!', homework_id: 2, date: '19/02/2019', lesson_id: 1, rate: 10)

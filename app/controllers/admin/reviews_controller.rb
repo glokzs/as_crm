@@ -4,13 +4,17 @@ class Admin::ReviewsController < Admin::AdminController
   # before_action :set_homework
 
   def index
-    @reviews = Review.all
+    # @reviews = Review.all
+    @lesson = Lesson.find(params[:lesson_id])
+    # @homework = Homework.find(params[:homework_id])
+    @review = @lesson.reviews.where(lesson_id: @lesson.id)
+    # @review = Review.find(params[:review_id])
   end
 
   def show
-    @reviews = Review.all
+    # @reviews = Review.all
+    @homework = Homework.find(params[:id])
     @review = @reviews.where(homework_id: @homework.id)
-    # @homework = Homework.find(params[:id])
     
   end
 

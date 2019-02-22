@@ -9,6 +9,8 @@ class CreateReviews < ActiveRecord::Migration[5.2]
       t.date :date
       t.decimal :rate
 
+      t.integer :lesson_id
+
       t.timestamps
     end
   end
