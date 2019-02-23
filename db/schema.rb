@@ -43,7 +43,7 @@ ActiveRecord::Schema.define(version: 20_190_216_090_016) do
   end
 
   create_table 'contracts', force: :cascade do |t|
-    t.date 'date', default: '2019-02-22'
+    t.date 'date', default: '2019-02-23'
     t.string 'number'
     t.integer 'student_id'
     t.datetime 'created_at', null: false
