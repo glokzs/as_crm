@@ -26,5 +26,4 @@ Rails.application.routes.draw do
   resources :homeworks
   resources :lessons
   resources :themes
-  
 end
