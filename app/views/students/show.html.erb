@@ -11,43 +11,49 @@
 </nav>
 <div class="tab-content" id="nav-tabContent">
     <div class="tab-pane fade show active" id="nav-homeworks" role="tabpanel" aria-labelledby="nav-home-tab">
-      <table class="table-striped w-100 mt-4">
+    <table class="table-striped w-100 mt-4">
       <table border="1" width="100%" cellpadding="5">
-  <tr>
-    <th>Домашняя работа и раздаточный материал </th>
-    <th>Файл домашней работы студента </th>
-  </tr>
-  <tr> 
-     <% @lessons.each do |lesson|%>
-        
-        <td>
-         <%=link_to "#{lesson.theme.title}", lesson_path(lesson.id)%>
-        </td>
-       <td>
-        <%= form_with model: @homeworks, url: homeworks_path, local: true do |f| %>
-                 <%= f.file_field :homework_file%>
-                 <% f.label :homework_file%>
-                 <%= f.hidden_field :student_id, value: @student.id %>
-                 <%= f.hidden_field :lesson_id, value: lesson.id %>
-                 <%= f.hidden_field :date, value: 01-01-2019 %>
-                 <br>
-                <%= f.submit 'Загрузить' %>
-              <% end %>
-        </td>
-  </tr>
-<% end %>
-</table>
-
-
-
-
-
+      <tr>
+        <th>№ занятия</th>
+        <th>Тема занятия и раздаточный материал занятия</th>
+        <th>Домашняя работа и раздаточный материал </th>
+        <th>Файл домашней работы студента </th>
+      </tr>
+      <tr> 
+         <% @lessons.each do |lesson|%>
+            <td>#<%=lesson.theme.number %></td>
+            <td><%=link_to "#{lesson.theme.title}",theme_path(lesson.theme.id)%></td>
+            <td>
+             <%=link_to "#{lesson.theme.title}", lesson_path(lesson.id)%>
+            </td>
+           <td>
+            <%= form_with model: @homeworks, url: homeworks_path, local: true do |f| %>
+                     <%= f.file_field :homework_file%>
+                     <% f.label :homework_file%>
+                     <%= f.hidden_field :student_id, value: @student.id %>
+                     <%= f.hidden_field :lesson_id, value: lesson.id %>
+                     <%= f.hidden_field :date, value: 01-01-2019 %>
+                     <br>
+                    <%= f.submit 'Загрузить' %>
+                  <% end %>
+            </td>
+      </tr>
+          <% end %>
+        </table>
       </table>
     </div>
 
     <div class="tab-pane fade" id="nav-lessons" role="tabpanel" aria-labelledby="nav-contact-tab">
         <table class="table-striped w-100 mt-4">
-          
+          <table border="1" width="100%" cellpadding="5">
+      <tr>
+        <th>№ занятия</th>
+        <th>Тема занятия и раздаточный материал занятия</th>
+        <th>Дополнительный материал </th>
+        <th>Видео</th>
+      </tr>
+
+          </table>
         </table>
     </div>
 
