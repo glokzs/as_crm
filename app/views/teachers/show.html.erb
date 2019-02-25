@@ -1,16 +1,142 @@
-<h1>Преподователь</h1>
-<% if @teacher.picture.attached? %>
-      <%= image_tag @teacher.picture, size: 50 %>
-  <% end %></br>
+<nav>
+  <div class="nav nav-tabs" id="nav-tab" role="tablist">
+    <a class="nav-item nav-link active" id="nav-home-tab" data-toggle="tab" href="#nav-teacher" role="tab" aria-controls="nav-home" aria-selected="true">Персональные данные</a>
+    <a class="nav-item nav-link" id="nav-contact-tab" data-toggle="tab" href="#nav-lessons" role="tab" aria-controls="nav-contact" aria-selected="false">Занятия</a>
+    <a class="nav-item nav-link" id="nav-contact-tab" data-toggle="tab" href="#nav-homeworks" role="tab" aria-controls="nav-contact" aria-selected="false">Домашние задания</a>
+    <a class="nav-item nav-link" id="nav-contact-tab" data-toggle="tab" href="#nav-reviews" role="tab" aria-controls="nav-contact" aria-selected="false">Рецензия</a>
+  </div>
+</nav>
+<div class="tab-content" id="nav-tabContent">
+  <div class="tab-pane fade show active" id="nav-teacher" role="tabpanel" aria-labelledby="nav-home-tab">
+    <table class="table-striped w-100 mt-4">
+    <br>
+        <div class="container">
+          <%= form_with model: @teacher, local: true do |f| %> 
+          <div class="row">
+            <div class="col-md-6">
+              <div class="card - border" style="width: 18rem; border-width: 0px; margin-bottom: 35px;">
+
+                <% if @teacher.avatar.attached? %>
+                <%= image_tag @teacher.avatar.variant(resize: '100x100'), class:"mt-5 pt-10 card-img-top rounded-circle round_border " %>
+                <% else %>
+                <%= image_tag "default.jpg", resize: "100x100", class:"mt-5 pt-10 card-img-top rounded-circle round_border"%>
+                <% end %>
+
+                <div class="card-body">
+                  <ul class="list-group list-group-flush">
+                    <li class="list-group-item name_client"><br/><%= @teacher.first_name %> <%= @teacher.middle_name %> <%= @teacher.last_name %> </li>
+                  </ul>
+                </div>
+              </div>
+
+                <% if @teacher.images.attached?%>
+                  <%= image_tag @teacher.images.first.variant(resize: '100x200'), data: {toggle:"modal", target:"#exampleModal1"}%>
+                  <%=image_tag @teacher.images.last.variant(resize: '100x200'), data: {toggle:"modal", target:"#exampleModal2"}%>
+
+                    <div class="modal fade" id="exampleModal1" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                      <div class="modal-dialog" role="document">
+                        <div class="modal-content">
+                          <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                              <span aria-hidden="true">&times;</span>
+                            </button>
+                          </div>
+                          <div class="modal-body">
+                           <%= image_tag @teacher.images.first.variant(resize: '400x600')%>
+                         </div>
+                         <div class="modal-footer">
+                         </div>
+                       </div>
+                     </div>
+                  </div>
+
+                   <div class="modal fade" id="exampleModal2" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                    <div class="modal-dialog" role="document">
+                      <div class="modal-content">
+                        <div class="modal-header">
+                          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                          </button>
+                        </div>
+                        <div class="modal-body">
+                         <%=image_tag @teacher.images.last.variant(resize: '400x600')%>
+                       </div>
+                       <div class="modal-footer">
+                       </div>
+                     </div>
+                   </div>
+                <% end %>
+            </div>
+           
+            <div class="col-md-6">
+                <div class="card - border" style="width: 20rem; border-width: 0px">
+                  <ul class="list-group list-group-flush">
+                    <li class="list-group-item" >
+                      <i class="fa fa-phone" aria-hidden="true"></i> <%= @teacher.tel_1 %>
+                    </li>
+                    <li class="list-group-item" ><i class="fa fa-phone" aria-hidden="true"></i> <%= @teacher.tel_2 %></li>
+                    <li class="list-group-item" ><i class="fa fa-envelope" aria-hidden="true"></i> <%= @teacher.email %></li>
+                    <li class="list-group-item"><i class="fa fa-telegram" aria-hidden="true"></i> <%= @teacher.telegram %></li>
+                  </ul>
+                </div>
+            <% end %>
+        </div>
+            <%= link_to 'Edit', edit_teacher_path, class:'btn btn-primary' %>
+    </table>
+  </div>
+   
   
-  <%= @teacher.first_name %>
-  <%= @teacher.last_name %>
-  <%= @teacher.middle_name %>
+  <div class="tab-pane fade" id="nav-lessons" role="tabpanel" aria-labelledby="nav-contact-tab">
+    <table class="table-striped w-100 mt-4">
+      <tr>
+        <th>Номер занятия</th>
+        <th>Тема занятия</th>
+        <th>Дата занятия</th>
+        <th>Доп материал</th>
+        <th colspan="3">Действия</th>
+      </tr>
+      <% @lessons.each do |lesson|%>
+      <tr>
+        <td>#<%= lesson.theme.number %></td>
+        <td><%=link_to "#{lesson.theme.title}",theme_path(lesson.theme.id) %></td>
+        <td><%= lesson.date %></td>
+        <td><%= lesson.theme.addition %></td>
+        <td>
+          <%= link_to (fa_icon "edit"), edit_lesson_path(lesson), class:"font" %>
+        </td>
+        <% end%>
+      </tr>
+    </table>
+  </div>
 
-  Еmail: <p><%= @teacher.email %></p>
-  Телефон_1: <p><%= @teacher.tel_1 %></p>
-  Телефон_2: <p><%= @teacher.tel_2 %></p>
-  Телеграмм: <p><%= @teacher.telegram %></p>
-</tr>
+  <div class="tab-pane fade" id="nav-homeworks" role="tabpanel" aria-labelledby="nav-contact-tab">
+    <table class="table-striped w-100 mt-4">
+      <tr>
+        <th>Номер домашки</th>
+        <th>Название домашки</th>
+        <th>Сдали/Студенты</th>
+        <th>Пров./Не пров.</th>
+        <th>Новые/Все</th>
+      </tr>
+      <tr>
+        <% @lessons.each do |lesson|%>
+        <td>#<%= lesson.theme.number %></td>
+        <td><%=link_to "#{lesson.theme.title}", lesson_path(lesson.id)%></td>
+        <td>
+          <%= lesson.homeworks.size %>/<%= @group.students.size %>        
+        </td>
+      </tr>
+      <%end%>
+    </table>
+  </div>
+  <div class="tab-pane fade" id="nav-reviews" role="tabpanel" aria-labelledby="nav-contact-tab">
+    <table class="table-striped w-100 mt-4">
+       
+    </table>
+  </div>
+</div>
 
-<%= link_to 'Back' %>
+
+
+
+

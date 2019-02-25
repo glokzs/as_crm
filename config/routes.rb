@@ -21,7 +21,7 @@ Rails.application.routes.draw do
 
   resources :courses, only: :show
   resources :groups, only: :show
-  resources :teachers, only: :show
+  resources :teachers, only: %i[show edit update]
   resources :students, only: %i[show edit update]
   resources :homeworks
   resources :lessons

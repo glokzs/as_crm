@@ -1,40 +1,110 @@
-<%= form_with model: @student, local: true do |f| %> 
-<div class="container">
-  <div class="row">
-    <div class="col-md-6">
-      <div class="card - border" style="width: 18rem; border-width: 0px">
-        <% if @student.avatar.attached? %>
-        <%= image_tag @student.avatar.variant(resize: '100x100'), class:"mt-5 pt-10 card-img-top rounded-circle round_border " %>
+  <nav>
+  <div class="nav nav-tabs" id="nav-tab" role="tablist">
+    <a class="nav-item nav-link active" id="nav-home-tab" data-toggle="tab" href="#nav-homeworks" role="tab" aria-controls="nav-home" aria-selected="true">Домашние задания</a>
 
-         <% else %>
-          <%= image_tag "default.jpg", resize: "100x100", class:"mt-5 pt-10 card-img-top rounded-circle round_border"%>
-        <% end %>
-        <div class="card-body">
-          <ul class="list-group list-group-flush">
-            <li class="list-group-item name_client"><br/><%= @student.first_name %> <%= @student.middle_name %> <%= @student.last_name %> </li>
-          </ul>
-        </div>
-      </div>
-  </br>
-</div>
-<div class="col-md-6">
-  <div class="card - border" style="width: 20rem; border-width: 0px">
-    <ul class="list-group list-group-flush">
-      <li class="list-group-item" >
-        <i class="fa fa-phone" aria-hidden="true"></i> <%= @student.tel_1 %>
-      </li>
-      <li class="list-group-item" ><i class="fa fa-phone" aria-hidden="true"></i> <%= @student.tel_2 %></li>
-      <li class="list-group-item" ><i class="fa fa-envelope" aria-hidden="true"></i> <%= @student.email %></li>
-      <li class="list-group-item"><i class="fa fa-telegram" aria-hidden="true"></i> <%= @student.telegram %></li>
-      
-      <li class="list-group-item" ><i class="fa fa-bookmark" aria-hidden="true"></i> <%=link_to @student.group.name, group_path(@student.group.id) %></li>
-    </ul>
+    <a class="nav-item nav-link" id="nav-contact-tab" data-toggle="tab" href="#nav-lessons" role="tab" aria-controls="nav-contact" aria-selected="false">Занятия</a>
+
+    <a class="nav-item nav-link" id="nav-contact-tab" data-toggle="tab" href="#nav-reviews" role="tab" aria-controls="nav-contact" aria-selected="false">Рецензия</a>
+
+    <a class="nav-item nav-link" id="nav-contact-tab" data-toggle="tab" href="#nav-student" role="tab" aria-controls="nav-contact" aria-selected="false">Персональные данные</a>
   </div>
-</div> 
-</div>
-<% end %>
-</div>
-<%= link_to 'Edit',  edit_student_path, class:'btn btn-primary' %>
-</div>
+</nav>
+<div class="tab-content" id="nav-tabContent">
+    <div class="tab-pane fade show active" id="nav-homeworks" role="tabpanel" aria-labelledby="nav-home-tab">
+    <table class="table-striped w-100 mt-4">
+      <table border="1" width="100%" cellpadding="5">
+      <tr>
+        <th>№ занятия</th>
+        <th>Тема занятия и раздаточный материал занятия</th>
+        <th>Домашняя работа и раздаточный материал </th>
+        <th>Файл домашней работы студента </th>
+      </tr>
+      <tr> 
+         <% @lessons.each do |lesson|%>
+            <td>#<%=lesson.theme.number %></td>
+            <td><%=link_to "#{lesson.theme.title}",theme_path(lesson.theme.id)%></td>
+            <td>
+             <%=link_to "#{lesson.theme.title}", lesson_path(lesson.id)%>
+            </td>
+           <td>
+            <%= form_with model: @homeworks, url: homeworks_path, local: true do |f| %>
+                     <%= f.file_field :homework_file%>
+                     <% f.label :homework_file%>
+                     <%= f.hidden_field :student_id, value: @student.id %>
+                     <%= f.hidden_field :lesson_id, value: lesson.id %>
+                     <%= f.hidden_field :date, value: 01-01-2019 %>
+                     <br>
+                    <%= f.submit 'Загрузить' %>
+                  <% end %>
+            </td>
+      </tr>
+          <% end %>
+        </table>
+      </table>
+    </div>
 
-</br>
+    <div class="tab-pane fade" id="nav-lessons" role="tabpanel" aria-labelledby="nav-contact-tab">
+        <table class="table-striped w-100 mt-4">
+          <table border="1" width="100%" cellpadding="5">
+      <tr>
+        <th>№ занятия</th>
+        <th>Тема занятия и раздаточный материал занятия</th>
+        <th>Дополнительный материал </th>
+        <th>Видео</th>
+      </tr>
+
+          </table>
+        </table>
+    </div>
+
+
+    <div class="tab-pane fade" id="nav-reviews" role="tabpanel" aria-labelledby="nav-contact-tab">
+      <table class="table-striped w-100 mt-4">
+          
+      </table>
+    </div>
+
+    <div class="tab-pane fade" id="nav-student" role="tabpanel" aria-labelledby="nav-contact-tab">
+      <table class="table-striped w-100 mt-4">
+      </br>
+          <%= form_with model: @student, local: true do |f| %> 
+          <div class="container">
+                <div class="row">
+                  <div class="col-md-6">
+                    <div class="card - border" style="width: 18rem; border-width: 0px">
+                      <% if @student.avatar.attached? %>
+                      <%= image_tag @student.avatar.variant(resize: '100x100'), class:"mt-5 pt-10 card-img-top rounded-circle round_border " %>
+
+                       <% else %>
+                        <%= image_tag "default.jpg", resize: "100x100", class:"mt-5 pt-10 card-img-top rounded-circle round_border"%>
+                      <% end %>
+                      <div class="card-body">
+                        <ul class="list-group list-group-flush">
+                          <li class="list-group-item name_client"><br/><%= @student.first_name %> <%= @student.middle_name %> <%= @student.last_name %> </li>
+                        </ul>
+                      </div>
+                    </div>
+                </br>
+                  </div>
+                  <div class="col-md-6">
+                        <div class="card - border" style="width: 20rem; border-width: 0px">
+                          <ul class="list-group list-group-flush">
+                            <li class="list-group-item" >
+                              <i class="fa fa-phone" aria-hidden="true"></i> <%= @student.tel_1 %>
+                            </li>
+                            <li class="list-group-item" ><i class="fa fa-phone" aria-hidden="true"></i> <%= @student.tel_2 %></li>
+                            <li class="list-group-item" ><i class="fa fa-envelope" aria-hidden="true"></i> <%= @student.email %></li>
+                            <li class="list-group-item"><i class="fa fa-telegram" aria-hidden="true"></i> <%= @student.telegram %></li>
+                            
+                            <li class="list-group-item" ><i class="fa fa-bookmark" aria-hidden="true"></i> <%= @student.group.name %></li>
+                          </ul>
+                        </div>
+                  </div> 
+                </div>
+          <% end %>
+          </div>
+          <%= link_to 'Edit',  edit_student_path, class:'btn btn-primary' %>
+    </table>
+  </div>
+
+</div>
