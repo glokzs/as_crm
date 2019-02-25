@@ -9,6 +9,7 @@ class Admin::ReviewsController < Admin::AdminController
   def show
     @homework = Homework.find(params[:id])
     @review = Review.find(params[:id])
+    @homework = Homework.find(params[:id])
   end
 
   def new
