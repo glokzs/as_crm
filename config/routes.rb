@@ -14,9 +14,12 @@ Rails.application.routes.draw do
     resources :clauses
     resources :teachers
     resources :themes
-    resources :lessons
+    resources :lessons do
+      resources :homeworks do
+      end
+      resources :reviews
+    end
     resources :requisites
-    resources :homeworks
   end
 
   resources :courses, only: :show
@@ -26,4 +29,5 @@ Rails.application.routes.draw do
   resources :homeworks
   resources :lessons
   resources :themes
+  resources :reviews, only: :show
 end
