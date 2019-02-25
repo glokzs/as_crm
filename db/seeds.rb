@@ -123,8 +123,8 @@ student_2 = Student.create!(
 
 1.times do |i|
   i = Teacher.create!(
-    first_name: 'Герберт',
-    last_name: 'Уэлс',
+    first_name: 'Уэлс',
+    last_name: 'Герберт',
     middle_name: 'Андреевич',
     tel_1: '87775878787',
     tel_2: '87775454548',
