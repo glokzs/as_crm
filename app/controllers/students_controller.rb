@@ -5,11 +5,6 @@ class StudentsController < ApplicationController
 
   def show
     @student = Student.find(params[:id])
-    @group = Group.find(params[:id])
-    @students = @group.students
-    @themes = @group.course.themes
-    @lessons = @group.lessons
-    @homeworks = Homework.all
   end
 
   def edit

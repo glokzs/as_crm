@@ -43,7 +43,7 @@ ActiveRecord::Schema.define(version: 20_190_130_184_456) do
   end
 
   create_table 'contracts', force: :cascade do |t|
-    t.date 'date', default: '2019-02-25'
+    t.date 'date', default: '2019-02-16'
     t.string 'number'
     t.integer 'student_id'
     t.datetime 'created_at', null: false
@@ -194,5 +194,6 @@ ActiveRecord::Schema.define(version: 20_190_130_184_456) do
     t.index ['confirmation_token'], name: 'index_users_on_confirmation_token', unique: true
     t.index ['email'], name: 'index_users_on_email', unique: true
     t.index ['reset_password_token'], name: 'index_users_on_reset_password_token', unique: true
+    
   end
 end
