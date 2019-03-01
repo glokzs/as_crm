@@ -4,7 +4,7 @@ before_script:
   - bundle exec rake db:create --all
   - bundle exec rake db:migrate
   - bundle exec rake db:seed
-  - rake cucumber
+  - bundle exec rake cucumber
 script:
   - bundle exec rake ci:tests
 notifications:
