@@ -1,5 +1,6 @@
-class Admin::StudentsController < Admin::AdminController
+# frozen_string_literal: true
 
+class Admin::StudentsController < Admin::AdminController
   def index
     @students = Student.all
   end
@@ -42,6 +43,7 @@ class Admin::StudentsController < Admin::AdminController
   end
 
   private
+
   def student_params
     params.require(:student).permit(:last_name, :first_name, :middle_name, :iin, :email, :tel_1, :tel_2, :telegram, :gender, :id_card, :date_of_issue, :issued_by, :group_id)
   end

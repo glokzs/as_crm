@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class Admin::SectionsController < Admin::AdminController
   def index
     @sections = Section.all
@@ -32,6 +34,7 @@ class Admin::SectionsController < Admin::AdminController
   end
 
   private
+
   def section_params
     params.require(:section).permit(:title, :number, :template_id)
   end

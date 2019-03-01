@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class Admin::ThemesController < Admin::AdminController
   def index
     @themes = Theme.all
@@ -36,6 +38,7 @@ class Admin::ThemesController < Admin::AdminController
   end
 
   private
+
   def theme_params
     params.require(:theme).permit(:number, :title, :addition, :course_id)
   end

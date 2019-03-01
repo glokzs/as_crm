@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class StudentsController < ApplicationController
   before_action :authenticate_user!, :is_student?
 
@@ -6,8 +8,8 @@ class StudentsController < ApplicationController
   end
 
   private
+
   def is_student?
     redirect_to root_path if current_user.role != 2
   end
-
 end
