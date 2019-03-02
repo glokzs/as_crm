@@ -1,37 +1,39 @@
-<%= form_with model: @student, local: true do |f| %> 
-          <div class="container">
-                <div class="row">
-                  <div class="col-md-6">
-                    <div class="card - border" style="width: 18rem; border-width: 0px">
-                      <% if @student.avatar.attached? %>
-                      <%= image_tag @student.avatar.variant(resize: '100x100'), class:"mt-5 pt-10 card-img-top rounded-circle round_border " %>
+<br>
+<div class="container">
+  <%= form_with model: @student, local: true do |f| %> 
+  <div class="container">
+    <div class="row">
+      <div class="col-md-6">
+        <div class="card - border" style="width: 18rem; border-width: 0px">
+          <% if @student.avatar.attached? %>
+          <%= image_tag @student.avatar.variant(resize: '100x100'), class:"mt-5 pt-10 card-img-top rounded-circle round_border " %>
 
-                       <% else %>
-                        <%= image_tag "default.jpg", resize: "100x100", class:"mt-5 pt-10 card-img-top rounded-circle round_border"%>
-                      <% end %>
-                      <div class="card-body">
-                        <ul class="list-group list-group-flush">
-                          <li class="list-group-item name_client"><br/><%= @student.first_name %> <%= @student.middle_name %> <%= @student.last_name %> </li>
-                        </ul>
-                      </div>
-                    </div>
-                </br>
-                  </div>
-                  <div class="col-md-6">
-                        <div class="card - border" style="width: 20rem; border-width: 0px">
-                          <ul class="list-group list-group-flush">
-                            <li class="list-group-item" >
-                              <i class="fa fa-phone" aria-hidden="true"></i> <%= @student.tel_1 %>
-                            </li>
-                            <li class="list-group-item" ><i class="fa fa-phone" aria-hidden="true"></i> <%= @student.tel_2 %></li>
-                            <li class="list-group-item" ><i class="fa fa-envelope" aria-hidden="true"></i> <%= @student.email %></li>
-                            <li class="list-group-item"><i class="fa fa-telegram" aria-hidden="true"></i> <%= @student.telegram %></li>
-                            
-                            <li class="list-group-item" ><i class="fa fa-bookmark" aria-hidden="true"></i> <%= @student.group.name %></li>
-                          </ul>
-                        </div>
-                  </div> 
-                </div>
+          <% else %>
+          <%= image_tag "default.jpg", resize: "100x100", class:"mt-5 pt-10 card-img-top rounded-circle round_border"%>
           <% end %>
+          <div class="card-body">
+            <ul class="list-group list-group-flush">
+              <li class="list-group-item name_client"><br/><%= @student.first_name %> <%= @student.middle_name %> <%= @student.last_name %> </li>
+            </ul>
           </div>
-          <%= link_to 'Edit',  edit_student_path, class:'btn btn-primary' %>
+        </div>
+      </br>
+    </div>
+    <div class="col-md-6">
+      <div class="card - border" style="width: 20rem; border-width: 0px">
+        <ul class="list-group list-group-flush">
+          <li class="list-group-item" >
+            <i class="fa fa-phone" aria-hidden="true"></i> <%= @student.tel_1 %>
+          </li>
+          <li class="list-group-item" ><i class="fa fa-phone" aria-hidden="true"></i> <%= @student.tel_2 %></li>
+          <li class="list-group-item" ><i class="fa fa-envelope" aria-hidden="true"></i> <%= @student.email %></li>
+          <li class="list-group-item"><i class="fa fa-telegram" aria-hidden="true"></i> <%= @student.telegram %></li>
+
+          <li class="list-group-item" ><i class="fa fa-bookmark" aria-hidden="true"></i> <%= @student.group.name %></li>
+        </ul>
+      </div>
+    </div> 
+  </div>
+  <% end %>
+</div>
+<%= link_to 'Edit',  edit_student_path, class:'btn btn-primary' %>
