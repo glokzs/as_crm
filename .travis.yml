@@ -1,15 +1,15 @@
 language: ruby
 before_script:
+  - export RAILS_ENV=test
+  - bundle exec rake db:drop
   - psql -c 'create database travis_ci_test;' -U postgres
   - bundle exec rake db:create --all
   - bundle exec rake db:migrate
   - bundle exec rake db:seed
   - bundle exec rake cucumber
-script:
-  - bundle exec rake ci:tests
 notifications:
   email: false
 services:
   - postgresql
-  addons:
+addons:
   chrome: stable
