@@ -11,3 +11,5 @@ notifications:
   email: false
 services:
   - postgresql
+  addons:
+  chrome: stable
