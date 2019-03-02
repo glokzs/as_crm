@@ -67,16 +67,16 @@ Cucumber::Rails::Database.javascript_strategy = :truncation
 # Capybara::Selenium::Driver.new(app, browser: :chrome)
 # end
 
-Capybara.default_driver = :firefox
-Capybara.register_driver :firefox do |app|
-  options = {
-    js_errors: true,
-    timeout: 360,
-    debug: false,
-    inspector: false
-  }
-  Capybara::Selenium::Driver.new(app, browser: :firefox)
-end
+# Capybara.default_driver = :firefox
+# Capybara.register_driver :firefox do |app|
+#   options = {
+#     js_errors: true,
+#     timeout: 360,
+#     debug: false,
+#     inspector: false
+#   }
+#   Capybara::Selenium::Driver.new(app, browser: :firefox)
+# end
 Before do
   load Rails.root.join('db/seeds.rb')
 end
