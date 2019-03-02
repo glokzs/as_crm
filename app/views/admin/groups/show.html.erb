@@ -65,7 +65,7 @@
 			<th>Номер занятия</th>
 			<th>Тема занятия</th>
 			<th>Дата занятия</th>
-			<th>Домашнее задание <%= check_box("tag", tag.id, {checked: true})    %></th>
+			<th>Домашнее задание </th>
 			<th>Дата дедлайна </th>
 			<th colspan="3">Действия</th>
 		</tr>
@@ -74,13 +74,20 @@
 			<td>#<%= lesson.theme.number %></td>
 			<td><%= link_to lesson.theme.title, admin_theme_path(lesson.theme_id) %></td>
 			<td><%= lesson.date %></td>
+		    <td>
+		    	<% if lesson.homework.empty?  %>
+		    	<% 'Домашка отсутствует' %>
+		    	<% else %>
+		    	<% 'Домашка есть' %>
+		    	 <% end %>
+		    </td>
 		    <td><%=   %></td>
          	<td><%=   %></td>
 			<td>
 				<%= link_to (fa_icon "edit"), edit_admin_lesson_path(lesson), class:"font" %>
 				<%= link_to (fa_icon "trash"), admin_lesson_path(lesson), class:"font" %>
 			</td>
-  		<% end%>
+  		<% end %>
 		</tr>
 	</table>
 
