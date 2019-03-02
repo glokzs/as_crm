@@ -8,6 +8,10 @@ class StudentsController < ApplicationController
   
   end
 
+  def show_profile_student
+    @student = Student.find(params[:id])
+  end 
+
   def edit
     @student = Student.find(params[:id])
   end

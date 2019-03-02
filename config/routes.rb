@@ -24,8 +24,16 @@ Rails.application.routes.draw do
 
   resources :courses, only: :show
   resources :groups, only: :show
-  resources :teachers, only: %i[show edit update]
-  resources :students, only: %i[show edit update]
+  resources :teachers, only: %i[show edit update ] do
+    member do 
+     get 'show_profile_teacher'
+    end
+  end
+  resources :students, only: %i[show edit update ] do
+    member do 
+     get 'show_profile_student'
+    end
+  end
   resources :homeworks
   resources :lessons
   resources :themes

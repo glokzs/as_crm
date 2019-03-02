@@ -14,6 +14,10 @@ class TeachersController < ApplicationController
     @groups = @teacher.groups
   end
 
+  def show_profile_teacher
+    @teacher = Teacher.find(params[:id])
+  end 
+
   def edit
     @teacher = Teacher.find(params[:id])
   end
