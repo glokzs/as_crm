@@ -1,4 +1,29 @@
+
 <%= form_with model: [:admin, @student], local: true, id:"new_student" do |f| %> 
+
+<%= form_with model: [:admin, @student], local: true do |f| %> 
+
+<div class="form-group row">
+	<div class="title_foto_student">
+		<%= f.label :avatar, 'Avatar'%>
+	</div>
+	<div class="col-sm-10, student_avatar_foto">
+		<%= f.file_field :avatar%>
+	</div> </br>
+
+</div>
+<div class="form-group row">
+	<div class="title_foto_student">
+		<%= f.label :images, 'Скан удостоверения'%>
+	</div>
+	<div class="col-sm-10, student_scan_id_card">
+		<%= f.file_field :images, multiple: true %>   
+	</div></br>
+</div>
+
+
+
+
 <div class="form-group row">
 	<%= f.label :last_name, 'Фамилия', class:"col-sm-2 col-form-label"%>
 	<div class="col-sm-10">
@@ -50,8 +75,8 @@
 <div class="form-group row">
 	<%= f.label :gender, 'Пол', class:"col-sm-2 col-form-label" %>
 	<div class="col-sm-10">
-	    <%= f.radio_button :gender, :male %> муж
-	    <%= f.radio_button :gender, :female %> жен
+		<%= f.radio_button :gender, :male %> муж
+		<%= f.radio_button :gender, :female %> жен
 	</div>
 </div>
 <div class="form-group row">
@@ -63,13 +88,13 @@
 <div class="form-group row">
 	<%= f.label :date_of_issue, 'Дата выдачи', class:"col-sm-2 col-form-label"%>
 	<div class="col-sm-10">
-		<%= f.date_field :date_of_issue, class:"form-input"%>
+		<%= f.text_field :date_of_issue, class:"form-input"%>
 	</div>
 </div>
 <div class="form-group row">
 	<%= f.label :issued_by, 'Кем выдан', class:"col-sm-2 col-form-label"%>
 	<div class="col-sm-10">
-		<%= f.text_field :issued_by, class:"form-control"%>
+		<%= f.text_field :issued_by,class:"form-control" %>
 	</div>
 </div>
 <div class="form-group row">
@@ -78,6 +103,6 @@
 		<%= f.select(:group_id, Group.all.collect {|c| [c.name, c.id]}, { :prompt => 'Выбрать' }, { :class => 'form-control' }) %>
 	</div>
 </div>
- 
-<%= f. submit @student.new_record? ? 'Создать' : 'Изменить', class:'btn btn-primary' %>
+
+<%= f. submit @student.new_record? ? 'Создать' : 'Изменить' , class:'btn btn-primary' %>
 <% end %>

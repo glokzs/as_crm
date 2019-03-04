@@ -7,6 +7,7 @@ class Admin::ThemesController < Admin::AdminController
 
   def show
     @theme = Theme.find(params[:id])
+    @lesson = Lesson.find(params[:id])
   end
 
   def new
@@ -40,6 +41,6 @@ class Admin::ThemesController < Admin::AdminController
   private
 
   def theme_params
-    params.require(:theme).permit(:number, :title, :addition, :course_id)
+    params.require(:theme).permit(:number, :title, :addition, :group_id, :content)
   end
 end

@@ -27,7 +27,7 @@ table.contract td {
 	text-align: center;
 }
 .form-input{
-	width: 30%;
+	width: 18.5%;
 	border: 1px solid #CED4DA;
 	background-clip: padding-box;
 	color: #495057;
@@ -35,6 +35,54 @@ table.contract td {
     padding: 0.375rem 0.75rem;
     border-radius: 0.25rem;  
 }
+.form-control{
+  width: 50%;
+}
 .font{
-	font-size: 25px;
+	font-size: 18.5px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.name_client {
+  font-weight: 900;
+}
+.title_foto_student{
+  margin-left: 16px;
+  margin-top:12px;
+}
+.round_border {
+  border:30px solid  #fff;
+  }
+.foto_avatar_bottom {
+margin-bottom: 15px;
+padding-top: 0px;
+}
+.student_avatar_foto {
+  margin-left: 141px;
+}
+.student_scan_id_card {
+  margin-left: 38px;
+}
+
+.modal-body {
+    margin-left: 29px;
+    margin-bottom: 10px;
+    margin-top: 10px;
 }

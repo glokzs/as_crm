@@ -4,13 +4,22 @@
 		<th>Тема занятия</th>
 		<th>Дата занятия</th>
 		<th>Название группы</th>
+		<th>Тема домашнего задания</th>
+		<th>Дата дедлайна</th>
 		<th colspan="3">Действия</th>
 	</tr>
 <% @lessons.each do |lesson| %>
 	<tr>
 		<td><%= lesson.theme.title %></td>
 		<td><%= lesson.date %></td>
-		<td><%= lesson.group_id %></td>
+		<td><%= lesson.group.name %></td>
+		<td><%= lesson.homework_task %></td>
+		<td><% if lesson.deadline.nil? %>
+				<%=(lesson.date + 3.days).strftime("%Y-%m-%d в 19:30") %>
+				<%else%>
+				<%= lesson.deadline.strftime("%Y-%m-%d в 19:30")%>
+				<%end%>
+		</td>
 		<td>
 			<%= link_to 'Редактировать', edit_admin_lesson_path(lesson) %>
 			<%= link_to 'Удалить' %>
