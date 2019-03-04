@@ -77,6 +77,4 @@ Cucumber::Rails::Database.javascript_strategy = :truncation
 #   }
 #   Capybara::Selenium::Driver.new(app, browser: :firefox)
 # end
-Before do
-  load Rails.root.join('db/seeds.rb')
-end
+
