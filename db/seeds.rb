@@ -93,7 +93,7 @@ student_1 = Student.create!(
   first_name: 'Александр',
   last_name: 'Пушкин',
   middle_name: 'Сергеевич',
-  iin: 123654789632,
+  iin: 123_654_789_632,
   tel_1: '87775556666',
   tel_2: '87779996622',
   email: 'student@student',
@@ -109,7 +109,7 @@ student_2 = Student.create!(
   first_name: 'Михаил',
   last_name: 'Лермонтов',
   middle_name: 'Юрьевич',
-  iin: 123654789632,
+  iin: 123_654_789_632,
   tel_1: '87775556666',
   tel_2: '87779996622',
   email: 'lermontov@gmail',
@@ -124,7 +124,7 @@ student_3 = Student.create!(
   first_name: 'Евгений',
   last_name: 'Петросян',
   middle_name: 'Вахтангович',
-  iin: 123654789632,
+  iin: 123_654_789_632,
   tel_1: '87775556666',
   tel_2: '87779996622',
   email: '565656@gmail',
@@ -159,7 +159,7 @@ Theme.create!(number: 2, title: 'Знакомство с CSS', group_id: 1)
 Requisite.create!(
   owner: 'ТОО Образовательный центр "Аттрактор скул Алматы"',
   address: 'Казахстан, город Алматы, Алмалинский район, проспект Жибек Жолы, дом 135',
-  bin: 171240019162,
+  bin: 171_240_019_162,
   bank: 'АО «Kaspi Bank»',
   iik: 'KZ88722S000001417077',
   bik: 'CASPKZKA',
@@ -185,4 +185,3 @@ Homework.create!(date: '19/02/2019', student_id: 3, lesson_id: 2)
 
 Review.create!(title: 'Рецензия к домашке 1', content: 'Домашка решена на 5 баллов!', homework_id: 1, date: '19/02/2019', lesson_id: 1, rate: 8.6)
 Review.create!(title: 'Рецензия к домашке 1', content: 'Домашка решена на отлично!', homework_id: 2, date: '19/02/2019', lesson_id: 1, rate: 10)
-

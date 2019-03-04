@@ -77,4 +77,3 @@ Cucumber::Rails::Database.javascript_strategy = :truncation
 #   }
 #   Capybara::Selenium::Driver.new(app, browser: :firefox)
 # end
-

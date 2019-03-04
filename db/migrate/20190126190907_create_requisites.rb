@@ -5,7 +5,7 @@ class CreateRequisites < ActiveRecord::Migration[5.2]
     create_table :requisites do |t|
       t.string :owner
       t.string :address
-      t.string :bin, :limit => 12
+      t.string :bin, limit: 12
       t.string :bank
       t.string :iik
       t.string :bik

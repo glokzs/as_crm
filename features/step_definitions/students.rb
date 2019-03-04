@@ -11,4 +11,3 @@
   end
   expect(page).to have_xpath('//h2')
 end
-

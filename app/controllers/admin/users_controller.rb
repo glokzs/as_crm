@@ -6,6 +6,5 @@ class Admin::UsersController < Admin::AdminController
     @students = Student.all
 
     @teachers = Teacher.all
-
   end
 end

@@ -15,7 +15,6 @@ class Teacher < ApplicationRecord
   enum gender: { male: 1, female: 2 }
   has_many_attached :images
 
-
   private
 
   def create_user

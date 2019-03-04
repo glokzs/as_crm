@@ -1,6 +1,6 @@
 # frozen_string_literal: true
-class GroupsController < ApplicationController
 
+class GroupsController < ApplicationController
   before_action :authenticate_user!
 
   def show
