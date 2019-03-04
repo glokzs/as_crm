@@ -75,7 +75,7 @@
 			<td><%= link_to lesson.theme.title, admin_theme_path(lesson.theme_id) %></td>
 			<td><%= lesson.date %></td>
 		    <td>
-		    	<% if lesson.homework.empty?  %>
+		    	<% if lesson.homework_task.empty?  %>
 		    	<% 'Домашка отсутствует' %>
 		    	<% else %>
 		    	<% 'Домашка есть' %>
