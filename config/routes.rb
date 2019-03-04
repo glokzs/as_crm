@@ -27,9 +27,6 @@ Rails.application.routes.draw do
   resources :courses, only: :show
   resources :groups, only: :show
   resources :teachers, only: :show
-
-  end
-
   resources :courses, only: :show
   resources :groups, only: :show
   resources :teachers, only: %i[show edit update]
@@ -38,4 +35,4 @@ Rails.application.routes.draw do
   resources :lessons
   resources :themes
   resources :reviews, only: :show
-
+end
