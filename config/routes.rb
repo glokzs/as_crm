@@ -34,8 +34,10 @@ Rails.application.routes.draw do
      get 'show_profile_student'
     end
   end
-  resources :homeworks
-  resources :lessons
+
+  resources :lessons do
+    resources :reviews
+  end
   resources :themes
-  resources :reviews, only: :show
+  resources :homeworks
 end

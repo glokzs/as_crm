@@ -63,16 +63,16 @@
             <th>Название домашки</th>
             <th>Рецензия на домашнюю работу</th>
             <th>Оценка</th>
-          </tr>
-          <% @lessons.each do |lesson|%>
-          <td><%=lesson.theme.title %></td>
-
-           <% end%>
-          <tr>
-
-
-
-
+        </tr>
+            <% @lessons.each do |lesson|%>
+        <tr>
+            <td><%=lesson.theme.title %> </td>
+             <%lesson.reviews.each do |review|%>
+              <td><%= link_to "#{review.title}", lesson_review_path(lesson.id) %> </td>
+              <td><%=review.rate%></td>
+             <% end%>
+        </tr>
+            <% end%>
     </table>
   </div>
 </div>
