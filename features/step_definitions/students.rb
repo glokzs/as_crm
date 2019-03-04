@@ -12,16 +12,3 @@
   expect(page).to have_xpath('//h2')
 end
 
-# То('он может создать студента с данными:') do |_table|
-#   visit('/admin/students/new') do
-#     # find('#new_student')
-#     within('#new_student') do
-#       fill_in('Фамилия', with: Одинокий)
-#       fill_in('Имя', with: Голубь)
-#       # fill_in('Email', with: table.hashes[0][:Email])
-#       # select(table.hashes[0][:Группа], from: 'Группа')
-#     end
-#     click_button('Создать')
-#   end
-#   expect(page).to have_content('Голубь')
-# end
