@@ -11,9 +11,13 @@
                   <% if user_signed_in? %>
                     <div class="nav-item">
                       <span class="navbar-text">
-                        <%= link_to 'Выйти', destroy_user_session_path, method: :delete, class: 'nav-link'%>
+                        <%= link_to 'Sign out', destroy_user_session_path, method: :delete, class: 'nav-link'%>
                       <span>
                     </div>
+                    <% else %>
+                      <div class="nav-item">
+                         <%= link_to 'Войти', new_user_session_path, class: 'nav-link' %>
+                      </div>
                   <% end %>
                 </div>
             </div>

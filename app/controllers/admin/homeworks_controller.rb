@@ -2,11 +2,16 @@
 
 class Admin::HomeworksController < Admin::AdminController
   def index
+
     @homeworks = Homework.all
+
+    @lesson = Lesson.find(params[:lesson_id])
+    @homework = Homework.where(lesson_id: @lesson.id)
+
   end
 
   def show
-    @homework = Homework.find(params[:id])
+    @lesson = Lesson.find(params[:id])
   end
 
   def new
@@ -43,6 +48,6 @@ class Admin::HomeworksController < Admin::AdminController
   end
 
   def homework_params
-    params.require(:homework).permit(:lesson_id, :date, :student_id)
+    params.require(:homework).permit(:lesson_id, :date, :homework_file, :student_id)
   end
 end

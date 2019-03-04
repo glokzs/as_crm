@@ -12,9 +12,9 @@ class Admin::ContractsController < Admin::AdminController
                            Contract.last.number.to_i + 1
                          end
     if @contract.save
-      redirect_to admin_users_path
+      redirect_to admin_students_path
     else
-      redirect_to admin_users_path
+      redirect_to admin_students_path
     end
   end
 
