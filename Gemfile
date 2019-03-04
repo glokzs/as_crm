@@ -12,7 +12,6 @@ gem 'prawn'
 gem 'devise'
 gem 'rails', '~> 5.2.2'
 # Use sqlite3 as the database for Active Record
-# gem 'sqlite3'
 gem 'mysql2'
 gem 'pg'
 # Use Puma as the app server
@@ -65,8 +64,6 @@ group :development, :test do
   gem 'coveralls', require: false
   gem 'cucumber-rails', require: false
   gem 'database_cleaner'
-  gem 'factory_bot_rails'
-  gem 'factory_bot_rails'
   gem 'geckodriver-helper'
   gem 'launchy'
   gem 'pry'
