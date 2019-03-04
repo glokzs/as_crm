@@ -39,4 +39,3 @@ Rails.application.routes.draw do
   resources :themes
   resources :reviews, only: :show
 
-end
