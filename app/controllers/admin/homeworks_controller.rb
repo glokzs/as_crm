@@ -2,6 +2,8 @@
 
 class Admin::HomeworksController < Admin::AdminController
   def index
+    @homeworks = Homework.all
+
     @lesson = Lesson.find(params[:lesson_id])
     @homework = Homework.where(lesson_id: @lesson.id)
   end

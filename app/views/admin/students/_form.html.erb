@@ -1,3 +1,6 @@
+
+<%= form_with model: [:admin, @student], local: true, id:"new_student" do |f| %> 
+
 <%= form_with model: [:admin, @student], local: true do |f| %> 
 <div class="form-group row">
 	<div class="title_foto_student">
@@ -16,6 +19,7 @@
 		<%= f.file_field :images, multiple: true %>   
 	</div></br>
 </div>
+
 
 
 

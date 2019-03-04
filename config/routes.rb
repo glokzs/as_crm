@@ -20,8 +20,13 @@ Rails.application.routes.draw do
       resources :reviews
     end
     resources :requisites
-  end
 
+    resources :homeworks
+  end
+  resources :students, only: :show
+  resources :courses, only: :show
+  resources :groups, only: :show
+  resources :teachers, only: :show
   resources :courses, only: :show
   resources :groups, only: :show
   resources :teachers, only: %i[show edit update]

@@ -46,6 +46,6 @@ class Admin::TeachersController < Admin::AdminController
   private
 
   def teacher_params
-    params.require(:teacher).permit(:last_name, :first_name, :middle_name, :email, :tel_1, :tel_2, :telegram, :avatar, images: [])
+    params.require(:teacher).permit(:last_name, :first_name, :middle_name, :email, :tel_1, :tel_2, :telegram, :picture)
   end
 end
