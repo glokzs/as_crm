@@ -1,45 +1,71 @@
   <br>
   <nav>
-  <div class="nav nav-tabs" id="nav-tab" role="tablist">
-    <a class="nav-item nav-link active" id="nav-home-tab" data-toggle="tab" href="#nav-homeworks" role="tab" aria-controls="nav-home" aria-selected="true">Домашние задания</a>
+    <div class="nav nav-tabs" id="nav-tab" role="tablist">
+      <a class="nav-item nav-link active" id="nav-home-tab" data-toggle="tab" href="#nav-homeworks" role="tab" aria-controls="nav-home" aria-selected="true">Домашние задания</a>
 
-    <a class="nav-item nav-link" id="nav-contact-tab" data-toggle="tab" href="#nav-lessons" role="tab" aria-controls="nav-contact" aria-selected="false">Занятия</a>
+      <a class="nav-item nav-link" id="nav-contact-tab" data-toggle="tab" href="#nav-lessons" role="tab" aria-controls="nav-contact" aria-selected="false">Занятия</a>
 
-    <a class="nav-item nav-link" id="nav-contact-tab" data-toggle="tab" href="#nav-reviews" role="tab" aria-controls="nav-contact" aria-selected="false">Рецензия</a>
+      <a class="nav-item nav-link" id="nav-contact-tab" data-toggle="tab" href="#nav-reviews" role="tab" aria-controls="nav-contact" aria-selected="false">Рецензия</a>
 
-  </div>
-</nav>
-<div class="tab-content" id="nav-tabContent">
+    </div>
+  </nav>
+  <div class="tab-content" id="nav-tabContent">
     <div class="tab-pane fade show active" id="nav-homeworks" role="tabpanel" aria-labelledby="nav-home-tab">
-    <table class="table-striped w-100 mt-4">
-      
-
-
-
-
-
-      </table>
-    </div>
-
-    <div class="tab-pane fade" id="nav-lessons" role="tabpanel" aria-labelledby="nav-contact-tab">
-        <table class="table-striped w-100 mt-4">
-          
-
-
-
-
-
-        </table>
-    </div>
-
-
-    <div class="tab-pane fade" id="nav-reviews" role="tabpanel" aria-labelledby="nav-contact-tab">
       <table class="table-striped w-100 mt-4">
-     
+        <table border="0" width="100%" cellpadding="5">
+          <tr>
+            <th>Название домашки</th>
+            <th>Файл домашней работы студента </th>
+          </tr>
+          <tr>
+            <% @lessons.each do |lesson|%>
+            <td><%=link_to "#{lesson.theme.title}", lesson_path(lesson.id)%></td>
+
+
+            <%= form_with model: @homeworks, url: homeworks_path, local: true do |f| %>
+            <td>
+              <%= f.file_field :homework_file%>
+              <% f.label :homework_file%>
+              <%= f.hidden_field :student_id, value: @student.id %>
+              <%= f.hidden_field :lesson_id, value: lesson.id %>
+              <%= f.hidden_field :date, value: 01-01-2019 %>
+              <br>
+              <div class="actions">
+                <%= f.button "Загрузить".html_safe, type: :submit,  data: {disable_with: "<i class='fa fa-spinner fa-spin'></i> Идет загрузка..."} %>         
+             </div>
+
+           </div>
+           <% end %>
+         </td>
+       </tr>
+       <% end %>
+     </table>
+   </table>
+ </div>
+
+ <div class="tab-pane fade" id="nav-lessons" role="tabpanel" aria-labelledby="nav-contact-tab">
+  <table class="table-striped w-100 mt-4">
+    <tr>
+      <th>Тема занятия</th>
+      <th>Доп материал</th>
+    </tr>
+    <% @lessons.each do |lesson|%>
+    <tr>
+      <td><%=link_to "#{lesson.theme.title}",theme_path(lesson.theme.id) %></td>
+      <td><%= lesson.theme.addition %></td>
+      <% end%>
+    </tr>
+  </table>
+</div>
+
+
+<div class="tab-pane fade" id="nav-reviews" role="tabpanel" aria-labelledby="nav-contact-tab">
+  <table class="table-striped w-100 mt-4">
 
 
 
 
-      </table>
-    </div>
+
+  </table>
+</div>
 </div>
