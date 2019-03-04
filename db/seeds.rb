@@ -308,8 +308,8 @@ student_13 = Student.create!(
   group_id: 6
   )
 
-3.times do |i, a, q|
-  i = Teacher.create!(
+
+  teacher_1 = Teacher.create!(
     first_name: 'Уэлс',
     last_name: 'Герберт',
     middle_name: 'Андреевич',
@@ -317,8 +317,8 @@ student_13 = Student.create!(
     tel_2: '87775454548',
     email: 'gerberd@gmail',
     telegram: 'gerberd1112232'
-  ), 
-  a = Teacher.create!(
+  )
+  teacher_2 = Teacher.create!(
     first_name: 'Гитлер',
     last_name: 'Адольф',
     middle_name: 'Алоизович',
@@ -326,8 +326,8 @@ student_13 = Student.create!(
     tel_2: '87775454666',
     email: 'gitler@gmail',
     telegram: 'gitler666'
-  ),
-  q = Teacher.create!(
+  )
+  teacher_3 = Teacher.create!(
     first_name: 'Ульянов',
     last_name: 'Владимир',
     middle_name: 'Ильич',
@@ -338,19 +338,7 @@ student_13 = Student.create!(
   )  
   
 
-  i.avatar.attach(
-    io: File.open("app/assets/images/#{i.id}.jpeg"),
-    filename: '{i.id}.jpeg'
- )
-  a.avatar.attach(
-    io: File.open("app/assets/images/#{a.id}.jpg"),
-    filename: '{a.id}.jpeg'
- )
-  q.avatar.attach(
-    io: File.open("app/assets/images/#{q.id}.jpeg"),
-    filename: '{q.id}.jpeg'
- )
-end
+  
 
 Theme.create!(number: 1, title: 'Знакомство с HTML', group_id: 1)
 Theme.create!(number: 2, title: 'Знакомство с CSS', group_id: 1)

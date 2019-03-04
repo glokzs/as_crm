@@ -1,9 +1,11 @@
 <%= form_with model: [:admin, @teacher], local: true do |f| %> 
 <div class="form-group row">
-	<%= f.label :picture, 'Фото', class:"col-sm-2 col-form-label"%>
-	<div class="col-sm-10">
-		<%= f.file_field :picture %>
+	<div class="title_foto_teacher">
+	<%= f.label :avatar, 'Фото' %>
 	</div>
+	<div class="col-sm-10, teacher_avatar_foto">
+		<%= f.file_field :avatar %>
+	</div> 
 </div>
 <div class="form-group row">
 	<%= f.label :last_name, 'Фамилия', class:"col-sm-2 col-form-label"%>
