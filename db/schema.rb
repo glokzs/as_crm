@@ -225,7 +225,8 @@ ActiveRecord::Schema.define(version: 2019_02_16_090016) do
   end
 
   create_table "contracts", force: :cascade do |t|
-    t.date "date", default: "2019-03-04"
+
+    t.date "date", default: "2019-03-05"
     t.string "number"
     t.integer "student_id"
     t.datetime "created_at", null: false
