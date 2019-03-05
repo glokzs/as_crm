@@ -14,6 +14,10 @@ class TeachersController < ApplicationController
     @groups = @teacher.groups
   end
 
+  def show_profile_teacher
+    @teacher = Teacher.find(params[:id])
+  end 
+
   def edit
     @teacher = Teacher.find(params[:id])
   end
@@ -34,6 +38,7 @@ class TeachersController < ApplicationController
   end
 
   def teacher_params
+    params.require(:teacher).permit(:last_name, :first_name, :middle_name, :email, :tel_1, :tel_2, :telegram, :picture)
     params.require(:teacher).permit(:last_name, :first_name, :middle_name, :email, :tel_1, :tel_2, :telegram, :avatar, images: [])
   end
 end

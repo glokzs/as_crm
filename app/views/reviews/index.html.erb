@@ -1,0 +1,23 @@
+<h5>Рецензии на тему <%="#{@lesson.theme.title}"%></h5>
+<table class="table-striped w-100 mt-4">
+	<tr>
+		<th>ФИО студента</th>
+		<th>Рецензия</th>
+		<th>Оценка за рецензию</th>
+	</tr>
+	<tr>
+		<% @lesson.homeworks.each do |homework| %>
+		<td><%= "#{homework.student.first_name} #{homework.student.last_name}"%>
+		</td>
+		
+		<td><% if homework.review.nil? %>
+			<%= link_to "Создать рецензию",new_lesson_review_path%>
+			<%else%>
+			<%= link_to "Редактровать рецензию",edit_lesson_review_path(@lesson,homework.review) %>
+		</td>
+		<td><%= homework.review.rate%></td>
+			<%end%>
+	</tr>
+		<%end%>
+</table>
+

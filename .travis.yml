@@ -1,9 +1,24 @@
 language: ruby
+cache: bundler
+
+before_script:
+  - export RAILS_ENV=test
+  - bundle exec rake db:drop
+  - psql -c 'create database travis_ci_test;' -U postgres
+  - bundle exec rake db:create --all
+  - bundle exec rake db:migrate
+  - bundle exec rake db:seed
+  - bundle exec rake cucumber
+notifications:
+  email: false
+services:
+  - postgresql
+addons:
+  chrome: stable
+
 env:
   - CI=true
 matrix:
   include:
     - rvm: 2.5.1
-      script:
-        - bundle info rubocop
-        - bundle exec rubocop
+
