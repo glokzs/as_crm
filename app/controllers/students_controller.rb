@@ -9,6 +9,7 @@ class StudentsController < ApplicationController
     @group = @student.group_id
     @lesson = Lesson.find(params[:id])
     @homeworks = Homework.all
+
   end
 
   def show_profile_student

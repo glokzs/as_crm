@@ -6,7 +6,7 @@ class CreateStudents < ActiveRecord::Migration[5.2]
       t.string :first_name
       t.string :last_name
       t.string :middle_name
-      t.integer :iin
+      t.string :iin, limit: 12
       t.string :tel_1
       t.string :tel_2
       t.string :email
