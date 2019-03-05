@@ -38,6 +38,7 @@ Rails.application.routes.draw do
   resources :lessons do
     resources :reviews
   end
+  
   resources :themes
   resources :homeworks
 end

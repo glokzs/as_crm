@@ -178,8 +178,8 @@ Requisite.create!(
 Lesson.create!(theme_id: 1, date: '12/02/2019', group_id: 1)
 Lesson.create!(theme_id: 2, date: '15/02/2019', group_id: 1)
 
-Homework.create!(date: '17/02/2019', student_id: 2, lesson_id: 1)
-Homework.create!(date: '18/02/2019', student_id: 1, lesson_id: 1)
+Homework.create!(date: '17/02/2019', student_id: 1, lesson_id: 1)
+Homework.create!(date: '18/02/2019', student_id: 2, lesson_id: 1)
 Homework.create!(date: '19/02/2019', student_id: 3, lesson_id: 1)
 Homework.create!(date: '19/02/2019', student_id: 3, lesson_id: 2)
 

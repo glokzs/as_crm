@@ -16,6 +16,7 @@
           <tr>
             <th>Название домашки</th>
             <th>Файл домашней работы студента </th>
+           
           </tr>
           <tr>
             <% @lessons.each do |lesson|%>
@@ -59,20 +60,25 @@
 
   <div class="tab-pane fade" id="nav-reviews" role="tabpanel" aria-labelledby="nav-contact-tab">
     <table class="table-striped w-100 mt-4">
-       <tr>
-            <th>Название домашки</th>
-            <th>Рецензия на домашнюю работу</th>
-            <th>Оценка</th>
-        </tr>
-            <% @lessons.each do |lesson|%>
-        <tr>
-            <td><%=lesson.theme.title %> </td>
-             <%lesson.reviews.each do |review|%>
-              <td><%= link_to "#{review.title}", lesson_review_path(lesson.id) %> </td>
-              <td><%=review.rate%></td>
-             <% end%>
-        </tr>
-            <% end%>
-    </table>
+          <% if @student.email == current_user.email%>
+            <tr>
+              <th>Название домашки</th>
+              <th>Рецензия на домашнюю работу</th>
+              <th>Оценка</th>
+            </tr>
+              <% @lessons.each do |lesson|%>
+              <tr>  
+                <td><%=lesson.theme.title %> </td>
+
+                <%lesson.reviews.each do |review|%>
+                <td><%= link_to "#{review.title}", lesson_review_path(review.id) %></td>
+                <td><%=review.rate%></td>
+                <% end%>
+
+            </tr>
+                <% end%>
+          <% end%>
+      
+  </table>
   </div>
 </div>
