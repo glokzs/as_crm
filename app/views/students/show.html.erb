@@ -19,7 +19,7 @@
            
           </tr>
           <tr>
-            <% @lessons.each do |lesson|%>
+            <% @lesson.each do |lesson|%>
             <td><%=link_to "#{lesson.theme.title}", lesson_path(lesson.id)%></td>
             <%= form_with model: @homeworks, url: homeworks_path, local: true do |f| %>
             <td>
@@ -48,7 +48,7 @@
         <th>Доп материал</th>
          <th>Видео занятия</th>
       </tr>
-      <% @lessons.each do |lesson|%>
+      <% @lesson.each do |lesson|%>
       <tr>
         <td><%=link_to "#{lesson.theme.title}",theme_path(lesson.theme.id) %></td>
         <td><%= lesson.theme.addition %></td>

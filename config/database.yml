@@ -12,8 +12,8 @@ test:
   adapter: postgresql
   encoding: unicode
   database: travis_ci_test
-  username: postgres
-  password: postgres
+  username: root
+  password: root
   pool: 50
   timeout: 5000
   
