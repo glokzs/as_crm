@@ -4,11 +4,6 @@ class StudentsController < ApplicationController
   before_action :authenticate_user!, :is_student?
 
   def show
-    # @student = Student.find(params[:id])
-    # @lessons = Lesson.all
-    # @group = @student.group_id
-    # @lesson = Lesson.find(params[:id])
-    # @homeworks = Homework.all
     @student = Student.find(params[:id])
     # @lessons = Lesson.all
     @group = Group.find(params[:id])
