@@ -5,10 +5,9 @@ class StudentsController < ApplicationController
 
   def show
     @student = Student.find(params[:id])
-    # @lessons = Lesson.all
-    @group = Group.find(params[:id])
+    @group = @student.group
     @lesson = Lesson.where(group_id: @group.id)
-    @homeworks = Homework.all
+    @homework = Homework.where(student_id: @student.id)
   end
 
   def show_profile_student
