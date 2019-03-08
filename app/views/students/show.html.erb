@@ -27,7 +27,7 @@
               <% f.label :homework_file%>
               <%= f.hidden_field :student_id, value: @student.id %>
               <%= f.hidden_field :lesson_id, value: lesson.id %>
-              <%= f.hidden_field :date, value: 01-01-2019 %>
+              <%= f.hidden_field :date, value: 2019 %>
               <div class="actions">
                 <%= f.button "Загрузить".html_safe, type: :submit,  data: {disable_with: "<i class='fa fa-spinner fa-spin'></i> Идет загрузка..."} %>         
              </div>
@@ -51,6 +51,7 @@
       <tr>
         <td><%=link_to "#{lesson.theme.title}",theme_path(lesson.theme.id) %></td>
         <td><%= lesson.theme.addition %></td>
+        <td><%= lesson.theme.video_link %></td>
         <% end%>
       </tr>
     </table>
@@ -66,9 +67,11 @@
             </tr>
             <tr>
               <%@homework.each do |homework|%>
+              <%if !homework.review.nil?%>
                 <td><%=homework.lesson.theme.title %> </td>
                 <td><%= link_to homework.review.title, lesson_review_path(homework.lesson)%></td>
                 <td><%= homework.review.rate%></td>
+                <%end%>
                  <% end%>
             </tr>
   </table>
