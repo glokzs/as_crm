@@ -8,8 +8,7 @@ class ReviewsController < ApplicationController
 
   def show
     @homework = Homework.find(params[:id])
-    @review = Review.find(params[:id])
-    @homework = Homework.find(params[:id])
+    @review = Review.where(homework_id: @homework.id)
   end
 
   def new

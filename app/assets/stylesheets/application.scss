@@ -14,9 +14,6 @@
  *= require_self
  */
 
- /*
- *= require font-awesome
- */
 @import "bootstrap";
 
 .logo {
@@ -67,6 +64,11 @@ table.contract td {
   font-size: 18.5px;
 }
 
-.prolile {
+.profile {
   margin-top: 16px;
+}
+.profile a{
+  text-decoration: none;
+  color: rgba(255, 255, 255, 0.5);
+  background-color: transparent;
 }

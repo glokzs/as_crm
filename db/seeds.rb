@@ -28,7 +28,6 @@ Group.create(name: 'Javscr-2', course_id: 2, start: '12/02/2019', end: '05/02/20
 Group.create(name: 'Pyt-1', course_id: 3, start: '11/05/2018', end: '04/05/2019')
 Group.create(name: 'Jav-1', course_id: 4, start: '11/01/2019', end: '04/02/2020')
 
-
 Template.create!(title: 'на оказание услуг по обучению')
 sections = [
   [1, 'Предмет договора'],
@@ -193,8 +192,7 @@ student_6 = Student.create!(
   date_of_issue: '12/01/2019',
   issued_by: 'МВД РК',
   group_id: 3
-  )
-
+)
 
 student_7 = Student.create!(
   first_name: 'Элеонора',
@@ -210,7 +208,7 @@ student_7 = Student.create!(
   date_of_issue: '12/07/2019',
   issued_by: 'МВД РК',
   group_id: 3
-  )
+)
 
 student_8 = Student.create!(
   first_name: 'Ева',
@@ -226,7 +224,7 @@ student_8 = Student.create!(
   date_of_issue: '17/07/2019',
   issued_by: 'МВД РК',
   group_id: 4
-  )
+)
 
 student_9 = Student.create!(
   first_name: 'Евлампий',
@@ -242,7 +240,7 @@ student_9 = Student.create!(
   date_of_issue: '17/02/2019',
   issued_by: 'МВД РК',
   group_id: 4
-  )
+)
 
 student_10 = Student.create!(
   first_name: 'Иван',
@@ -258,7 +256,7 @@ student_10 = Student.create!(
   date_of_issue: '13/02/2019',
   issued_by: 'МВД РК',
   group_id: 5
-  )
+)
 
 student_11 = Student.create!(
   first_name: 'Мария',
@@ -274,7 +272,7 @@ student_11 = Student.create!(
   date_of_issue: '13/02/2013',
   issued_by: 'МВД РК',
   group_id: 5
-  )
+)
 
 student_12 = Student.create!(
   first_name: 'Пьер',
@@ -290,7 +288,7 @@ student_12 = Student.create!(
   date_of_issue: '13/03/2013',
   issued_by: 'МВД РК',
   group_id: 6
-  )
+)
 
 student_13 = Student.create!(
   first_name: 'Михаил',
@@ -306,39 +304,35 @@ student_13 = Student.create!(
   date_of_issue: '13/06/2013',
   issued_by: 'МВД РК',
   group_id: 6
-  )
+)
 
-
-  teacher_1 = Teacher.create!(
-    first_name: 'Уэлс',
-    last_name: 'Герберт',
-    middle_name: 'Андреевич',
-    tel_1: '87775878787',
-    tel_2: '87775454548',
-    email: 'gerberd@gmail',
-    telegram: 'gerberd1112232'
-  )
-  teacher_2 = Teacher.create!(
-    first_name: 'Гитлер',
-    last_name: 'Адольф',
-    middle_name: 'Алоизович',
-    tel_1: '87775878666',
-    tel_2: '87775454666',
-    email: 'gitler@gmail',
-    telegram: 'gitler666'
-  )
-  teacher_3 = Teacher.create!(
-    first_name: 'Ульянов',
-    last_name: 'Владимир',
-    middle_name: 'Ильич',
-    tel_1: '87775811187',
-    tel_2: '87775111548',
-    email: 'lenin@gmail',
-    telegram: 'lenin111'
-  )  
-  
-
-  
+teacher_1 = Teacher.create!(
+  first_name: 'Уэлс',
+  last_name: 'Герберт',
+  middle_name: 'Андреевич',
+  tel_1: '87775878787',
+  tel_2: '87775454548',
+  email: 'gerberd@gmail',
+  telegram: 'gerberd1112232'
+)
+teacher_2 = Teacher.create!(
+  first_name: 'Гитлер',
+  last_name: 'Адольф',
+  middle_name: 'Алоизович',
+  tel_1: '87775878666',
+  tel_2: '87775454666',
+  email: 'gitler@gmail',
+  telegram: 'gitler666'
+)
+teacher_3 = Teacher.create!(
+  first_name: 'Ульянов',
+  last_name: 'Владимир',
+  middle_name: 'Ильич',
+  tel_1: '87775811187',
+  tel_2: '87775111548',
+  email: 'lenin@gmail',
+  telegram: 'lenin111'
+)
 
 Theme.create!(number: 1, title: 'Знакомство с HTML', group_id: 1)
 Theme.create!(number: 2, title: 'Знакомство с CSS', group_id: 1)
@@ -405,7 +399,6 @@ Homework.create!(date: '17/02/2019', student_id: 8, lesson_id: 6)
 Homework.create!(date: '19/02/2019', student_id: 9, lesson_id: 10)
 Homework.create!(date: '26/02/2019', student_id: 10, lesson_id: 11)
 Homework.create!(date: '19/02/2019', student_id: 4, lesson_id: 2)
-
 
 Review.create!(title: 'Рецензия к домашке 1', content: 'Домашка решена на 5 баллов!', homework_id: 1, date: '19/02/2019', lesson_id: 1, rate: 8.6)
 Review.create!(title: 'Рецензия к домашке 1', content: 'Домашка решена на отлично!', homework_id: 2, date: '19/02/2019', lesson_id: 1, rate: 10)
