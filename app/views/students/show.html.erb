@@ -51,7 +51,12 @@
       <tr>
         <td><%=link_to "#{lesson.theme.title}",theme_path(lesson.theme.id) %></td>
         <td><%= lesson.theme.addition %></td>
-        <td><%= lesson.theme.video_link %></td>
+        <td><%if lesson.theme.video_link.nil? %>
+        <%= (fa_icon "video-slash")%>
+        <%else%>
+        <%= link_to (fa_icon "far video"), theme_path(lesson.theme.id)%>
+        
+        <%end%></td>
         <% end%>
       </tr>
     </table>
