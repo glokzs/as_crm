@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class Admin::GroupsController < Admin::AdminController
   def index
     @groups = Group.all
@@ -8,7 +10,7 @@ class Admin::GroupsController < Admin::AdminController
     @students = @group.students
     @themes = @group.themes
     @lessons = @group.lessons
-    @homeworks = Homework.all
+    @lesson = Lesson.find(params[:id])
   end
 
   def new

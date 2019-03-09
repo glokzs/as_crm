@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module WelcomeHelper
   def resource_name
     :user
@@ -8,6 +10,6 @@ module WelcomeHelper
   end
 
   def devise_mapping
-   @devise_mapping ||= Devise.mappings[:user]
+    @devise_mapping ||= Devise.mappings[:user]
   end
 end

@@ -5,6 +5,7 @@
     <a class="nav-item nav-link" id="nav-profile-tab" data-toggle="tab" href="#nav-themes" role="tab" aria-controls="nav-profile" aria-selected="false">Программа курса</a>
     <a class="nav-item nav-link" id="nav-contact-tab" data-toggle="tab" href="#nav-lessons" role="tab" aria-controls="nav-contact" aria-selected="false">Занятия</a>
     <a class="nav-item nav-link" id="nav-contact-tab" data-toggle="tab" href="#nav-homeworks" role="tab" aria-controls="nav-contact" aria-selected="false">Домашние задания</a>
+    <a class="nav-item nav-link" id="nav-contact-tab" data-toggle="tab" href="#nav-reviews" role="tab" aria-controls="nav-contact" aria-selected="false">Рецензии</a>
   </div>
 </nav>
 <div class="tab-content" id="nav-tabContent">
@@ -96,20 +97,36 @@
   <div class="tab-pane fade" id="nav-homeworks" role="tabpanel" aria-labelledby="nav-contact-tab">
   	<table class="table-striped w-100 mt-4">
   		<tr>
-  			<th>Студент</th>
-  			<th>Урок</th>
-  			<th>Дата</th>
-  			<th colspan="3">Статус</th>
-  		</tr>
-  		<% @homeworks.each do |homework|%>
+			<th>Номер домашки</th>
+			<th>Название домашки</th>
+			<th>Сдали/Студенты</th>
+			<th>Пров./Не пров.</th>
+			<th>Новые/Все</th>
+		</tr>
   		<tr>
-  			<td><%= homework.student.first_name%> <%=  homework.student.last_name %></td>
-  			<td><%= homework.lesson.theme.title %></td>
-  			<td><%= homework.date%></td>
-  			<td><%= @homeworks.count%>/<%= @students.count%>
-  			</td>
-  		</tr>
-  		<% end%>
+  		<% @lessons.each do |lesson|%>
+			<td>#<%= lesson.theme.number %></td>
+			<td><%= link_to lesson.theme.title, admin_lesson_homeworks_path(lesson) %></td>
+			<td>
+				<%= lesson.homeworks.size %>/<%= @group.students.size %>				
+			</td>
+		</tr>
+			<%end%>
+  	</table>
+  </div>
+
+  <div class="tab-pane fade" id="nav-reviews" role="tabpanel" aria-labelledby="nav-contact-tab">
+  	<table class="table-striped w-100 mt-4">
+  		<tr>
+			<th>Номер занятия</th>
+			<th>Тема занятия</th>
+		</tr>
+  		<tr>
+  		<% @lessons.each do |lesson|%>
+			<td>#<%= lesson.theme.number %></td>
+			<td><%= link_to lesson.theme.title, admin_lesson_reviews_path(lesson)%></td>
+		</tr>
+			<%end%>
   	</table>
   </div>
 </div>

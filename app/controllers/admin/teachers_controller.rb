@@ -1,5 +1,6 @@
-class Admin::TeachersController < Admin::AdminController
+# frozen_string_literal: true
 
+class Admin::TeachersController < Admin::AdminController
   def index
     @teachers = Teacher.all
   end
@@ -14,8 +15,8 @@ class Admin::TeachersController < Admin::AdminController
   end
 
   def create
-     @teacher = Teacher.new(teacher_params)
-    if  @teacher.save
+    @teacher = Teacher.new(teacher_params)
+    if @teacher.save
       flash[:notice] = 'Преподователь успешно добавлен'
       redirect_to admin_teachers_path
     else
@@ -43,10 +44,8 @@ class Admin::TeachersController < Admin::AdminController
   end
 
   private
+
   def teacher_params
-    params.require(:teacher).permit(:last_name, :first_name, :middle_name, :email, :tel_1, :tel_2, :telegram, :picture )
+    params.require(:teacher).permit(:last_name, :first_name, :middle_name, :email, :tel_1, :tel_2, :telegram, :picture)
   end
 end
-
-
-

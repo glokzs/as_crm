@@ -16,4 +16,6 @@
 //= require rails-ujs
 //= require activestorage
 // = require turbolinks
+//= require tinymce-jquery
 //= require_tree .
+

@@ -1,16 +1,96 @@
-  <% if @teacher.picture.attached? %>
-      <%= image_tag @teacher.picture, size: 100 %>
-  <% end %></br>
-  
-  <%= @teacher.first_name %>
-  <%= @teacher.last_name %>
-  <%= @teacher.middle_name %>
+<%= form_with model: [:admin, @teacher], local: true do |f| %> 
+<div class="container">
+  <div class="row">
+    <div class="col-md-6">
+      <div class="card - border" style="width: 18rem; border-width: 0px">
+        <% if @teacher.avatar.attached? %>
+        <%= image_tag @teacher.avatar.variant(resize: '100x100'), class:"mt-5 pt-10 card-img-top rounded-circle round_border " %>
 
-  Еmail:       <p><%= @teacher.email %></p>
-  Телефон:     <p><%= @teacher.tel_1 %></p>
-  Доп телефон: <p><%= @teacher.tel_2 %></p>
-  Телеграмм:   <p><%= @teacher.telegram %></p>
-  
-</tr>
+         <% else %>
+          <%= image_tag "default.jpg", resize: "100x100", class:"mt-5 pt-10 card-img-top rounded-circle round_border"%>
+        <% end %>
+        <div class="card-body">
+          <ul class="list-group list-group-flush">
+            <li class="list-group-item name_client"><br/><%= @teacher.first_name %> <%= @teacher.middle_name %> <%= @teacher.last_name %> </li>
+          </ul>
+        </div>
+      </div>
+    </br>
+    <% if @teacher.images.attached?%>
+    <%= image_tag @teacher.images.first.variant(resize: '100x200'), data: {toggle:"modal", target:"#exampleModal1"}%>
+    <%=image_tag @teacher.images.last.variant(resize: '100x200'), data: {toggle:"modal", target:"#exampleModal2"}%>
 
-<%= link_to 'Back', admin_teachers_path %>
+    <div class="modal fade" id="exampleModal1" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+           <%= image_tag @teacher.images.first.variant(resize: '400x600')%>
+          </div>
+          <div class="modal-footer">
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="modal fade" id="exampleModal2" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+             <%=image_tag @teacher.images.last.variant(resize: '400x600')%>
+          </div>
+          <div class="modal-footer">
+          </div>
+        </div>
+      </div>
+    </div>
+    <% end %>
+  </br>
+</div>
+<div class="col-md-6">
+  <div class="card - border" style="width: 20rem; border-width: 0px">
+    <ul class="list-group list-group-flush">
+      <li class="list-group-item" >
+        <i class="fa fa-phone" aria-hidden="true"></i> <%= @teacher.tel_1 %>
+      </li>
+      <li class="list-group-item" ><i class="fa fa-phone" aria-hidden="true"></i> <%= @teacher.tel_2 %></li>
+      <li class="list-group-item" ><i class="fa fa-envelope" aria-hidden="true"></i> <%= @teacher.email %></li>
+      <li class="list-group-item"><i class="fa fa-telegram" aria-hidden="true"></i> <%= @teacher.telegram %></li>
+    </ul>
+  </div>
+</div> 
+</div>
+<% end %>
+</div>
+<%= link_to 'Edit', edit_admin_teacher_path, class:'btn btn-primary' %>
+</div>
+
+</br>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

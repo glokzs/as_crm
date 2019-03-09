@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class Admin::LessonsController < Admin::AdminController
   def index
     @lessons = Lesson.all
@@ -41,6 +43,6 @@ class Admin::LessonsController < Admin::AdminController
   end
 
   def lesson_params
-    params.require(:lesson).permit(:theme_id, :date, :group_id)
+    params.require(:lesson).permit(:theme_id, :date, :group_id, :homework_task, :deadline)
   end
 end

@@ -11,7 +11,7 @@
         <% end %>
         <div class="card-body">
           <ul class="list-group list-group-flush">
-            <li class="list-group-item name_student"><br/><%= @student.first_name %> <%= @student.middle_name %> <%= @student.last_name %> </li>
+            <li class="list-group-item name_client"><br/><%= @student.first_name %> <%= @student.middle_name %> <%= @student.last_name %> </li>
           </ul>
         </div>
       </div>
@@ -78,6 +78,7 @@
 </div>
 <% end %>
 </div>
+<%= link_to 'Edit', edit_admin_student_path, class:'btn btn-primary' %>
 </div>
 
 </br>
