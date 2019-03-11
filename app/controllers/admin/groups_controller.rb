@@ -42,7 +42,6 @@ class Admin::GroupsController < Admin::AdminController
 
   def destroy
     Group.destroy(params[:id])
-
     redirect_to admin_groups_path
   end
 

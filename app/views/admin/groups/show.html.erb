@@ -102,7 +102,7 @@
 				<%= lesson.homeworks.size %>/<%= @group.students.size %>				
 			</td>
 			<td>
-			<%= lesson.reviews.size%>
+			<%= lesson.reviews.size%>/<%= lesson.homeworks.size.to_i - lesson.reviews.size.to_i%>
 								
 			</td>
 		</tr>
