@@ -407,4 +407,4 @@ Review.create!(title: 'Рецензия к домашке 1', content: 'Дома
 Review.create!(title: 'Рецензия к домашке 1', content: 'Домашка решена на 7 баллов!', homework_id: 5, date: '19/02/2019', lesson_id: 16, rate: 7.0)
 Review.create!(title: 'Рецензия к домашке 1', content: 'Домашка решена на 9.8 баллов!', homework_id: 6, date: '20/02/2019', lesson_id: 5, rate: 9.8)
 Review.create!(title: 'Рецензия к домашке 1', content: 'Домашка решена на 9 баллов!', homework_id: 7, date: '19/02/2019', lesson_id: 5, rate: 9.0)
-Review.create!(title: 'Рецензия к домашке 1', content: 'Домашка решена на 5 баллов!', homework_id: 8, date: '19/02/2019', lesson_id: 5, rate: 5)
+Review.create!(title: 'Рецензия к домашке 1', content: 'Домашка решена на 5 баллов!', homework_id: 8, date: '19/02/2019', lesson_id: 2, rate: 5)
