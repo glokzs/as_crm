@@ -387,18 +387,66 @@ Lesson.create!(theme_id: 12, date: '23/02/2019', group_id: 2)
 Lesson.create!(theme_id: 1, date: '22/02/2019', group_id: 6)
 Lesson.create!(theme_id: 9, date: '24/02/2019', group_id: 3)
 
-Homework.create!(date: '17/02/2019', student_id: 1, lesson_id: 1)
-Homework.create!(date: '18/02/2019', student_id: 2, lesson_id: 1)
-Homework.create!(date: '19/02/2019', student_id: 3, lesson_id: 1)
-Homework.create!(date: '26/02/2019', student_id: 13, lesson_id: 11)
-Homework.create!(date: '13/02/2019', student_id: 11, lesson_id: 16)
-Homework.create!(date: '19/02/2019', student_id: 5, lesson_id: 2)
-Homework.create!(date: '19/02/2019', student_id: 6, lesson_id: 5)
-Homework.create!(date: '19/02/2019', student_id: 7, lesson_id: 5)
-Homework.create!(date: '17/02/2019', student_id: 8, lesson_id: 6)
-Homework.create!(date: '19/02/2019', student_id: 9, lesson_id: 10)
-Homework.create!(date: '26/02/2019', student_id: 10, lesson_id: 11)
-Homework.create!(date: '19/02/2019', student_id: 4, lesson_id: 2)
+h1 = Homework.create!(date: '17/02/2019', student_id: 1, lesson_id: 1)
+h1.homework_file.attach(
+  io: File.open("app/assets/images/#{h1.id}.zip"),
+  filename: "#{h1.id}.zip"
+)
+h2 = Homework.create!(date: '18/02/2019', student_id: 2, lesson_id: 1)
+h2.homework_file.attach(
+  io: File.open("app/assets/images/#{h2.id}.zip"),
+  filename: "#{h2.id}.zip"
+)
+h3 = Homework.create!(date: '19/02/2019', student_id: 3, lesson_id: 1)
+h3.homework_file.attach(
+  io: File.open("app/assets/images/#{h3.id}.zip"),
+  filename: "#{h3.id}.zip"
+)
+h4 = Homework.create!(date: '26/02/2019', student_id: 13, lesson_id: 11)
+h4.homework_file.attach(
+  io: File.open("app/assets/images/#{h4.id}.zip"),
+  filename: "#{h4.id}.zip"
+)
+h5 = Homework.create!(date: '13/02/2019', student_id: 11, lesson_id: 16)
+h5.homework_file.attach(
+  io: File.open("app/assets/images/#{h5.id}.zip"),
+  filename: "#{h5.id}.zip"
+)
+h6 = Homework.create!(date: '19/02/2019', student_id: 5, lesson_id: 2)
+h6.homework_file.attach(
+  io: File.open("app/assets/images/#{h6.id}.zip"),
+  filename: "#{h6.id}.zip"
+)
+h7 = Homework.create!(date: '19/02/2019', student_id: 6, lesson_id: 5)
+h7.homework_file.attach(
+  io: File.open("app/assets/images/#{h7.id}.zip"),
+  filename: "#{h7.id}.zip"
+)
+h8 = Homework.create!(date: '19/02/2019', student_id: 7, lesson_id: 5)
+h8.homework_file.attach(
+  io: File.open("app/assets/images/#{h8.id}.zip"),
+  filename: "#{h8.id}.zip"
+)
+h9 = Homework.create!(date: '17/02/2019', student_id: 8, lesson_id: 6)
+h9.homework_file.attach(
+  io: File.open("app/assets/images/#{h9.id}.zip"),
+  filename: "#{h9.id}.zip"
+)
+h10 = Homework.create!(date: '19/02/2019', student_id: 9, lesson_id: 10)
+h10.homework_file.attach(
+  io: File.open("app/assets/images/#{h10.id}.zip"),
+  filename: "#{h10.id}.zip"
+)
+h11 = Homework.create!(date: '26/02/2019', student_id: 10, lesson_id: 11)
+h11.homework_file.attach(
+  io: File.open("app/assets/images/#{h11.id}.zip"),
+  filename: "#{h11.id}.zip"
+)
+h12 = Homework.create!(date: '19/02/2019', student_id: 4, lesson_id: 2)
+h12.homework_file.attach(
+  io: File.open("app/assets/images/#{h12.id}.zip"),
+  filename: "#{h12.id}.zip"
+)
 
 Review.create!(title: 'Рецензия к домашке 1', content: 'Домашка решена на 5 баллов!', homework_id: 1, date: '19/02/2019', lesson_id: 1, rate: 8.6)
 Review.create!(title: 'Рецензия к домашке 1', content: 'Домашка решена на отлично!', homework_id: 2, date: '19/02/2019', lesson_id: 1, rate: 10)

@@ -95,7 +95,7 @@
 			<th>Новые/Все</th>
 		</tr>
   		<tr>
-  		<% @lessons.each do |lesson|%>
+		  <% @lessons.each do |lesson|%>
 			<td>#<%= lesson.theme.number %></td>
 			<td><%= link_to lesson.theme.title, admin_lesson_homeworks_path(lesson) %></td>
 			<td>
@@ -103,7 +103,19 @@
 			</td>
 			<td>
 			<%= lesson.reviews.size%>/<%= lesson.homeworks.size.to_i - lesson.reviews.size.to_i%>
-								
+			</td>
+			<td>
+				<%lesson.homeworks.each do |homework|%>
+					<%if homework.present?%>
+						<%if !homework.homework_file.nil?%>
+						<%#hwa = []%>
+						<% #hwa << homework.homework_file%>
+						<%= link_to "Скачать все домашние работы", homework.homework_file %>	
+						<%end%>
+					<%else%>
+					<%= "Домашних работ нет"%>		
+					<%end%>
+				<%end%>
 			</td>
 		</tr>
 			<%end%>
