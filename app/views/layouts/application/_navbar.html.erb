@@ -10,11 +10,11 @@
               <div class="navbar-nav ml-auto">
                   <% if user_signed_in? %>
                         <% if current_user.role == 2  %>
-                        <div class='prolile'>
-                        <%= link_to "#{('Profile')}", show_profile_student_student_path %>
+                        <div class='profile'>
+                        <%= link_to "#{('Profile')}", show_profile_student_student_path(current_user) %>
                          </div>
                         <% elsif current_user.role == 3 %>
-                        <div class='prolile'>
+                        <div class='profile'>
                         <%= link_to "#{('Profile')}", show_profile_teacher_teacher_path %>
                          </div>
                          <% end %>
