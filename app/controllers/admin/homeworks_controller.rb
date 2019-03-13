@@ -2,10 +2,12 @@
 
 class Admin::HomeworksController < Admin::AdminController
   def index
-    @homeworks = Homework.all
-
     @lesson = Lesson.find(params[:lesson_id])
     @homework = Homework.where(lesson_id: @lesson.id)
+    @group = @lesson.group
+    @student = Student.where(lesson_id: @lesson.id)
+    @students = @group.students
+    @students_who_not_sended = @students - send_homework_method
   end
 
   def show
@@ -43,6 +45,15 @@ class Admin::HomeworksController < Admin::AdminController
     Homework.destroy(params[:id])
 
     redirect_to admin_homeworks_path
+  end
+  private
+
+  def send_homework_method
+    @send_homework = []
+    @lesson.homeworks.each do |homework| 
+    @send_homework << homework.student    
+    end
+    @send_homework
   end
 
   def homework_params
