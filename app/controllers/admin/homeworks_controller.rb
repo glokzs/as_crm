@@ -3,7 +3,7 @@
 class Admin::HomeworksController < Admin::AdminController
   def index
     @lesson = Lesson.find(params[:lesson_id])
-    @homework = Homework.where(lesson_id: @lesson.id)
+    @homeworks = Homework.where(lesson_id: @lesson.id)
     @group = @lesson.group
     @student = Student.where(lesson_id: @lesson.id)
     @students = @group.students
