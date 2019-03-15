@@ -74,7 +74,7 @@
               <%@homework.each do |homework|%>
               <%if !homework.review.nil?%>
                 <td><%=homework.lesson.theme.title %> </td>
-                <td><%= link_to homework.review.title, lesson_review_path(homework.lesson)%></td>
+                <td><%= link_to homework.review.title, lesson_review_path(homework.lesson, homework.review)%></td>
                 <td><%= homework.review.rate%></td>
                 <%end%>
                  <% end%>

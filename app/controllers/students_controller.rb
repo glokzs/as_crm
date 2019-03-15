@@ -12,7 +12,7 @@ class StudentsController < ApplicationController
   end
 
   def show_profile_student
-    @student = Student.find(params[:id])
+    @student = Student.find(params[:student_id])
   end
 
   def edit

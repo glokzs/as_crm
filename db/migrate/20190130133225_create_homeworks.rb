@@ -6,6 +6,7 @@ class CreateHomeworks < ActiveRecord::Migration[5.2]
       t.integer :lesson_id
       t.date :date
       t.integer :student_id
+      t.boolean :status, default: true
 
       t.timestamps
     end
