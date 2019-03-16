@@ -178,141 +178,141 @@ student_5 = Student.create!(
   group_id: 2
 )
 
-# student_6 = Student.create!(
-#   first_name: 'Елена',
-#   last_name: 'Лермонтова',
-#   middle_name: 'Анатольевна',
-#   iin: 123_654_888_888,
-#   tel_1: '8777543888',
-#   tel_2: '87788666882',
-#   email: 'lermontova@student',
-#   telegram: 'lermontova222',
-#   gender: 2,
-#   id_card: '9998566888',
-#   date_of_issue: '12/01/2019',
-#   issued_by: 'МВД РК',
-#   group_id: 3,
-#   id: 6
-# )
+student_6 = Student.create!(
+  first_name: 'Елена',
+  last_name: 'Лермонтова',
+  middle_name: 'Анатольевна',
+  iin: 123_654_888_888,
+  tel_1: '8777543888',
+  tel_2: '87788666882',
+  email: 'lermontova@student',
+  telegram: 'lermontova222',
+  gender: 2,
+  id_card: '9998566888',
+  date_of_issue: '12/01/2019',
+  issued_by: 'МВД РК',
+  group_id: 3,
+  id: 6
+)
 
-# student_7 = Student.create!(
-#   first_name: 'Элеонора',
-#   last_name: 'Толстая',
-#   middle_name: 'Анатольевна',
-#   iin: 123_699_888_888,
-#   tel_1: '8777773888',
-#   tel_2: '87787766882',
-#   email: 'tolstaia@student',
-#   telegram: 'tolstaia222',
-#   gender: 2,
-#   id_card: '9998577888',
-#   date_of_issue: '12/07/2019',
-#   issued_by: 'МВД РК',
-#   group_id: 3,
-#   id: 7
-# )
+student_7 = Student.create!(
+  first_name: 'Элеонора',
+  last_name: 'Толстая',
+  middle_name: 'Анатольевна',
+  iin: 123_699_888_888,
+  tel_1: '8777773888',
+  tel_2: '87787766882',
+  email: 'tolstaia@student',
+  telegram: 'tolstaia222',
+  gender: 2,
+  id_card: '9998577888',
+  date_of_issue: '12/07/2019',
+  issued_by: 'МВД РК',
+  group_id: 3,
+  id: 7
+)
 
-# student_8 = Student.create!(
-#   first_name: 'Ева',
-#   last_name: 'Толстая',
-#   middle_name: 'Филипповна',
-#   iin: 123_699_888_888,
-#   tel_1: '8777773877',
-#   tel_2: '87787766877',
-#   email: 'tolstaia777@student',
-#   telegram: 'tolstaia777',
-#   gender: 2,
-#   id_card: '9998577877',
-#   date_of_issue: '17/07/2019',
-#   issued_by: 'МВД РК',
-#   group_id: 4,
-#   id: 8
-# )
+student_8 = Student.create!(
+  first_name: 'Ева',
+  last_name: 'Толстая',
+  middle_name: 'Филипповна',
+  iin: 123_699_888_888,
+  tel_1: '8777773877',
+  tel_2: '87787766877',
+  email: 'tolstaia777@student',
+  telegram: 'tolstaia777',
+  gender: 2,
+  id_card: '9998577877',
+  date_of_issue: '17/07/2019',
+  issued_by: 'МВД РК',
+  group_id: 4,
+  id: 8
+)
 
-# student_9 = Student.create!(
-#   first_name: 'Евлампий',
-#   last_name: 'Калягин',
-#   middle_name: 'Феодосьевич',
-#   iin: 123_444_888_888,
-#   tel_1: '8777443877',
-#   tel_2: '87787766447',
-#   email: 'kaliagin@student',
-#   telegram: 'kaliagin777',
-#   gender: 1,
-#   id_card: '9998444877',
-#   date_of_issue: '17/02/2019',
-#   issued_by: 'МВД РК',
-#   group_id: 4,
-#   id: 9
-# )
+student_9 = Student.create!(
+  first_name: 'Евлампий',
+  last_name: 'Калягин',
+  middle_name: 'Феодосьевич',
+  iin: 123_444_888_888,
+  tel_1: '8777443877',
+  tel_2: '87787766447',
+  email: 'kaliagin@student',
+  telegram: 'kaliagin777',
+  gender: 1,
+  id_card: '9998444877',
+  date_of_issue: '17/02/2019',
+  issued_by: 'МВД РК',
+  group_id: 4,
+  id: 9
+)
 
-# student_10 = Student.create!(
-#   first_name: 'Иван',
-#   last_name: 'Тургенев',
-#   middle_name: 'Сергеевич',
-#   iin: 123_444_888_888,
-#   tel_1: '8997443877',
-#   tel_2: '87711766447',
-#   email: 'turgenev@student',
-#   telegram: 'turgenev777',
-#   gender: 1,
-#   id_card: '9998111877',
-#   date_of_issue: '13/02/2019',
-#   issued_by: 'МВД РК',
-#   group_id: 5,
-#   id: 10
-# )
+student_10 = Student.create!(
+  first_name: 'Иван',
+  last_name: 'Тургенев',
+  middle_name: 'Сергеевич',
+  iin: 123_444_888_888,
+  tel_1: '8997443877',
+  tel_2: '87711766447',
+  email: 'turgenev@student',
+  telegram: 'turgenev777',
+  gender: 1,
+  id_card: '9998111877',
+  date_of_issue: '13/02/2019',
+  issued_by: 'МВД РК',
+  group_id: 5,
+  id: 10
+)
 
-# student_11 = Student.create!(
-#   first_name: 'Мария',
-#   last_name: 'Складовская',
-#   middle_name: 'Сергеевна',
-#   iin: 123_444_888_111,
-#   tel_1: '8997411117',
-#   tel_2: '8771176111',
-#   email: 'kuri@student',
-#   telegram: 'kuri777',
-#   gender: 2,
-#   id_card: '1118111877',
-#   date_of_issue: '13/02/2013',
-#   issued_by: 'МВД РК',
-#   group_id: 5,
-#   id: 11
-# )
+student_11 = Student.create!(
+  first_name: 'Мария',
+  last_name: 'Складовская',
+  middle_name: 'Сергеевна',
+  iin: 123_444_888_111,
+  tel_1: '8997411117',
+  tel_2: '8771176111',
+  email: 'kuri@student',
+  telegram: 'kuri777',
+  gender: 2,
+  id_card: '1118111877',
+  date_of_issue: '13/02/2013',
+  issued_by: 'МВД РК',
+  group_id: 5,
+  id: 11
+)
 
-# student_12 = Student.create!(
-#   first_name: 'Пьер',
-#   last_name: 'Кюри',
-#   middle_name: 'Семенович',
-#   iin: 123_444_888_333,
-#   tel_1: '8997411333',
-#   tel_2: '8771176333',
-#   email: 'kuri333@student',
-#   telegram: 'kuri333',
-#   gender: 1,
-#   id_card: '3338111877',
-#   date_of_issue: '13/03/2013',
-#   issued_by: 'МВД РК',
-#   group_id: 6,
-#   id: 12
-# )
+student_12 = Student.create!(
+  first_name: 'Пьер',
+  last_name: 'Кюри',
+  middle_name: 'Семенович',
+  iin: 123_444_888_333,
+  tel_1: '8997411333',
+  tel_2: '8771176333',
+  email: 'kuri333@student',
+  telegram: 'kuri333',
+  gender: 1,
+  id_card: '3338111877',
+  date_of_issue: '13/03/2013',
+  issued_by: 'МВД РК',
+  group_id: 6,
+  id: 12
+)
 
-# student_13 = Student.create!(
-#   first_name: 'Михаил',
-#   last_name: 'Булгаков',
-#   middle_name: 'Афанасьевич',
-#   iin: 123_444_888_456,
-#   tel_1: '8997411456',
-#   tel_2: '8771176456',
-#   email: 'master@student',
-#   telegram: 'master666',
-#   gender: 1,
-#   id_card: '3338111866',
-#   date_of_issue: '13/06/2013',
-#   issued_by: 'МВД РК',
-#   group_id: 6,
-#   id: 13
-# )
+student_13 = Student.create!(
+  first_name: 'Михаил',
+  last_name: 'Булгаков',
+  middle_name: 'Афанасьевич',
+  iin: 123_444_888_456,
+  tel_1: '8997411456',
+  tel_2: '8771176456',
+  email: 'master@student',
+  telegram: 'master666',
+  gender: 1,
+  id_card: '3338111866',
+  date_of_issue: '13/06/2013',
+  issued_by: 'МВД РК',
+  group_id: 6,
+  id: 13
+)
 
 teacher_1 = Teacher.create!(
   first_name: 'Уэлс',
@@ -413,51 +413,51 @@ h3.homework_file.attach(
   io: File.open("app/assets/images/#{h3.id}.zip"),
   filename: "#{h3.id}.zip"
 )
-# h4 = Homework.create!(date: '26/02/2019', student_id: 13, lesson_id: 11)
-# h4.homework_file.attach(
-#   io: File.open("app/assets/images/#{h4.id}.zip"),
-#   filename: "#{h4.id}.zip"
-# )
-# h5 = Homework.create!(date: '13/02/2019', student_id: 11, lesson_id: 16)
-# h5.homework_file.attach(
-#   io: File.open("app/assets/images/#{h5.id}.zip"),
-#   filename: "#{h5.id}.zip"
-# )
-# h6 = Homework.create!(date: '19/02/2019', student_id: 5, lesson_id: 2)
-# h6.homework_file.attach(
-#   io: File.open("app/assets/images/#{h6.id}.zip"),
-#   filename: "#{h6.id}.zip"
-# )
-# h7 = Homework.create!(date: '19/02/2019', student_id: 6, lesson_id: 5)
-# h7.homework_file.attach(
-#   io: File.open("app/assets/images/#{h7.id}.zip"),
-#   filename: "#{h7.id}.zip"
-# )
-# h8 = Homework.create!(date: '19/02/2019', student_id: 7, lesson_id: 5)
-# h8.homework_file.attach(
-#   io: File.open("app/assets/images/#{h8.id}.zip"),
-#   filename: "#{h8.id}.zip"
-# )
-# h9 = Homework.create!(date: '17/02/2019', student_id: 8, lesson_id: 6)
-# h9.homework_file.attach(
-#   io: File.open("app/assets/images/#{h9.id}.zip"),
-#   filename: "#{h9.id}.zip"
-# )
-# h10 = Homework.create!(date: '19/02/2019', student_id: 9, lesson_id: 10)
-# h10.homework_file.attach(
-#   io: File.open("app/assets/images/#{h10.id}.zip"),
-#   filename: "#{h10.id}.zip"
-# )
-# h11 = Homework.create!(date: '26/02/2019', student_id: 10, lesson_id: 11)
-# h11.homework_file.attach(
-#   io: File.open("app/assets/images/#{h11.id}.zip"),
-#   filename: "#{h11.id}.zip"
-# )
-# h12 = Homework.create!(date: '19/02/2019', student_id: 4, lesson_id: 2)
-# h12.homework_file.attach(
-#   io: File.open("app/assets/images/#{h12.id}.zip"),
-#   filename: "#{h12.id}.zip"
-# )
+h4 = Homework.create!(date: '26/02/2019', student_id: 13, lesson_id: 11)
+h4.homework_file.attach(
+  io: File.open("app/assets/images/#{h4.id}.zip"),
+  filename: "#{h4.id}.zip"
+)
+h5 = Homework.create!(date: '13/02/2019', student_id: 11, lesson_id: 16)
+h5.homework_file.attach(
+  io: File.open("app/assets/images/#{h5.id}.zip"),
+  filename: "#{h5.id}.zip"
+)
+h6 = Homework.create!(date: '19/02/2019', student_id: 5, lesson_id: 2)
+h6.homework_file.attach(
+  io: File.open("app/assets/images/#{h6.id}.zip"),
+  filename: "#{h6.id}.zip"
+)
+h7 = Homework.create!(date: '19/02/2019', student_id: 6, lesson_id: 5)
+h7.homework_file.attach(
+  io: File.open("app/assets/images/#{h7.id}.zip"),
+  filename: "#{h7.id}.zip"
+)
+h8 = Homework.create!(date: '19/02/2019', student_id: 7, lesson_id: 5)
+h8.homework_file.attach(
+  io: File.open("app/assets/images/#{h8.id}.zip"),
+  filename: "#{h8.id}.zip"
+)
+h9 = Homework.create!(date: '17/02/2019', student_id: 8, lesson_id: 6)
+h9.homework_file.attach(
+  io: File.open("app/assets/images/#{h9.id}.zip"),
+  filename: "#{h9.id}.zip"
+)
+h10 = Homework.create!(date: '19/02/2019', student_id: 9, lesson_id: 10)
+h10.homework_file.attach(
+  io: File.open("app/assets/images/#{h10.id}.zip"),
+  filename: "#{h10.id}.zip"
+)
+h11 = Homework.create!(date: '26/02/2019', student_id: 10, lesson_id: 11)
+h11.homework_file.attach(
+  io: File.open("app/assets/images/#{h11.id}.zip"),
+  filename: "#{h11.id}.zip"
+)
+h12 = Homework.create!(date: '19/02/2019', student_id: 4, lesson_id: 2)
+h12.homework_file.attach(
+  io: File.open("app/assets/images/#{h12.id}.zip"),
+  filename: "#{h12.id}.zip"
+)
 
 Review.create!(title: 'Рецензия к домашке 1', content: 'Домашка решена на 5 баллов!', homework_id: 1, date: '19/02/2019', lesson_id: 1, rate: 8.6)
 Review.create!(title: 'Рецензия к домашке 1', content: 'Домашка решена на отлично!', homework_id: 2, date: '19/02/2019', lesson_id: 1, rate: 10)
