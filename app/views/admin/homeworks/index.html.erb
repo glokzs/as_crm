@@ -4,6 +4,7 @@
     <tr>
         <th>ФИО</th>
         <th>Домашка</th>
+        <th></th>
         <th>Рецензия</th>
         <th>Оценка</th>
     </tr>
@@ -15,12 +16,14 @@
             <%= link_to "Скачать домашку", homework.homework_file %>
             <%end%>
         </td>
-        
+        <td><%= check_box_tag homework.status%></td>
            <td> <% if homework.review.nil?%>
             <%= link_to "Создать рецензию",new_admin_lesson_review_path%>
                 
             <%else%>
-            <%= link_to "Редактровать рецензию",edit_admin_lesson_review_path(lesson_id: @lesson.id, id: homework.review) if homework.review %></td>
+            <%= link_to "Редактровать рецензию",edit_admin_lesson_review_path(lesson_id: @lesson.id, id: homework.review) if homework.review %>
+                <%= link_to "Смотреть рецензию", admin_lesson_review_path(lesson_id: @lesson.id, id: homework.review) %>
+            </td>
             
             <td><%= homework.review.rate if homework.review%></td>
             <%end%>

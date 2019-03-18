@@ -1,5 +1,4 @@
-<br><h5>Рецензия на домашку <%= @homework.lesson.theme.title%></h5><br>
-<h5>Студент <%= "#{@homework.student.first_name} #{@homework.student.last_name}"%></h5><br>
+
 <%= form_with model: [:admin, @review], url: admin_lesson_review_path, local: true do |f| %>
 <% if @review.errors.any? %>
 <div id="error_explanation">
@@ -20,16 +19,11 @@
 	</div>
 	<%= tinymce %>
 </div>
+
 <div class="form-group row">
-	<% f.label :homework_id, 'Тема урока', class:"col-sm-2 col-form-label" %>
+	<%= f.hidden_field :date %>
 	<div class="col-sm-10">
-		<%= f.hidden_field :homework_id, value: @homework.id%>
-	</div>
-</div>
-<div class="form-group row">
-	<%= f.label :date, 'Дата рецензии', class:"col-sm-2 col-form-label" %>
-	<div class="col-sm-10">
-		<%= f.date_field :date, class:"form-input" %>
+		<%= f.hidden_field :date, class:"form-input" %>
 	</div>
 </div>
 <div class="form-group row">

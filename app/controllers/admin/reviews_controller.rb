@@ -7,14 +7,10 @@ class Admin::ReviewsController < Admin::AdminController
   end
 
   def show
-    @homework = Homework.find(params[:id])
     @review = Review.find(params[:id])
-    @homework = Homework.find(params[:id])
   end
 
   def new
-    @lesson = Lesson.find(params[:lesson_id])
-    @homeworks = @lesson.homeworks
     @review = Review.new
   end
 
@@ -29,8 +25,8 @@ class Admin::ReviewsController < Admin::AdminController
   end
 
   def edit
-    @homework = Homework.find(params[:id])
     @review = Review.find(params[:id])
+    @homework = @review.homework
   end
 
   def update

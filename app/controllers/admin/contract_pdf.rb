@@ -80,6 +80,10 @@ class Admin::ContractPdf < Prawn::Document
         "" + "\n" +
         "" + "\n" +
         "" + "\n" +
+        "" + "\n" +
+        "" + "\n" +
+        "" + "\n" +
+        "" + "\n" +
         "_____________________ #{@student.last_name}", :at => [260, x_position], :width => 250
       end
     end

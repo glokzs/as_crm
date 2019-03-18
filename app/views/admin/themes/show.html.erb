@@ -6,18 +6,20 @@
 </nav>
 <div class="tab-content" id="nav-tabContent">
   <div class="tab-pane fade show active" id="nav-task" role="tabpanel" aria-labelledby="nav-home-tab">
-    <h1><%= @lesson.theme.title %></h1>
-    <%= link_to 'Редактировать', edit_admin_theme_path(@lesson)%>
-    <%if !@lesson.theme.content.nil?%>
-    <%= @lesson.theme.content.html_safe %>
+    <h1><%= @theme.title %></h1>
+    <%= link_to 'Редактировать', edit_admin_theme_path(@theme)%><br>
+    <%if !@theme.content.nil?%>
+    <%= @theme.content.html_safe%>
     <%end%>
   </div>
 
   <div class="tab-pane fade" id="nav-homework-task" role="tabpanel" aria-labelledby="nav-contact-tab">
-    <h2><%= @lesson.theme.title %></h2>
-    <%= link_to 'Редактировать', edit_admin_lesson_path(@lesson)%>
-    <%if !@lesson.homework_task.nil?%>
-    <%= @lesson.homework_task.html_safe %>
+    <h2><%= @theme.title %></h2>
+    <%= link_to 'Редактировать', edit_admin_lesson_path(@theme)%><br>
+  <% @theme.lessons.each do |lesson|%>
+    <%if !lesson.homework_task.nil?%>
+    <%= lesson.homework_task.html_safe %>
+    <%end%>
     <%end%>
   </div>
 </div>
