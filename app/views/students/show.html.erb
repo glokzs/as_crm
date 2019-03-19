@@ -21,9 +21,7 @@
           <tr>
           <%@lessons.each do |lesson|%>
             <td><%=link_to "#{lesson.theme.title}", lesson_path(lesson)%></td>
-            
-
-            <% unless Homework.find_by(lesson_id: lesson.id, student_id: params[:id]) && Homework.find_by(lesson_id: lesson.id, student_id: params[:id]).homework_file.attachment %>
+            <% unless Homework.find_by(lesson_id: lesson.id, student_id: params[:id]) && Homework.find_by(lesson_id: lesson.id, student_id: params[:id]).homework_file.attachment && Homework.find_by(lesson_id: lesson.id, student_id: params[:id]).status == true %>
               <%= form_with model: @homeworks, url: homeworks_path, local: true do |f| %>
               <td>
                 <%= f.file_field :homework_file%>
@@ -32,9 +30,9 @@
                 <%= f.hidden_field :lesson_id, value: lesson.id %>
                 <%= f.hidden_field :date, value: Date.today%>
                 <%=  %>
-                <div class="actions">
+                <span class="actions">
                   <%= f.button "Загрузить".html_safe, type: :submit,  data: {disable_with: "<i class='fa fa-spinner fa-spin'></i> Идет загрузка..."} %>         
-              </div>
+              </span>
             </div>
             <% end %>
           <% end  %>
@@ -70,20 +68,18 @@
 
   <div class="tab-pane fade" id="nav-reviews" role="tabpanel" aria-labelledby="nav-contact-tab">
     <table class="table-striped w-100 mt-4">
-            <tr>
-              <th>Название домашки</th>
-              <th>Рецензия на домашнюю работу</th>
-              <th>Оценка</th>
-            </tr>
-            <tr>
-              <%@homeworks.each do |homework|%>
-              <%if !homework.review.nil?%>
-                <td><%=homework.lesson.theme.title %> </td>
-                <td><%= link_to homework.review.title, lesson_review_path(homework.lesson, homework.review)%></td>
-                <td><%= homework.review.rate%></td><br>
-                <%end%>
-                 <% end%>
-            </tr>
-  </table>
+      <tr>
+        <th>Название домашки</th>
+        <th>Рецензия на домашнюю работу</th>
+        <th>Оценка</th>
+      </tr>
+        <%@homeworks.each do |homework|%>
+      <tr>
+        <td><%=homework.lesson.theme.title if homework.review %> </td>
+        <td><%= link_to "Рецензия на домашнюю работу", lesson_review_path(homework.lesson, homework.review) if homework.review%></td>
+        <td><%= homework.review.rate if homework.review%></td>
+        <% end%>
+      </tr>
+    </table>
   </div>
 </div>

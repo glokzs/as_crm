@@ -8,7 +8,6 @@ class StudentsController < ApplicationController
     @group = @student.group
     @lessons = Lesson.where(group_id: @group.id)
     @homeworks = Homework.where(student_id: @student.id)
-    @homework = Homework.find_by(student_id: @student.id)
   end
 
   def show_profile_student

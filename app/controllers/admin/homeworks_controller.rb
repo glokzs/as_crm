@@ -43,6 +43,13 @@ class Admin::HomeworksController < Admin::AdminController
 
     redirect_to admin_homeworks_path
   end
+
+  def approve_send_homework
+    @homework = Homework.find(params[:homework_id])
+    @homework.status == true
+    @homework.save
+  end
+
   private
 
   def homework_params

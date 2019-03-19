@@ -8,8 +8,7 @@ class ReviewsController < ApplicationController
 
   def show
     @student = current_user
-    @homework = Homework.find(params[:id])
-    @reviews = Review.where(homework_id: @homework.id)
+    @review = Review.find(params[:id])
   end
 
   def new

@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   devise_for :users, controllers: { confirmations: 'users/confirmations' }
   root to: 'welcome#index'
   namespace :admin do
+    post '/homeworks/:homework_id/approve_send_homeworks' => 'homeworks#approve_send_homework', as: 'approve_send_homework'
     resources :students
     resources :users
     resources :contracts

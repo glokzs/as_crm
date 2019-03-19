@@ -333,6 +333,7 @@ teacher_3 = Teacher.create!(
   email: 'lenin@gmail',
   telegram: 'lenin111',
 )
+sleep(5)
 
 Theme.create!(number: 1, title: 'Знакомство с HTML', group_id: 1, content: '#1 Введение в HTML и CSS
 HTML
@@ -358,6 +359,8 @@ Theme.create!(number: 9, title: 'HTML in Javascript', group_id: 4)
 Theme.create!(number: 10, title: 'CSS in Java', group_id: 6)
 Theme.create!(number: 11, title: 'HTML in Python', group_id: 5)
 Theme.create!(number: 12, title: 'Знакомство с Query ', group_id: 1)
+
+sleep(5)
 
 Requisite.create!(
   owner: 'ТОО Образовательный центр "Аттрактор скул Алматы"',
@@ -422,6 +425,8 @@ Lesson.create!(theme_id: 12, date: '23/02/2019', group_id: 2)
 Lesson.create!(theme_id: 1, date: '22/02/2019', group_id: 6)
 Lesson.create!(theme_id: 9, date: '24/02/2019', group_id: 3)
 
+sleep(5)
+
 h1 = Homework.create!(date: '17/02/2019', student_id: 1, lesson_id: 1)
 h1.homework_file.attach(
   io: File.open("app/assets/images/#{h1.id}.zip"),
@@ -482,6 +487,7 @@ h12.homework_file.attach(
   io: File.open("app/assets/images/#{h12.id}.zip"),
   filename: "#{h12.id}.zip"
 )
+sleep(5)
 
 Review.create!(title: 'Рецензия к домашке 1', content: 'Домашка решена на 5 баллов!', homework_id: 1, date: '19/02/2019', lesson_id: 1, rate: 8.6)
 Review.create!(title: 'Рецензия к домашке 1', content: 'Домашка решена на отлично!', homework_id: 2, date: '19/02/2019', lesson_id: 1, rate: 10)
