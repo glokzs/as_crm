@@ -21,7 +21,7 @@
           <tr>
           <%@lessons.each do |lesson|%>
             <td><%=link_to "#{lesson.theme.title}", lesson_path(lesson)%></td>
-            <% unless Homework.find_by(lesson_id: lesson.id, student_id: params[:id]) && Homework.find_by(lesson_id: lesson.id, student_id: params[:id]).homework_file.attachment && Homework.find_by(lesson_id: lesson.id, student_id: params[:id]).status == true %>
+            <% unless Homework.find_by(lesson_id: lesson.id, student_id: params[:id], status: true) && Homework.find_by(lesson_id: lesson.id, student_id: params[:id], status: true).homework_file.attachment %>
               <%= form_with model: @homeworks, url: homeworks_path, local: true do |f| %>
               <td>
                 <%= f.file_field :homework_file%>
@@ -31,11 +31,12 @@
                 <%= f.hidden_field :date, value: Date.today%>
                 <%=  %>
                 <span class="actions">
-                  <%= f.button "Загрузить".html_safe, type: :submit,  data: {disable_with: "<i class='fa fa-spinner fa-spin'></i> Идет загрузка..."} %>         
-              </span>
+                  <%= f.button "Загрузить".html_safe, type: :submit,  data: {disable_with: "<i class='fa fa-spinner fa-spin'></i> Идет загрузка..."} %>        
+                </span>
+            
             </div>
             <% end %>
-          <% end  %>
+          <%end%>
            </td>
          </tr>
          <% end %>

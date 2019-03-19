@@ -16,10 +16,10 @@
             <%= link_to "Скачать домашку", homework.homework_file %>
             <%end%>
         </td>
-        <td><% homework.status == false if homework.homework_file.attached?%>
+        <td>
             <%= button_to 'Approve', admin_approve_send_homework_path(homework) %>
         </td>
-        <td> <%= link_to 'approve', admin_approve_send_homework_path(homework), method: :post %> </td>
+        
            <td> <% if homework.review.nil?%>
             <%= link_to "Создать рецензию",new_admin_lesson_review_path%>
                 

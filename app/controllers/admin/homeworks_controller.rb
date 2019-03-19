@@ -46,13 +46,13 @@ class Admin::HomeworksController < Admin::AdminController
 
   def approve_send_homework
     @homework = Homework.find(params[:homework_id])
-    @homework.status == true
+    @homework.status = false
     @homework.save
   end
 
   private
 
   def homework_params
-    params.require(:homework).permit(:lesson_id, :date, :homework_file, :student_id)
+    params.require(:homework).permit(:lesson_id, :date, :homework_file, :student_id, :status)
   end
 end
