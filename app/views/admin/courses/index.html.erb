@@ -8,8 +8,7 @@
 	<tr>
 		<td><%= course.name %></td>
 		<td>
-			<%= link_to (fa_icon "edit"), edit_admin_course_path(course), class:"font" %>
-			<%= link_to (fa_icon "trash"), admin_course_path(course), class:"font" %>
+			<%= link_to "Редактировать", edit_admin_course_path(course), class:"font" %>
 		</td>
 	</tr>
 <% end %>

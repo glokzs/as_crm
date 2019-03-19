@@ -1,3 +1,5 @@
 <h2><%= @theme.title %></h2>
-<%= @theme.content.html_safe%>
+<%= @theme.content%>
+<%if !@theme.video_link.nil?%>
 <%= link_to "Ссылка на видео урока", "#{@theme.video_link}", :target => "_blank"%>
+<%end%>

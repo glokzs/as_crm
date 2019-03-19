@@ -7,7 +7,7 @@ class LessonsController < ApplicationController
 
   def show
     @lesson = Lesson.find(params[:id])
-    @lesson.html_safe?
+    @student = current_user
   end
 
   def new

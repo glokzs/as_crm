@@ -34,6 +34,6 @@ class HomeworksController < ApplicationController
   end
 
   def homework_params
-    params.require(:homework).permit(:lesson_id, :date, :homework_file, :student_id)
+    params.require(:homework).permit(:lesson_id, :date, :homework_file, :student_id, :status)
   end
 end
