@@ -13,7 +13,7 @@
 		<td><% if homework.review.nil? %>
 			<%= link_to "Создать рецензию",new_admin_lesson_review_path%>
 			<%else%>
-			<%= link_to "Редактровать рецензию",edit_admin_lesson_review_path(@lesson,homework.review) %>
+			<%= link_to "Редактровать рецензию",edit_admin_lesson_review_path(lesson_id: @lesson.id, id: homework.review) %>
 		</td>
 		<td><%= homework.review.rate%></td>
 			<%end%>

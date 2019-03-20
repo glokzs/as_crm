@@ -5,7 +5,6 @@
     <a class="nav-item nav-link" id="nav-profile-tab" data-toggle="tab" href="#nav-themes" role="tab" aria-controls="nav-profile" aria-selected="false">Программа курса</a>
     <a class="nav-item nav-link" id="nav-contact-tab" data-toggle="tab" href="#nav-lessons" role="tab" aria-controls="nav-contact" aria-selected="false">Занятия</a>
     <a class="nav-item nav-link" id="nav-contact-tab" data-toggle="tab" href="#nav-homeworks" role="tab" aria-controls="nav-contact" aria-selected="false">Домашние задания</a>
-    <a class="nav-item nav-link" id="nav-contact-tab" data-toggle="tab" href="#nav-reviews" role="tab" aria-controls="nav-contact" aria-selected="false">Рецензии</a>
   </div>
 </nav>
 <div class="tab-content" id="nav-tabContent">
@@ -30,7 +29,7 @@
 				<%= link_to (fa_icon "edit"), edit_admin_student_path(student), class:"font" %>
 				<%= link_to (fa_icon "trash"), admin_student_path(student), class:"font" %>
 				<% if student.contract.present? %>
-					<%= link_to student.contract.number, admin_contracts_path << "/#{student.contract.number}.pdf"  %>
+					<%= link_to 'Просмотреть договор', admin_contracts_path << "/#{student.contract.number}.pdf"  %>
 				<% else %>
 					<%= link_to 'Заключить договор', admin_contracts_path(student_id: student), method: :post%>
 				<% end %>
@@ -66,6 +65,7 @@
 			<th>Номер занятия</th>
 			<th>Тема занятия</th>
 			<th>Дата занятия</th>
+			<th>Домашняя работа</th>
 			<th>Доп материал</th>
 			<th colspan="3">Действия</th>
 		</tr>
@@ -74,6 +74,13 @@
 			<td>#<%= lesson.theme.number %></td>
 			<td><%= link_to lesson.theme.title, admin_theme_path(lesson.theme_id) %></td>
 			<td><%= lesson.date %></td>
+			<td>
+				<%if lesson.homework_task.nil?%>
+					<%= 'Домашняя работа есть'%>
+				<%else%>
+					<%= 'Домашней работы нет'%>
+				<%end%>
+			</td>
 			<td><%= lesson.theme.addition %></td>
 			<td>
 				<%= link_to (fa_icon "edit"), edit_admin_lesson_path(lesson), class:"font" %>
@@ -92,34 +99,23 @@
 			<th>Название домашки</th>
 			<th>Сдали/Студенты</th>
 			<th>Пров./Не пров.</th>
-			<th>Новые/Все</th>
 		</tr>
   		<tr>
-  		<% @lessons.each do |lesson|%>
+		  <% @lessons.each do |lesson|%>
 			<td>#<%= lesson.theme.number %></td>
 			<td><%= link_to lesson.theme.title, admin_lesson_homeworks_path(lesson) %></td>
 			<td>
 				<%= lesson.homeworks.size %>/<%= @group.students.size %>				
+			</td>
+			<td>
+			<%= lesson.reviews.size%>/<%= lesson.homeworks.size.to_i - lesson.reviews.size.to_i%>
 			</td>
 		</tr>
 			<%end%>
   	</table>
   </div>
 
-  <div class="tab-pane fade" id="nav-reviews" role="tabpanel" aria-labelledby="nav-contact-tab">
-  	<table class="table-striped w-100 mt-4">
-  		<tr>
-			<th>Номер занятия</th>
-			<th>Тема занятия</th>
-		</tr>
-  		<tr>
-  		<% @lessons.each do |lesson|%>
-			<td>#<%= lesson.theme.number %></td>
-			<td><%= link_to lesson.theme.title, admin_lesson_reviews_path(lesson)%></td>
-		</tr>
-			<%end%>
-  	</table>
-  </div>
+  
 </div>
   
 </div>

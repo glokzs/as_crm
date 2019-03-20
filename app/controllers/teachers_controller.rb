@@ -15,7 +15,7 @@ class TeachersController < ApplicationController
   end
 
   def show_profile_teacher
-    @teacher = Teacher.find(params[:id])
+    @teacher = Teacher.find(params[:teacher_id])
   end
 
   def edit

@@ -7,7 +7,7 @@ class ThemesController < ApplicationController
 
   def show
     @theme = Theme.find(params[:id])
-    @theme.html_safe?
+    @student = current_user
   end
 
   def new

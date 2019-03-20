@@ -10,7 +10,6 @@ class Admin::GroupsController < Admin::AdminController
     @students = @group.students
     @themes = @group.themes
     @lessons = @group.lessons
-    @lesson = Lesson.find(params[:id])
   end
 
   def new
@@ -42,7 +41,6 @@ class Admin::GroupsController < Admin::AdminController
 
   def destroy
     Group.destroy(params[:id])
-
     redirect_to admin_groups_path
   end
 

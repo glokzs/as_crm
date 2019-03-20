@@ -16,23 +16,27 @@
           <tr>
             <th>Название домашки</th>
             <th>Файл домашней работы студента </th>
-           
           </tr>
+
           <tr>
-            <% @lesson.each do |lesson|%>
-            <td><%=link_to "#{lesson.theme.title}", lesson_path(lesson.id)%></td>
-            <%= form_with model: @homeworks, url: homeworks_path, local: true do |f| %>
-            <td>
-              <%= f.file_field :homework_file%>
-              <% f.label :homework_file%>
-              <%= f.hidden_field :student_id, value: @student.id %>
-              <%= f.hidden_field :lesson_id, value: lesson.id %>
-              <%= f.hidden_field :date, value: 2019 %>
-              <div class="actions">
-                <%= f.button "Загрузить".html_safe, type: :submit,  data: {disable_with: "<i class='fa fa-spinner fa-spin'></i> Идет загрузка..."} %>         
-             </div>
-           </div>
-           <% end %>
+          <%@lessons.each do |lesson|%>
+            <td><%=link_to "#{lesson.theme.title}", lesson_path(lesson)%></td>
+            <% unless Homework.find_by(lesson_id: lesson.id, student_id: params[:id], status: true) && Homework.find_by(lesson_id: lesson.id, student_id: params[:id], status: true).homework_file.attachment %>
+              <%= form_with model: @homeworks, url: homeworks_path, local: true do |f| %>
+              <td>
+                <%= f.file_field :homework_file%>
+                <% f.label :homework_file%>
+                <%= f.hidden_field :student_id, value: @student.id %>
+                <%= f.hidden_field :lesson_id, value: lesson.id %>
+                <%= f.hidden_field :date, value: Date.today%>
+                <%=  %>
+                <span class="actions">
+                  <%= f.button "Загрузить".html_safe, type: :submit,  data: {disable_with: "<i class='fa fa-spinner fa-spin'></i> Идет загрузка..."} %>        
+                </span>
+            
+            </div>
+            <% end %>
+          <%end%>
            </td>
          </tr>
          <% end %>
@@ -47,7 +51,7 @@
         <th>Доп материал</th>
          <th>Видео занятия</th>
       </tr>
-      <% @lesson.each do |lesson|%>
+      <% @lessons.each do |lesson|%>
       <tr>
         <td><%=link_to "#{lesson.theme.title}",theme_path(lesson.theme.id) %></td>
         <td><%= lesson.theme.addition %></td>
@@ -65,20 +69,18 @@
 
   <div class="tab-pane fade" id="nav-reviews" role="tabpanel" aria-labelledby="nav-contact-tab">
     <table class="table-striped w-100 mt-4">
-            <tr>
-              <th>Название домашки</th>
-              <th>Рецензия на домашнюю работу</th>
-              <th>Оценка</th>
-            </tr>
-            <tr>
-              <%@homework.each do |homework|%>
-              <%if !homework.review.nil?%>
-                <td><%=homework.lesson.theme.title %> </td>
-                <td><%= link_to homework.review.title, lesson_review_path(homework.lesson)%></td>
-                <td><%= homework.review.rate%></td>
-                <%end%>
-                 <% end%>
-            </tr>
-  </table>
+      <tr>
+        <th>Название домашки</th>
+        <th>Рецензия на домашнюю работу</th>
+        <th>Оценка</th>
+      </tr>
+        <%@homeworks.each do |homework|%>
+      <tr>
+        <td><%=homework.lesson.theme.title if homework.review %> </td>
+        <td><%= link_to "Рецензия на домашнюю работу", lesson_review_path(homework.lesson, homework.review) if homework.review%></td>
+        <td><%= homework.review.rate if homework.review%></td>
+        <% end%>
+      </tr>
+    </table>
   </div>
 </div>

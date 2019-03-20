@@ -1,7 +1,34 @@
 <h3>Полученные домашки на тему <%= "#{@lesson.theme.title}"%></h3>
-<br>
-<% @lesson.homeworks.each do |homework| %>
-<%= "#{homework.student.first_name} #{homework.student.last_name}"%><br>
-<%end%>
 
-		
+<table class="table-striped w-100 mt-4">
+    <tr>
+        <th>ФИО</th>
+        <th>Домашка</th>
+        <th></th>
+        <th>Рецензия</th>
+        <th>Оценка</th>
+    </tr>
+        <% @lesson.homeworks.each do |homework|%>
+        <tr>
+        <td><%= "#{homework.student.first_name} #{homework.student.last_name}"%></td> 
+        <td>
+            <%if homework.homework_file.attached?%>
+            <%= link_to "Скачать домашку", homework.homework_file %>
+            <%end%>
+        </td>
+        <td>
+            <%= button_to 'Approve', admin_approve_send_homework_path(homework) %>
+        </td>
+        
+           <td> <% if homework.review.nil?%>
+            <%= link_to "Создать рецензию",new_admin_lesson_review_path%>
+                
+            <%else%>
+            <%= link_to "Редактровать",edit_admin_lesson_review_path(lesson_id: @lesson.id, id: homework.review) if homework.review %> /
+                <%= link_to "Смотреть", admin_lesson_review_path(lesson_id: @lesson.id, id: homework.review) %>
+            </td>
+            
+            <td><%= homework.review.rate if homework.review%></td>
+            <%end%>
+        <%end%> 
+    <tr>

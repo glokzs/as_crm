@@ -1,8 +1,3 @@
-<br>
-<% @review.each do |review|%>
-<h5><%="#{review.homework.student.first_name} #{review.homework.student.last_name}" %></h5>
-<h5>Оценка: <%= review.rate%></h5>
-<td><%= review.content.html_safe%></td>
-<%end%>
-
-
+<h5><%="#{@review.homework.student.first_name} #{@review.homework.student.last_name}" %></h5><br>
+<%= @review.content.html_safe if @review%>
+Оценка: <%= @review.rate%>

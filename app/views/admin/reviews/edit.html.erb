@@ -1,2 +1,5 @@
 <h2>Редактировать рецензию</h2>
+<br><h5>Рецензия на домашку <%= @homework.lesson.theme.title%></h5><br>
+<h5>Студент <%= "#{@homework.student.first_name} #{@homework.student.last_name}"%></h5><br>
+
 <%= render 'form' %>

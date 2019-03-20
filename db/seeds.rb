@@ -191,7 +191,7 @@ student_6 = Student.create!(
   id_card: '9998566888',
   date_of_issue: '12/01/2019',
   issued_by: 'МВД РК',
-  group_id: 3
+  group_id: 3,
 )
 
 student_7 = Student.create!(
@@ -207,7 +207,7 @@ student_7 = Student.create!(
   id_card: '9998577888',
   date_of_issue: '12/07/2019',
   issued_by: 'МВД РК',
-  group_id: 3
+  group_id: 3,
 )
 
 student_8 = Student.create!(
@@ -223,7 +223,7 @@ student_8 = Student.create!(
   id_card: '9998577877',
   date_of_issue: '17/07/2019',
   issued_by: 'МВД РК',
-  group_id: 4
+  group_id: 4,
 )
 
 student_9 = Student.create!(
@@ -239,7 +239,7 @@ student_9 = Student.create!(
   id_card: '9998444877',
   date_of_issue: '17/02/2019',
   issued_by: 'МВД РК',
-  group_id: 4
+  group_id: 4,
 )
 
 student_10 = Student.create!(
@@ -255,7 +255,7 @@ student_10 = Student.create!(
   id_card: '9998111877',
   date_of_issue: '13/02/2019',
   issued_by: 'МВД РК',
-  group_id: 5
+  group_id: 5,
 )
 
 student_11 = Student.create!(
@@ -271,7 +271,7 @@ student_11 = Student.create!(
   id_card: '1118111877',
   date_of_issue: '13/02/2013',
   issued_by: 'МВД РК',
-  group_id: 5
+  group_id: 5,
 )
 
 student_12 = Student.create!(
@@ -287,7 +287,7 @@ student_12 = Student.create!(
   id_card: '3338111877',
   date_of_issue: '13/03/2013',
   issued_by: 'МВД РК',
-  group_id: 6
+  group_id: 6,
 )
 
 student_13 = Student.create!(
@@ -303,7 +303,7 @@ student_13 = Student.create!(
   id_card: '3338111866',
   date_of_issue: '13/06/2013',
   issued_by: 'МВД РК',
-  group_id: 6
+  group_id: 6,
 )
 
 teacher_1 = Teacher.create!(
@@ -313,7 +313,7 @@ teacher_1 = Teacher.create!(
   tel_1: '87775878787',
   tel_2: '87775454548',
   email: 'gerberd@gmail',
-  telegram: 'gerberd1112232'
+  telegram: 'gerberd1112232',
 )
 teacher_2 = Teacher.create!(
   first_name: 'Гитлер',
@@ -322,7 +322,7 @@ teacher_2 = Teacher.create!(
   tel_1: '87775878666',
   tel_2: '87775454666',
   email: 'gitler@gmail',
-  telegram: 'gitler666'
+  telegram: 'gitler666',
 )
 teacher_3 = Teacher.create!(
   first_name: 'Ульянов',
@@ -331,10 +331,23 @@ teacher_3 = Teacher.create!(
   tel_1: '87775811187',
   tel_2: '87775111548',
   email: 'lenin@gmail',
-  telegram: 'lenin111'
+  telegram: 'lenin111',
 )
+sleep(5)
 
-Theme.create!(number: 1, title: 'Знакомство с HTML', group_id: 1)
+Theme.create!(number: 1, title: 'Знакомство с HTML', group_id: 1, content: '#1 Введение в HTML и CSS
+HTML
+Как написать свою веб-страничку?
+Сайт состоит из множества страниц и доступен по какому-то адресу. Например, www.example.com
+Каждая страница имеет свой какой-нибудь адрес и содержит какую-то информацию: приветствие, контактные данные, галерею картинок, ссылки на другие сайты и так далее.
+Чтобы создать html-страницу, достаточно создать простой текстовый документ, расширение которого изменить с .txt на .html
+
+Обратите внимание, что как только вы сохранили документ с расширением .html, его значок изменился на значок вашего браузера по умолчанию, в нашем случае это значок Chrome 
+Теперь нужно открыть этот документ в любом текстовом редакторе (мы рекомендуем вам sublime text, но вы можете воспользоваться даже самым простым блокнотом) и написать любой текст.
+
+Всё! По сути, это веб-страница. Просто находится она не в интернете, а у нас на компьютере. Если открыть такой файл через веб-браузер, то можно увидеть текст “Hello world”.
+Но это пока страница-калека. Чтобы стать настоящей взрослой веб-страницей, нужно сделать ее разметку  с помощью HTML-тегов.
+')
 Theme.create!(number: 2, title: 'Знакомство с CSS', group_id: 1)
 Theme.create!(number: 3, title: 'Знакомство с Javascript', group_id: 3)
 Theme.create!(number: 4, title: 'Знакомство с Ruby', group_id: 2)
@@ -346,6 +359,8 @@ Theme.create!(number: 9, title: 'HTML in Javascript', group_id: 4)
 Theme.create!(number: 10, title: 'CSS in Java', group_id: 6)
 Theme.create!(number: 11, title: 'HTML in Python', group_id: 5)
 Theme.create!(number: 12, title: 'Знакомство с Query ', group_id: 1)
+
+sleep(5)
 
 Requisite.create!(
   owner: 'ТОО Образовательный центр "Аттрактор скул Алматы"',
@@ -366,7 +381,30 @@ Requisite.create!(
   based: 'Устава'
 )
 
-Lesson.create!(theme_id: 1, date: '12/02/2019', group_id: 1)
+Lesson.create!(theme_id: 1, date: '12/02/2019', group_id: 1, homework_task: 'Домашка 1 
+
+1. К следующему занятию вы должны потренироваться писать код в текстовом редакторе Sublime 
+Для этого вам необходимо сверстать маленькую личную страничку, примерно также как мы это делали на занятии:
+На странице должны быть использованы  следующие теги:
+h1,h2,h3,h4,h5,h6,
+div
+p,
+a,
+span,
+b,em,i, strong
+img, 
+Количество тегов может быть любым. Внутрь тегов вкладывайте любой текст о себе. 
+Основная цель данной домашки, просто потренироваться писать код в саблайме. 
+
+2. Прочитать первую раздатку. Она лежит в папке первого занятия на гугл драйве. На всякий случай, вот вам ссылка.
+
+Дедлайн для домашки - четверг, 19 апреля 2018 года, 19:00. Домашки, присланные позже срока, оцениваются в 50% от максимума. 
+
+Успехов!!!
+
+Бонус - усложненный вариант (максимум +1 балл)
+Этот вариант не является обязательным, но если есть желание вы можете добавить к вашей домашке стилевое оформление - раскрасить шрифты, задать размеры картинкам, цвет фона для страницы или отдельных блоков, границы кое-где и так далее. Постарайтесь, чтобы ваша страница выглядела аккуратно, современно и приятно глазу. С первого раза может не получиться, но чем больше вы практикуетесь, тем лучше у вас будет получаться.
+')
 Lesson.create!(theme_id: 1, date: '15/02/2019', group_id: 2)
 Lesson.create!(theme_id: 2, date: '18/02/2019', group_id: 6)
 Lesson.create!(theme_id: 2, date: '19/02/2019', group_id: 2)
@@ -387,18 +425,69 @@ Lesson.create!(theme_id: 12, date: '23/02/2019', group_id: 2)
 Lesson.create!(theme_id: 1, date: '22/02/2019', group_id: 6)
 Lesson.create!(theme_id: 9, date: '24/02/2019', group_id: 3)
 
-Homework.create!(date: '17/02/2019', student_id: 1, lesson_id: 1)
-Homework.create!(date: '18/02/2019', student_id: 2, lesson_id: 1)
-Homework.create!(date: '19/02/2019', student_id: 3, lesson_id: 1)
-Homework.create!(date: '26/02/2019', student_id: 13, lesson_id: 11)
-Homework.create!(date: '13/02/2019', student_id: 11, lesson_id: 16)
-Homework.create!(date: '19/02/2019', student_id: 5, lesson_id: 2)
-Homework.create!(date: '19/02/2019', student_id: 6, lesson_id: 5)
-Homework.create!(date: '19/02/2019', student_id: 7, lesson_id: 5)
-Homework.create!(date: '17/02/2019', student_id: 8, lesson_id: 6)
-Homework.create!(date: '19/02/2019', student_id: 9, lesson_id: 10)
-Homework.create!(date: '26/02/2019', student_id: 10, lesson_id: 11)
-Homework.create!(date: '19/02/2019', student_id: 4, lesson_id: 2)
+sleep(5)
+
+h1 = Homework.create!(date: '17/02/2019', student_id: 1, lesson_id: 1)
+h1.homework_file.attach(
+  io: File.open("app/assets/images/#{h1.id}.zip"),
+  filename: "#{h1.id}.zip"
+)
+h2 = Homework.create!(date: '18/02/2019', student_id: 2, lesson_id: 1)
+h2.homework_file.attach(
+  io: File.open("app/assets/images/#{h2.id}.zip"),
+  filename: "#{h2.id}.zip"
+)
+h3 = Homework.create!(date: '19/02/2019', student_id: 3, lesson_id: 1)
+h3.homework_file.attach(
+  io: File.open("app/assets/images/#{h3.id}.zip"),
+  filename: "#{h3.id}.zip"
+)
+h4 = Homework.create!(date: '26/02/2019', student_id: 13, lesson_id: 11)
+h4.homework_file.attach(
+  io: File.open("app/assets/images/#{h4.id}.zip"),
+  filename: "#{h4.id}.zip"
+)
+h5 = Homework.create!(date: '13/02/2019', student_id: 11, lesson_id: 16)
+h5.homework_file.attach(
+  io: File.open("app/assets/images/#{h5.id}.zip"),
+  filename: "#{h5.id}.zip"
+)
+h6 = Homework.create!(date: '19/02/2019', student_id: 5, lesson_id: 2)
+h6.homework_file.attach(
+  io: File.open("app/assets/images/#{h6.id}.zip"),
+  filename: "#{h6.id}.zip"
+)
+h7 = Homework.create!(date: '19/02/2019', student_id: 6, lesson_id: 5)
+h7.homework_file.attach(
+  io: File.open("app/assets/images/#{h7.id}.zip"),
+  filename: "#{h7.id}.zip"
+)
+h8 = Homework.create!(date: '19/02/2019', student_id: 7, lesson_id: 5)
+h8.homework_file.attach(
+  io: File.open("app/assets/images/#{h8.id}.zip"),
+  filename: "#{h8.id}.zip"
+)
+h9 = Homework.create!(date: '17/02/2019', student_id: 8, lesson_id: 6)
+h9.homework_file.attach(
+  io: File.open("app/assets/images/#{h9.id}.zip"),
+  filename: "#{h9.id}.zip"
+)
+h10 = Homework.create!(date: '19/02/2019', student_id: 9, lesson_id: 10)
+h10.homework_file.attach(
+  io: File.open("app/assets/images/#{h10.id}.zip"),
+  filename: "#{h10.id}.zip"
+)
+h11 = Homework.create!(date: '26/02/2019', student_id: 10, lesson_id: 11)
+h11.homework_file.attach(
+  io: File.open("app/assets/images/#{h11.id}.zip"),
+  filename: "#{h11.id}.zip"
+)
+h12 = Homework.create!(date: '19/02/2019', student_id: 4, lesson_id: 2)
+h12.homework_file.attach(
+  io: File.open("app/assets/images/#{h12.id}.zip"),
+  filename: "#{h12.id}.zip"
+)
+sleep(5)
 
 Review.create!(title: 'Рецензия к домашке 1', content: 'Домашка решена на 5 баллов!', homework_id: 1, date: '19/02/2019', lesson_id: 1, rate: 8.6)
 Review.create!(title: 'Рецензия к домашке 1', content: 'Домашка решена на отлично!', homework_id: 2, date: '19/02/2019', lesson_id: 1, rate: 10)
@@ -407,4 +496,4 @@ Review.create!(title: 'Рецензия к домашке 1', content: 'Дома
 Review.create!(title: 'Рецензия к домашке 1', content: 'Домашка решена на 7 баллов!', homework_id: 5, date: '19/02/2019', lesson_id: 16, rate: 7.0)
 Review.create!(title: 'Рецензия к домашке 1', content: 'Домашка решена на 9.8 баллов!', homework_id: 6, date: '20/02/2019', lesson_id: 5, rate: 9.8)
 Review.create!(title: 'Рецензия к домашке 1', content: 'Домашка решена на 9 баллов!', homework_id: 7, date: '19/02/2019', lesson_id: 5, rate: 9.0)
-Review.create!(title: 'Рецензия к домашке 1', content: 'Домашка решена на 5 баллов!', homework_id: 8, date: '19/02/2019', lesson_id: 5, rate: 5)
+Review.create!(title: 'Рецензия к домашке 1', content: 'Домашка решена на 5 баллов!', homework_id: 8, date: '19/02/2019', lesson_id: 2, rate: 5)

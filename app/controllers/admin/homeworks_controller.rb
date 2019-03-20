@@ -2,10 +2,9 @@
 
 class Admin::HomeworksController < Admin::AdminController
   def index
-    @homeworks = Homework.all
-
     @lesson = Lesson.find(params[:lesson_id])
-    @homework = Homework.where(lesson_id: @lesson.id)
+    @homeworks = Homework.where(lesson_id: @lesson.id)
+    @group = @lesson.group
   end
 
   def show
@@ -45,7 +44,15 @@ class Admin::HomeworksController < Admin::AdminController
     redirect_to admin_homeworks_path
   end
 
+  def approve_send_homework
+    @homework = Homework.find(params[:homework_id])
+    @homework.status = false
+    @homework.save
+  end
+
+  private
+
   def homework_params
-    params.require(:homework).permit(:lesson_id, :date, :homework_file, :student_id)
+    params.require(:homework).permit(:lesson_id, :date, :homework_file, :student_id, :status)
   end
 end
