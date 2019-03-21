@@ -23,7 +23,6 @@ class Admin::ContractsController < Admin::AdminController
     @template = Template.first
     @requisite = Requisite.first
     respond_to do |format|
-      format.html
       format.pdf do
         pdf = Admin::ContractPdf.new(@contract, @template, @requisite)
         send_data pdf.render, filename: 'contract.pdf', type: 'application/pdf'
