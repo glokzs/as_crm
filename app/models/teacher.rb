@@ -23,8 +23,6 @@ class Teacher < ApplicationRecord
                     length: { minimum: 2, maximum: 20 }
   validates :last_name, presence: true,
                     length: { minimum: 2, maximum: 20 }
-  validates :iin, presence: true,
-                    length: { maximum: 12 }
   validates :tel_1, presence: true,
                     length: { maximum: 12 }
   validates :email, presence: true, format: { with: VALID_EMAIL_REGEX }
