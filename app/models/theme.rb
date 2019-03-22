@@ -6,6 +6,6 @@ class Theme < ApplicationRecord
 
   validates :title, presence: true,
                     length: { maximum: 100 }
-  validates :content, presence: true,
-                    length: { maximum: 4000 }
+ #validates :content, presence: true,
+ #                   length: { maximum: 4000 }
 end
