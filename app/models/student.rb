@@ -15,6 +15,24 @@ class Student < ApplicationRecord
   has_many_attached :images
   has_many :homeworks
 
+  before_validation { self.email.downcase! }
+
+  VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
+
+  validates :first_name, presence: true,
+                    length: { minimum: 2, maximum: 20 }
+  validates :last_name, presence: true,
+                    length: { minimum: 2, maximum: 20 }
+  validates :middle_name, presence: true,
+                    length: { minimum: 2, maximum: 20 }
+  validates :iin, presence: true,
+                    length: { maximum: 12 }
+  validates :tel_1, presence: true,
+                    length: { maximum: 12 }
+  validates :id_card, presence: true,
+                    length: { maximum: 12 }
+  validates :email, presence: true, format: { with: VALID_EMAIL_REGEX }
+
   private
 
   def create_user
