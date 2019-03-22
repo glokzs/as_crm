@@ -17,7 +17,6 @@ class Admin::StudentsController < Admin::AdminController
     @student = Student.new(student_params)
     if @student.save
       flash[:notice] = 'Студент успешно добавлен'
-
       redirect_to admin_students_path
 
     else
