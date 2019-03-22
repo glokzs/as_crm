@@ -85,9 +85,11 @@ class Admin::ContractPdf < Prawn::Document
         "" + "\n" +
         "" + "\n" +
         "_____________________ #{@student.last_name}", :at => [260, x_position], :width => 250
+        "" + "\n"
       end
     end
   end
+
   def get_month(month)
     if month == 1
       'января'
@@ -115,4 +117,5 @@ class Admin::ContractPdf < Prawn::Document
       'декабря'
     end
   end
+
 end
