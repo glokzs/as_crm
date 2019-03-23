@@ -1,5 +1,5 @@
 Если("он создаёт группу с данными: название {string}") do |name|
-  visit("admin/groups/new")
+  visit("groups/new")
   within('#new_group') do
     fill_in('Название', with: name)
     sleep(3)
@@ -12,7 +12,7 @@
 end
 
 То("группу RoR-1 видно в списке групп") do
-  visit("admin/groups")
+  visit("groups")
   find('td', text: 'RoR-1', match: :prefer_exact)
   sleep(3)
 end
