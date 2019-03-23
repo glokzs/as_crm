@@ -5,7 +5,7 @@
     sleep(3)
     fill_in('Email', with: email)
 
-    select('RoR-1', from:'Группа')
+    select('RoR-2', from:'Группа')
     sleep(1)
     click_button('Создать')
     sleep(3)
