@@ -20,7 +20,7 @@ end
   end
 end
 
-То("курс RoR видно в списке курсов") do
+То("курс Разработчики RoR видно в списке курсов") do
   visit("courses")
   find('td', text: 'Разработчики RoR', match: :prefer_exact)
 end

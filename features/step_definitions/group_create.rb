@@ -4,15 +4,15 @@
     fill_in('Название', with: name)
     sleep(3)
 
-    select('Разработчик Ruby on Rails', from:'Курс')
+    select('Разработчики RoR', from:'Курс')
     sleep(1)
     click_button('Создать')
     sleep(3)
   end
 end
 
-То("группу RoR-1 видно в списке групп") do
+То("группу RoR-5 видно в списке групп") do
   visit("groups")
-  find('td', text: 'RoR-1', match: :prefer_exact)
+  find('td', text: 'RoR-5', match: :prefer_exact)
   sleep(3)
 end
