@@ -66,7 +66,9 @@ Cucumber::Rails::Database.javascript_strategy = :truncation
 # Capybara.register_driver :chrome do |app|
 # Capybara::Selenium::Driver.new(app, browser: :chrome)
 # end
-
+Before do |scenario|
+    load Rails.root.join('features/support/seeds.rb')
+end
 # Capybara.default_driver = :firefox
 # Capybara.register_driver :firefox do |app|
 #   options = {
@@ -78,3 +80,4 @@ Cucumber::Rails::Database.javascript_strategy = :truncation
 #   Capybara::Selenium::Driver.new(app, browser: :firefox)
 # end
 
+  

@@ -11,7 +11,7 @@
 end  
 
 Если("он создаёт курс с данными: название {string}") do |name|
-  visit("courses/new")
+  visit("admin/courses/new")
   within('#new_course') do
     fill_in('Название', with: name)
     sleep(1)
@@ -21,6 +21,6 @@ end
 end
 
 То("курс RoR видно в списке курсов") do
-  visit("courses")
+  visit("admin/courses")
   find('td', text: 'Разработчики RoR', match: :prefer_exact)
 end
