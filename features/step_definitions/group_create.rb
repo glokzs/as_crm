@@ -4,7 +4,7 @@
     fill_in('Название', with: name)
     sleep(3)
 
-    select('Разработчик RoR', from:'Курс')
+    select('Разработчики RoR', from:'Курс')
     sleep(1)
     click_button('Создать')
     sleep(3)
