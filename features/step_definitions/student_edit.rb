@@ -1,6 +1,6 @@
 Если("он меняет имя студента с {string} на {string}") do |current_first_name, new_first_name|
   student_id = find_student(current_first_name).id
-  visit("students/#{student_id}/edit")
+  visit("/admin/students/#{student_id}/edit")
   within('#new_student') do 
     fill_in('student_first_name', with: new_first_name)
     sleep(2)
