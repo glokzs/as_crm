@@ -14,5 +14,5 @@
   
   То("преподавателя Виктор Александрович видно в списке преподавателей") do
     visit("/admin/teachers")
-    find('td', text: 'Александрович', match: :prefer_exact)
+    find('td', text: 'v.aleksandrovich@mail.ru', match: :prefer_exact)
   end
