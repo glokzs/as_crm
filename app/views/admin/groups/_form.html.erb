@@ -1,4 +1,17 @@
-<%= form_with model: [:admin, @group], local: true do |f| %>
+<%= form_with model: [:admin, @group], local: true, id: "new_group" do |f| %>
+
+<% if @group.errors.any? %>
+<div id="error_explanation">
+  <h2><%= pluralize(@group.errors.count, "error") %> prohibited this group from being saved:</h2>
+
+  <ul>
+    <% @group.errors.full_messages.each do |message| %>
+    <li><%= message %></li>
+    <% end %>
+  </ul>
+</div>
+<% end %>
+
 <div class="form-group row">
 	<%= f.label :name, 'Название', class:"col-sm-2 col-form-label" %>
 	<div class="col-sm-10">
