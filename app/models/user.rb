@@ -7,6 +7,11 @@ class User < ApplicationRecord
   has_one :student, foreign_key: :email
   has_one :teacher, foreign_key: :email
 
+  before_validation { self.email.downcase! }
+
+  VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
+  validates :email, presence: true, format: { with: VALID_EMAIL_REGEX }
+
   protected
 
   def password_required?
