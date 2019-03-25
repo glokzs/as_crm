@@ -12,7 +12,7 @@ end
 
 То("студента Петр видно в списке студентов") do
   sleep 2
-  visit("admin/students")
+  visit("/admin/students")
   sleep(2)
   find('td', text: 'Петр', match: :first)
   sleep 2
