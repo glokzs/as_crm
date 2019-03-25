@@ -1,4 +1,5 @@
-<%= form_with model: [:admin, @group], local: true do |f| %>
+<%= form_with model: [:admin, @group], local: true, id: "new_group" do |f| %>
+
 <% if @group.errors.any? %>
 <div id="error_explanation">
   <h2><%= pluralize(@group.errors.count, "error") %> prohibited this group from being saved:</h2>

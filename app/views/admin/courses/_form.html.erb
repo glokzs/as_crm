@@ -1,4 +1,5 @@
-<%= form_with model: [:admin, @course], local: true do |f| %>
+
+<%= form_with model: [:admin, @course], local: true, id: "new_course" do |f| %>
 <% if @course.errors.any? %>
 <div id="error_explanation">
   <h2><%= pluralize(@course.errors.count, "error") %> prohibited this course from being saved:</h2>
