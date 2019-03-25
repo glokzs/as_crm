@@ -11,9 +11,11 @@
 end
 
 То("студента Петр видно в списке студентов") do
-  visit("students")
+  sleep 2
+  visit("admin/students")
   sleep(2)
-  find('td', text: 'Петр', match: :prefer_exact)
+  find('td', text: 'Петр', match: :first)
+  sleep 2
 end
 
 def find_student(first_name)
