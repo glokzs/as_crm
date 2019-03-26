@@ -66,6 +66,7 @@ group :development do
   gem 'capistrano-rbenv', '~> 2.1'
   gem 'capistrano-passenger', '>= 0.1.1'
   gem 'capistrano-bundler'
+  gem 'sshkit'
 end
 
 group :development, :test do
