@@ -15,7 +15,7 @@
                          </div>
                         <% elsif current_user.role == 3 %>
                         <div class='profile'>
-                        <%= link_to "#{('Profile')}", show_profile_teacher_path(@teacher) %>
+                        <%= link_to "#{('Profile')}", show_profile_teacher_path(@teacher.id) %>
                          </div>
                          <% end %>
                     <div class="nav-item">
