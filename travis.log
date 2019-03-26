@@ -1,5 +1,5 @@
 Command line:
-"travis sshkey --upload /home/asel/.ssh/id_rsa"
+"travis sshkey --upload /home/asel/.ssh/id_rsa -r myorg/main"
 
 
    ________                                 __
@@ -26,7 +26,7 @@ Command line:
 
      There is absolutely no warranty on any results obtained from TRAVIS.
 
-  #  Running on lenovo at Tue Mar 26 21:54:15 2019 (PID 26404).
+  #  Running on lenovo at Tue Mar 26 23:11:43 2019 (PID 29032).
   #  Running in /home/asel/Ruby/ESDP/master
   #  Source code version: Nov 07 2015.
   #  Compiled at Nov 17 2015 23:12:21.

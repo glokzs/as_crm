@@ -1,27 +1,27 @@
 language: ruby
 cache: bundler
-
 before_script:
-  - export RAILS_ENV=test
-  - bundle exec rake db:drop
-  - psql -c 'create database travis_ci_test;' -U postgres
-  - bundle exec rake db:create --all
-  - bundle exec rake db:migrate
-  - bundle exec rake db:seed
-  - bundle exec rake cucumber
+- export RAILS_ENV=test
+- bundle exec rake db:drop
+- psql -c 'create database travis_ci_test;' -U postgres
+- bundle exec rake db:create --all
+- bundle exec rake db:migrate
+- bundle exec rake db:seed
+- bundle exec rake cucumber
 notifications:
   email: false
 services:
-  - postgresql
+- postgresql
 addons:
   chrome: stable
-
 env:
+  matrix:
   - CI=true
+  global:
+    secure: 8cOyODZYIYZkF4Tt2miNbaJQ32DVEDqvnYKM0ZnuGMoECYkawZgxGs0k3aesWHsydubXrufsw+yLwpy02KEJmjL8RNms4uR9vzuc2JBfSUFQnTlAZpbKLP1Y0Hs6KJlsMmY+0CR0EP7DsmNCg/dHNxwB2zlimxo1ho/336w+COap6dH6yd9DP3r9rYL4Z9f1cEU/Ru1o7USJFs75uZEYfEIeD8fBypagf59TFsVLDSIRbeCa6Y8KgIjzOGvrE42MwwsneOihZ1jjE1AhxLAWWwLoQjvxM7Ael6FHbos9FiSxFd1yZM/AuepgmiaDHf3mcdYlbh9tgri/2uk1CaIvVHe9KlGiph0KrUluk91JqgIgnefEF+OMCzuq9xTsJ0d5TGlZVNogwAYCG+2nM2lHBazVwYg6Ugzm4rIB91X1WgwVKGBWShw/Xc8bzpDvVccaGNXRalN+kYlxIZRpCSW9aBK7gcP/3d4nGYrWS8TQcmMKBHpw4zA4eha3ePESP1fcg0JX9hruhxNGw9X7e65ufNirt+q4s6Nk1uq08+M/H6DdU564qOECamu9W/tZwWL9GlupWZjZqzqPRoVjyhs7Ef6H7E79D3zllxwPl/8DgWLGvsC3GUZxxHg2NTGefQGDfZpIP6MvvMjyduh5r0L8JAc9F4QuJqRDNkt760hXhuw=
 matrix:
   include:
-    - rvm: 2.5.1
-
+  - rvm: 2.5.1
 after_success:
-  # - "openssl aes-256-cbc -k $DEPLOY_KEY -in config/deploy_id_rsa_enc_travis -d -a -out config/deploy_id_rsa"
-  - bundle exec cap production deploy
+ - "openssl aes-256-cbc -k $DEPLOY_KEY -in config/deploy_id_rsa_enc_travis -d -a -out config/deploy_id_rsa"
+  - "bundle exec cap deploy"
