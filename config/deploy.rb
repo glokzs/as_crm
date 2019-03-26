@@ -38,7 +38,7 @@ append :linked_dirs, "log", "tmp/pids", "tmp/cache", "tmp/sockets", "public/syst
 # Uncomment the following to require manually verifying the host key before first deploy.
 # set :ssh_options, verify_host_key: :secure
 
-namaspace :deploy do
+namespace :deploy do
     desc 'Restart application'
         task :restart do
             on roles(:app), in: :sequence, wait: 5 do
