@@ -1,14 +1,14 @@
 # config valid for current version and patch releases of Capistrano
 lock "~> 3.11.0"
 
-set :application, "as_crm"
+set :application, "myapp"
 set :repo_url, "https://github.com/glokzs/as_crm.git"
 
 # Default branch is :master
 # ask :branch, `git rev-parse --abbrev-ref HEAD`.chomp
-
+set :username, 'deploy'
 # Default deploy_to directory is /var/www/my_app_name
-set :deploy_to, "/home/deploy/as_crm"
+set :deploy_to, "/home/deploy/www"
 
 # Default value for :format is :airbrussh.
 # set :format, :airbrussh
@@ -37,3 +37,13 @@ append :linked_dirs, "log", "tmp/pids", "tmp/cache", "tmp/sockets", "public/syst
 
 # Uncomment the following to require manually verifying the host key before first deploy.
 # set :ssh_options, verify_host_key: :secure
+
+namaspace :deploy do
+    desc 'Restart application'
+        task :restart do
+            on roles(:app), in: :sequence, wait: 5 do
+            execute :touch, release_path.join('tmp/restart.txt')
+        end
+    end
+    after :publishing, restart
+end

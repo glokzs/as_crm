@@ -2,13 +2,13 @@
 # ======================
 # Defines a single server with a list of roles and multiple properties.
 # You can define all roles on a single server, or split them:
-server "ar-1-2-esdp-4.ltestl.com", user: "deploy", roles: %w{app db web}, primary: true
+server "134.209.192.197", user: "deploy", roles: %w{app db web}, primary: true
 # server "example.com", user: "deploy", roles: %w{app db web}, my_property: :my_value
 # server "example.com", user: "deploy", roles: %w{app web}, other_property: :other_value
 # server "db.example.com", user: "deploy", roles: %w{db}
-role :app, %w{deploy@ar-1-2-esdp-4.ltestl.com}
-role :web, %w{deploy@ar-1-2-esdp-4.ltestl.com}
-role :db,  %w{deploy@ar-1-2-esdp-4.ltestl.com}
+role :app, %w{deploy@134.209.192.197}
+role :web, %w{deploy@134.209.192.197}
+role :db,  %w{deploy@134.209.192.197}
 set :rails_env, :production
 
 
