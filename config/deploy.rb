@@ -45,5 +45,5 @@ namespace :deploy do
             execute :touch, release_path.join('tmp/restart.txt')
         end
     end
-    after :publishing, restart
+    after :publishing, :restart
 end
