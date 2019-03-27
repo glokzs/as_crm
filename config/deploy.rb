@@ -9,7 +9,7 @@ set :repo_url, "https://github.com/glokzs/as_crm"
 set :username, 'deploy'
 # Default deploy_to directory is /var/www/my_app_name
 set :deploy_to, "/home/deploy/www"
-
+set :rbenv_ruby, '2.5.1'
 # Default value for :format is :airbrussh.
 # set :format, :airbrussh
 
