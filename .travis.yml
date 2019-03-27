@@ -10,7 +10,7 @@ before_script:
 - bundle exec rake db:migrate
 - bundle exec rake db:seed
 - bundle exec rake cucumber
-- bundle exec cucumber --color
+# - bundle exec cucumber --color
 
 notifications:
   email: false
