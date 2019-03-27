@@ -21,7 +21,7 @@ env:
   global:
   - secure: G9k2cNhXxZLQwq8zOgt8NFWnJsb8j+ajp4p30LPbYPY+XRZ7x3bv1cYaE7AWNKSexaTAspcWSz8Rui2ptJfdE1GQRLcS/CZi0binMzv2colxxqUDEJxG/eg55BJ7qshC+nJePokOj3dxrYvKj+RUhxkT/zILXWCEUMMxwuWG0n2Z6cju+rZCCO2waNXQxpLb3awHM+cMM216R1wXUHtFsp49D9XHkGhcO6oNVi9+mSgPqOYzDkItAk78YFjFZLgR8hMT8NKwnUonX7dgIMfbDp4OW8qHoLJQLRDuau7USrA697g/p5jN/FWKJO2fBD9PhuYGI5ISfFVCP+HySQmcKj9jrqcRZwrmxoQPv7OfkEby9oi+1TTKBLDprhSVELB1QKB7hNfpNIFiqCKlq+xGMoqAJMkVYZGUrnx6dPmPQqNhYmHKBjaWawam2H5yFdyHMK5y+8Ru8r3+On3n+bX5Nq6v+/1bFi1UkusowzFJbpsVIRJpULcFrg+KsxRWtv+40ZHlfPZ4PYFTcNnrSzk2JtFulTpSlQmnkSkWshU7YgomHfx5GVP0hCKEc+ac0th+Y53guNn6EhEb5HrPXRnvH6l6XtZvjCn6VsM4Xvev+4S13/UllFnaWA9kpE+Mvw8c0rYBcsFe69/Ty5rxk3zZxoSoiefb4kes8K6/mXABl20=
 before_install:
-- openssl aes-256-cbc -K $encrypted_11cd8d428410_key -iv $encrypted_11cd8d428410_iv
+- openssl aes-256-cbc -K $encrypted_5b6970ef99ca_key -iv $encrypted_5b6970ef99ca_iv
   -in travis_key.pub.enc -out ~/.ssh/travis_key.pub -d
 after_success:
 - bundle exec cap production deploy
