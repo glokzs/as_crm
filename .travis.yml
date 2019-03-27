@@ -23,11 +23,15 @@ env:
 before_install:
 # - openssl aes-256-cbc -K $encrypted_5b6970ef99ca_key -iv $encrypted_5b6970ef99ca_iv
 #   -in travis_key.pub.enc -out ~/.ssh/travis_key.pub -d
-  - openssl aes-256-cbc -K $encrypted_5b6970ef99ca_key -iv $encrypted_5b6970ef99ca_iv -in .travis/id_rsa.enc -out ~/.ssh/id_rsa -d
+  # - openssl aes-256-cbc -K $encrypted_5b6970ef99ca_key -iv $encrypted_5b6970ef99ca_iv -in .travis/id_rsa.enc -out ~/.ssh/id_rsa -d
+  # - chmod 600 ~/.ssh/id_rsa
+  # - eval "$(ssh-agent -s)"
+  # - ssh-add ~/.ssh/id_rsa
+  # - cp .travis/ssh_config ~/.ssh/config
+  - echo -n $id_rsa_{00..30} >> ~/.ssh/id_rsa_base64
+  - base64 --decode --ignore-garbage ~/.ssh/id_rsa_base64 > ~/.ssh/id_rsa
   - chmod 600 ~/.ssh/id_rsa
-  - eval "$(ssh-agent -s)"
-  - ssh-add ~/.ssh/id_rsa
-  - cp .travis/ssh_config ~/.ssh/config
+  - echo -e "Host github.com\n\tStrictHostKeyChecking no\n" >> ~/.ssh/config
 after_success:
 - bundle exec cap production deploy
 
