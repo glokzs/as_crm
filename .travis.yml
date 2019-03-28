@@ -30,5 +30,5 @@ before_install:
 after_success:
 - |
     if [[ $TRAVIS_BRANCH == 'master' && $TRAVIS_PULL_REQUEST == 'false' ]]; then
-      bundle exec cap prod_upgrade deploy
+      bundle exec cap production deploy
     fi
