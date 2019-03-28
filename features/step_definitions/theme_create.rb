@@ -1,11 +1,12 @@
-Если("он создаёт тему с данными: название {string}") do |title|
+Если("он создаёт тему с данными: название {string}") do |string|
   visit("/admin/themes/new")
   sleep 3
   within('#new_theme') do
+    fill_in('Номер темы', with: number)
     fill_in('Название', with: title)
     sleep(3)
 
-    select('Разработчики RoR', from:'Курс')
+    select('Разработчик Ruby on Rails', from:'Курс')
     sleep(3)
     select('RoR-1', from:'Группа')
     sleep(7)
