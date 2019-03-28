@@ -33,6 +33,6 @@ before_install:
   - chmod 600 ~/.ssh/id_rsa
   - echo -e "Host github.com\n\tStrictHostKeyChecking no\n" >> ~/.ssh/config
 after_success:
-- bundle exec cap production deploy
+  - bundle exec cap production deploy
 
 
