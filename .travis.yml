@@ -8,7 +8,7 @@ before_script:
 - bundle exec rake db:migrate
 - bundle exec rake db:seed
 - bundle exec cucumber --color
-- bundle exec rake c ucumber
+- bundle exec rake cucumber
 notifications:
   email: false
 services:
