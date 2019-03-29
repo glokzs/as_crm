@@ -45,7 +45,7 @@ set :rails_env, :production
 # Global options
 # --------------
 #  set :ssh_options, {
-#    keys: %w(/home/rlisowski/.ssh/id_rsa),
+#    keys: %w(~/.ssh/id_travis_deploy),
 #    forward_agent: false,
 #    auth_methods: %w(password)
 #  }
