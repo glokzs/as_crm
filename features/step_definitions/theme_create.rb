@@ -1,8 +1,6 @@
 Если("он создаёт тему с данными: название {string}") do |string|
   visit("/admin/themes/new")
-  sleep 3
   within('#new_theme') do
-    fill_in('Номер темы', with: number)
     fill_in('Название', with: title)
     sleep(3)
 
