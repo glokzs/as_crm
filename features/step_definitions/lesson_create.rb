@@ -2,11 +2,11 @@
   visit("/admin/lessons/new")
   within('#new_lesson') do
     select('ООП', from:'Тема занятия')
-    sleep(7)
+    
     select('RoR-1', from:'Группа')
-    sleep(7)
+    
     fill_in('Дата дедлайна', with: '2019-03-05'  )
-    sleep(3)
+    
     click_button('Создать')
     sleep(3)
   end
