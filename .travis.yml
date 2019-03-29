@@ -7,8 +7,8 @@ before_script:
 - bundle exec rake db:create --all
 - bundle exec rake db:migrate
 - bundle exec rake db:seed
-# - bundle exec rake c ucumber
-# - bundle exec cucumber --color
+- bundle exec cucumber --color
+- bundle exec rake c ucumber
 notifications:
   email: false
 services:
@@ -26,5 +26,8 @@ before_install:
 - cp travis_deploy ~/.ssh/id_travis_deploy
 - chmod 600 ~/.ssh/id_travis_deploy
 after_success:
-- bundle exec cap production deploy
+- |
+    if [[ $TRAVIS_BRANCH == 'master' && $TRAVIS_PULL_REQUEST == 'false' ]]; then
+      bundle exec cap production deploy
+    fi
 
