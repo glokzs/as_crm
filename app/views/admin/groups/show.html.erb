@@ -76,9 +76,9 @@
 			<td><%= lesson.date %></td>
 			<td>
 				<%if lesson.homework_task.nil?%>
-					<%= 'Домашняя работа есть'%>
-				<%else%>
 					<%= 'Домашней работы нет'%>
+				<%else%>
+					<%= 'Домашняя работа есть'%>
 				<%end%>
 			</td>
 			<td><%= lesson.theme.addition %></td>
