@@ -2,10 +2,10 @@
   visit("/admin/students/new")
   within('#new_student') do
     fill_in('Имя', with: first_name)
-    sleep(3)
+    
     fill_in('Email', with: email)
 
-    select('RoR-2', from:'Группа')
+    select('RoR-1', from:'Группа')
     sleep(1)
     click_button('Создать')
     sleep(3)

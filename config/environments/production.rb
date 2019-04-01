@@ -97,15 +97,15 @@ Rails.application.configure do
   config.action_mailer.delivery_method = :smtp
   config.action_mailer.perform_caching = false
   config.action_mailer.perform_deliveries = true
-  config.action_mailer.default_options = { from: 'efremov18228@yandex.kz' }
+  config.action_mailer.default_options = { from: 'attractoralmaty@yandex.kz' }
   config.action_mailer.default_url_options = { :host => '134.209.192.197' }
 
   ActionMailer::Base.smtp_settings = {
     :address              => 'smtp.yandex.kz',
     :domain               => 'yandex.kz',
     :port                 => 465,
-    :user_name            => 'efremov18228@yandex.kz',
-    :password             => 'yura18228',
+    :user_name            => 'attractoralmaty@yandex.kz',
+    :password             => '1qaz@WSX',
     :authentication       => 'plain',
     :enable_starttls_auto => true,
     :tls                  => true

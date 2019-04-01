@@ -1,4 +1,4 @@
-<%= form_with model: [:admin, @lesson], local: true do |f| %>
+<%= form_with model: [:admin, @lesson], local: true, id: "new_lesson" do |f| %>
 
 <% if @lesson.errors.any? %>
 <div id="error_explanation">
