@@ -5,17 +5,10 @@ class Admin::ContractsController < Admin::AdminController
 
   def create
     @contract = Contract.new(contract_params)
+    @contract[:date] = Date.today
     @contract[:student_id] = params[:student_id]
-    @contract[:number] = if Contract.last.nil?
-                           1
-                         else
-                           Contract.last.number.to_i + 1
-                         end
-    if @contract.save
-      redirect_to admin_students_path
-    else
-      redirect_to admin_students_path
-    end
+    @contract.save
+    redirect_to admin_students_path
   end
 
   def show
@@ -33,6 +26,6 @@ class Admin::ContractsController < Admin::AdminController
   private
 
   def contract_params
-    params.permit(:student_id, :date, :number)
+    params.permit(:student_id, :date)
   end
 end

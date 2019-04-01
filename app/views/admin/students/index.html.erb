@@ -21,7 +21,7 @@
 			<%= link_to (fa_icon "far fa-edit"), edit_admin_student_path(student), class:"font" %>
 			<%= link_to (fa_icon "trash"), admin_student_path(student), class:"font" %>
 			<% if student.contract.present? %>
-				<%= link_to 'Смотреть договор', admin_contracts_path << "/#{student.contract.number}.pdf"  %>
+				<%= link_to 'Смотреть договор', admin_contracts_path << "/#{student.contract.id}.pdf"  %>
 			<% else %>
 				<%= link_to 'Заключить договор', admin_contracts_path(student_id: student), method: :post%>
 			<% end %>

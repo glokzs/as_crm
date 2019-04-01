@@ -13,7 +13,7 @@ class Admin::ContractPdf < Prawn::Document
     y_position = cursor - 0
     bounding_box([30, y_position], :width => 500) do
       font ("#{Rails.root}/app/assets/fonts/7454bold.ttf") do
-        text_box "ДОГОВОР № #{@contract.number}", :at => [0, 0], :align => :center
+        text_box "ДОГОВОР № #{@contract.id}", :at => [0, 0], :align => :center
         move_down 12
         text_box "#{@template.title}", :at => [0, 0], :align => :center
       end
