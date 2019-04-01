@@ -14,15 +14,9 @@
 		<td><%= lesson.theme.title %></td>
 		<td><%= lesson.date %></td>
 		<td><%= lesson.group.name %></td>
-		<td><% if lesson.deadline.nil? %>
-				<%=(lesson.date + 3.days).strftime("%Y-%m-%d в 19:30") %>
-				<%else%>
-				<%= lesson.deadline.strftime("%Y-%m-%d в 19:30")%>
-				<%end%>
-		</td>
+		<td><%= lesson.deadline.strftime("%Y-%m-%d в 19:30") if lesson.deadline%></td>
 		<td>
-			<%= link_to 'Редактировать', edit_admin_lesson_path(lesson) %>
-			<%= link_to 'Удалить' %>
+			<%= link_to (fa_icon "edit"), edit_admin_lesson_path(lesson) %>
 		</td>
 	</tr>
 

@@ -2,6 +2,7 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 @import "bootstrap";
+@import "font-awesome";
 
 table.table-striped {
 	text-align: center;
@@ -39,6 +40,9 @@ table.contract td {
 }
 .font{
 	font-size: 18.5px;
+}
+.fa{
+  color: #28a745;
 }
 
 
