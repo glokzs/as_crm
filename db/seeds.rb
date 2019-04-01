@@ -471,17 +471,7 @@ h10.homework_file.attach(
   io: File.open("app/assets/images/#{h10.id}.zip"),
   filename: "#{h10.id}.zip"
 )
-h11 = Homework.create!(date: '26/02/2019', student_id: 10, lesson_id: 11)
-h11.homework_file.attach(
-  io: File.open("app/assets/images/#{h11.id}.zip"),
-  filename: "#{h11.id}.zip"
-)
-h12 = Homework.create!(date: '19/02/2019', student_id: 4, lesson_id: 2)
-h12.homework_file.attach(
-  io: File.open("app/assets/images/#{h12.id}.zip"),
-  filename: "#{h12.id}.zip"
-)
-sleep(5)
+
 
 Review.create!(title: 'Рецензия к домашке 1', content: 'Домашка решена на 5 баллов!', homework_id: 1, date: '19/02/2019', lesson_id: 1, rate: 8.6)
 Review.create!(title: 'Рецензия к домашке 1', content: 'Домашка решена на отлично!', homework_id: 2, date: '19/02/2019', lesson_id: 1, rate: 10)
