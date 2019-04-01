@@ -6,7 +6,4 @@ class Lesson < ApplicationRecord
   has_and_belongs_to_many :students
   has_many :homeworks
   has_many :reviews
-
-  validates :homework_task, presence: false,
-                    length: { maximum: 4000 }
 end
