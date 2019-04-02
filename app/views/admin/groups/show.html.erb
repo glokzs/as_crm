@@ -75,11 +75,7 @@
 			<td><%= link_to lesson.theme.title, admin_theme_path(lesson.theme_id) %></td>
 			<td><%= lesson.date %></td>
 			<td>
-				<%if lesson.homework_task.nil?%>
-					<%= 'Домашней работы нет'%>
-				<%else%>
-					<%= 'Домашняя работа есть'%>
-				<%end%>
+				<%= (fa_icon "check") if lesson.homework_task%>
 			</td>
 			<td><%= lesson.theme.addition %></td>
 			<td>
